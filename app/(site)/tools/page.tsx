@@ -7,6 +7,7 @@ import { ToolSuite } from "@/components/ToolSuite";
 export const metadata: Metadata = {
   title: "All UK Tax Calculators",
   description: "Browse every free UK tax calculator in one place — salary, income tax, National Insurance, capital gains, inheritance tax, stamp duty and more, for the 2026/27 tax year.",
+  alternates: { canonical: "/tools" },
 };
 
 export default function AllTools() {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CONTACT_EMAIL, SITE_NAME, SITE_URL } from "@/lib/tools";
 
-export const metadata = { title: "Terms of Use" };
+export const metadata = { title: "Terms of Use", alternates: { canonical: "/terms" } };
 
 const LAST_UPDATED = "29 September 2026";
 const DOMAIN = SITE_URL.replace("https://", "");

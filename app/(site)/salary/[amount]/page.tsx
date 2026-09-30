@@ -34,6 +34,7 @@ export default async function SalaryAmountPage({ params }: { params: Promise<{ a
   const eng = calcSalary({ gross, region: "england", pensionPct: 0, plan: "none" });
   const sco = calcSalary({ gross, region: "scotland", pensionPct: 0, plan: "none" });
   const effective = gross > 0 ? (eng.incomeTax / gross) * 100 : 0;
+  const combinedRate = gross > 0 ? ((eng.incomeTax + eng.ni) / gross) * 100 : 0;
   const keepPct = gross > 0 ? (eng.net / gross) * 100 : 0;
 
   const idx = COMMON_SALARIES.indexOf(gross);
@@ -45,7 +46,7 @@ export default async function SalaryAmountPage({ params }: { params: Promise<{ a
   const faqs = [
     { q: `How much is ${gbp(gross, 0)} after tax in the UK?`, a: `On a ${gbp(gross, 0)} salary in England, Wales or Northern Ireland, you'd take home about ${gbp(eng.net, 0)} a year (${gbp(eng.net / 12, 0)} a month), after ${gbp(eng.incomeTax, 0)} of Income Tax and ${gbp(eng.ni, 0)} of National Insurance.` },
     { q: `What's the take-home pay on ${gbp(gross, 0)} in Scotland?`, a: `In Scotland, a ${gbp(gross, 0)} salary works out at about ${gbp(sco.net, 0)} a year take-home, because Scottish Income Tax uses different bands from the rest of the UK.` },
-    { q: `What is the effective tax rate on ${gbp(gross, 0)}?`, a: `Income Tax alone comes to about ${effective.toFixed(1)}% of a ${gbp(gross, 0)} salary. Once National Insurance is included, the total deduction rate is higher — see the breakdown above.` },
+    { q: `What is the effective tax rate on ${gbp(gross, 0)}?`, a: `Income Tax alone comes to about ${effective.toFixed(1)}% of a ${gbp(gross, 0)} salary. Add National Insurance and the combined effective rate is about ${combinedRate.toFixed(1)}%.` },
     { q: "Does this include pension contributions or student loan?", a: "No — this page assumes no pension contribution, no student loan and the standard tax code. Use the full Income Tax Calculator to add those and get a more personal figure." },
   ];
 

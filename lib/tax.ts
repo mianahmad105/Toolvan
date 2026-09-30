@@ -1,4 +1,5 @@
-// UK tax year 2025/26 rates (illustrative calculator, not financial advice)
+// UK tax year 2026/27 rates (illustrative calculator, not financial advice)
+// Scottish bands reflect the Scottish Budget announced 13 January 2026.
 
 export type Region = "england" | "scotland";
 export type StudentPlan = "none" | "plan1" | "plan2" | "plan4" | "plan5" | "postgrad";
@@ -12,9 +13,9 @@ const ENGLAND = [
   { name: "Additional rate 45%", width: Infinity, rate: 0.45 },
 ];
 const SCOTLAND = [
-  { name: "Starter 19%", width: 15397 - 12570, rate: 0.19 },
-  { name: "Basic 20%", width: 27491 - 15397, rate: 0.2 },
-  { name: "Intermediate 21%", width: 43662 - 27491, rate: 0.21 },
+  { name: "Starter 19%", width: 16537 - 12570, rate: 0.19 },
+  { name: "Basic 20%", width: 29526 - 16537, rate: 0.2 },
+  { name: "Intermediate 21%", width: 43662 - 29526, rate: 0.21 },
   { name: "Higher 42%", width: 75000 - 43662, rate: 0.42 },
   { name: "Advanced 45%", width: 125140 - 75000, rate: 0.45 },
   { name: "Top 48%", width: Infinity, rate: 0.48 },

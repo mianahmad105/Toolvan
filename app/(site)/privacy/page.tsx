@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CONTACT_EMAIL, SITE_NAME, SITE_URL } from "@/lib/tools";
 
-export const metadata = { title: "Privacy Policy" };
+export const metadata = { title: "Privacy Policy", alternates: { canonical: "/privacy" } };
 
 const LAST_UPDATED = "29 September 2026";
 
