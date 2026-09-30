@@ -38,6 +38,7 @@ export default function Gdpr() {
             <p className="text-muted mb-2">We only ever hold personal data that you choose to give us directly:</p>
             <ul className="list-disc pl-6 space-y-1.5 text-muted">
               <li>Your name, email address and message, if you contact us through the contact form or by email</li>
+              <li>Your email address, if you sign up for tax-update emails through the newsletter box — kept until you unsubscribe</li>
               <li>A light/dark display preference, stored in your own browser and never sent to us</li>
               <li>Advertising cookie identifiers set by Google and its advertising partners, used to serve and measure ads</li>
             </ul>
@@ -52,7 +53,7 @@ export default function Gdpr() {
           <section>
             <h2 className="text-xl font-extrabold mb-2">Our lawful basis for processing</h2>
             <ul className="list-disc pl-6 space-y-1.5 text-muted">
-              <li><b className="text-ink">Consent</b> — when you send us a message, you&apos;re consenting to us using those details to reply to you; and when you accept advertising cookies via our cookie banner</li>
+              <li><b className="text-ink">Consent</b> — when you send us a message or sign up for tax-update emails, you&apos;re consenting to us using those details for that purpose; and when you accept advertising cookies via our cookie banner</li>
               <li><b className="text-ink">Legitimate interests</b> — keeping the site running securely and reliably, and funding it through advertising</li>
             </ul>
             <p className="text-muted mt-3">We don&apos;t use your data for automated decision-making or profiling.</p>
@@ -61,8 +62,9 @@ export default function Gdpr() {
           <section>
             <h2 className="text-xl font-extrabold mb-2">How long we keep it</h2>
             <p className="text-muted">
-              Contact-form messages are kept only for as long as it takes to resolve your enquiry, then deleted.
-              We don&apos;t maintain a mailing list or long-term customer database.
+              Contact-form messages are kept only for as long as it takes to resolve your enquiry, then deleted. If you
+              sign up for tax-update emails, we keep your address on a simple list for as long as you stay subscribed,
+              and remove it as soon as you ask us to. We don&apos;t run a large-scale customer database beyond that.
             </p>
           </section>
 

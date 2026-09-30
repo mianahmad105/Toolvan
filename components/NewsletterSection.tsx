@@ -21,10 +21,14 @@ export function NewsletterSection() {
         </span>
         <h2 className="text-3xl md:text-5xl font-extrabold mt-6 leading-tight">Tax changes and new tools, straight to your inbox</h2>
         <p className="text-muted text-lg mt-5 max-w-2xl mx-auto">
-          Leave your email and we will tell you when tax rates change, when a new calculator goes live and when there is a simple way to keep more of your pay.
+          Want to hear when tax rates change or a new calculator goes live? Enter your email below — it opens an
+          email to us from your own mail app, so you&apos;re in control of what gets sent.
         </p>
         <Newsletter />
-        <p className="text-xs text-muted mt-6 max-w-md mx-auto">We respect your privacy and will only use your email address to send tax updates.</p>
+        <p className="text-xs text-muted mt-6 max-w-md mx-auto">
+          This doesn&apos;t submit anything to our servers — it just drafts an email from you to us. See our{" "}
+          <a href="/privacy" className="underline hover:text-ink">Privacy Policy</a> for how we handle it from there.
+        </p>
       </div>
     </section>
   );

@@ -61,7 +61,7 @@ const FIRST_YEAR: [number, number][] = [
 ];
 export function vehicleTax(co2: number, electric: boolean, listPrice: number) {
   const first = electric ? 10 : FIRST_YEAR.find(([max]) => co2 <= max)![1];
-  const standard = 195;
-  const supplement = listPrice > 40000 ? 425 : 0;
+  const standard = 200;
+  const supplement = listPrice > 50000 ? 440 : 0;
   return { first, standard, supplement, standardWithSupplement: standard + supplement };
 }

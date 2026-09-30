@@ -57,8 +57,11 @@ export default function Privacy() {
               local storage. It stays on your device and is never transmitted to us.
             </p>
             <p className="text-muted mt-3">
-              If you choose to contact us through our contact form or by email, we&apos;ll receive whatever you enter —
-              typically your name, email address, and the content of your message — so that we can reply to you.
+              If you choose to contact us through our contact form, the newsletter signup box, or by email, we&apos;ll
+              receive whatever you enter — typically your name and/or email address, and the content of your message —
+              so that we can reply to you or, for the newsletter box, add you to the list of people we email about tax
+              updates. Both forms work by opening an email from your own mail app to us; nothing is submitted to our
+              servers first.
             </p>
           </section>
 
