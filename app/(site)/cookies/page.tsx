@@ -53,7 +53,7 @@ export default function Cookies() {
                 <thead><tr className="bg-surface2 text-left"><th className="px-4 py-2.5">Name</th><th className="px-4 py-2.5">Purpose</th><th className="px-4 py-2.5">Duration</th></tr></thead>
                 <tbody>
                   <Row cookie="theme" purpose="Remembers whether you last chose light or dark mode" duration="Until you clear your browser data" />
-                  <Row cookie="cookieConsent" purpose="Remembers that you've seen our cookie notice" duration="Until you clear your browser data" />
+                  <Row cookie="cookieConsent" purpose="Remembers whether you accepted or rejected our cookie notice" duration="Until you clear your browser data" />
                 </tbody>
               </table>
             </div>

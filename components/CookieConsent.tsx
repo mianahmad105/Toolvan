@@ -12,8 +12,8 @@ export function CookieConsent() {
     } catch { /* localStorage unavailable */ }
   }, []);
 
-  const accept = () => {
-    try { localStorage.setItem("cookieConsent", "accepted"); } catch { /* ignore */ }
+  const choose = (choice: "accepted" | "rejected") => {
+    try { localStorage.setItem("cookieConsent", choice); } catch { /* ignore */ }
     setVisible(false);
   };
 
@@ -27,7 +27,10 @@ export function CookieConsent() {
           We store a small local preference (your light/dark theme choice) on your device, and use Google
           advertising cookies to help fund these free tools. See our <Link href="/cookies" className="text-accent hover:underline">Cookie Policy</Link> for details and how to opt out.
         </p>
-        <button onClick={accept} className="btn shrink-0 w-full sm:w-auto">Got it</button>
+        <div className="flex gap-2 shrink-0 w-full sm:w-auto">
+          <button onClick={() => choose("rejected")} className="rounded-xl border border-line px-4 py-2.5 text-sm font-bold flex-1 sm:flex-none">Reject</button>
+          <button onClick={() => choose("accepted")} className="btn flex-1 sm:flex-none">Accept</button>
+        </div>
       </div>
     </div>
   );
