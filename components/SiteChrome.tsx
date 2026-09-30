@@ -100,6 +100,7 @@ const QUICK_LINKS = [
   { href: "/about", label: "About us" },
   { href: "/contact", label: "Contact Us" },
   { href: "/privacy", label: "Privacy notice" },
+  { href: "/cookies", label: "Cookie Policy" },
   { href: "/gdpr", label: "GDPR" },
   { href: "/terms", label: "Terms of service" },
 ];

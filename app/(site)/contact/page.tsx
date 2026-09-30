@@ -5,7 +5,11 @@ import {
 import { ContactForm } from "@/components/ContactForm";
 import { CONTACT_EMAIL } from "@/lib/tools";
 
-export const metadata = { title: "Contact", alternates: { canonical: "/contact" } };
+export const metadata = {
+  title: "Contact",
+  description: "Get in touch with Toolvan about a calculator, a figure that looks wrong, or a general question — by email or contact form.",
+  alternates: { canonical: "/contact" },
+};
 
 const WHY = [
   "Free to use, no registration required",
@@ -15,7 +19,6 @@ const WHY = [
 ];
 
 const TRIO = [
-  { icon: MessageCircle, title: "Live Chat", body: "Coming soon! We're working on adding live chat support for instant help." },
   { icon: ShieldCheck, title: "Privacy First", body: "Your privacy is our priority. We don't store personal information unnecessarily." },
   { icon: Zap, title: "Quick Response", body: "We aim to respond to all inquiries within 24-48 hours during business days." },
 ];
@@ -28,7 +31,7 @@ export default function Contact() {
           <h1 className="text-4xl md:text-5xl font-extrabold">Contact Us</h1>
           <p className="mt-5 text-white/90 leading-7">
             Have questions about our tax calculators? Need support or want to suggest improvements?
-            Our team is here to help you navigate the complex world of UK taxation.
+            I&apos;m here to help you navigate the complex world of UK taxation.
           </p>
         </div>
       </section>
@@ -76,8 +79,8 @@ export default function Contact() {
 
           <div className="rounded-2xl p-6 text-white text-center" style={{ background: "linear-gradient(120deg,#1d4ed8,#38bdf8)" }}>
             <h3 className="text-lg font-extrabold">Need Quick Answers?</h3>
-            <p className="text-white/90 text-sm mt-1.5">Check our comprehensive FAQ section for common questions</p>
-            <Link href="/tools" className="inline-block mt-4 rounded-xl bg-white text-accent2 px-5 py-2.5 font-bold text-sm">View FAQ</Link>
+            <p className="text-white/90 text-sm mt-1.5">Every calculator page has its own FAQ section, right below the tool</p>
+            <Link href="/tools" className="inline-block mt-4 rounded-xl bg-white text-accent2 px-5 py-2.5 font-bold text-sm">Browse calculators</Link>
           </div>
         </div>
 
@@ -89,7 +92,7 @@ export default function Contact() {
           <h2 className="text-2xl md:text-3xl font-extrabold">Other Ways to Get Help</h2>
           <p className="text-muted mt-2">We&apos;re committed to providing you with the best possible support experience</p>
         </div>
-        <div className="grid gap-8 sm:grid-cols-3 text-center mt-10">
+        <div className="grid gap-8 sm:grid-cols-2 max-w-xl mx-auto text-center mt-10">
           {TRIO.map(({ icon: Icon, title, body }) => (
             <div key={title}>
               <span className="inline-grid place-items-center w-12 h-12 rounded-2xl bg-surface2 text-accent mb-3"><Icon size={22} /></span>
