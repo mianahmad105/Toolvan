@@ -13,7 +13,7 @@ type Freq = keyof typeof FREQ;
 type Result = ReturnType<typeof calcSalary>;
 interface Snap { r: Result; region: Region; blind: boolean; over66: boolean; marriage: boolean; taxCode: string; plan: StudentPlan }
 
-const TEAL = "#22c55e";
+const TEAL = "#3b82f6";
 const tint = (c: string, pct = 14) => `color-mix(in srgb, ${c} ${pct}%, var(--surface))`;
 
 function Tile({ icon: Icon, label, value, color }: { icon: typeof Wallet; label: string; value: string; color: string }) {
@@ -80,12 +80,12 @@ export function SalaryPro() {
   const form = (
     <form className="sal-card" onSubmit={submit}>
       {snap ? (
-        <h2 className="text-2xl font-extrabold" style={{ color: "#16a34a" }}>Update your calculation</h2>
+        <h2 className="text-2xl font-extrabold" style={{ color: "#1d4ed8" }}>Update your calculation</h2>
       ) : (
         <div className="flex items-center gap-4">
           <span className="grid place-items-center w-12 h-12 rounded-2xl shrink-0" style={{ background: tint(TEAL, 16), color: TEAL }}><Calculator size={22} /></span>
           <div>
-            <h1 className="text-2xl md:text-3xl font-extrabold leading-tight" style={{ color: "#16a34a" }}>Take-Home Pay Calculator 2026/27</h1>
+            <h1 className="text-2xl md:text-3xl font-extrabold leading-tight" style={{ color: "#1d4ed8" }}>Take-Home Pay Calculator 2026/27</h1>
             <p className="text-sm text-muted mt-1">See what lands in your bank account after tax, National Insurance and other deductions.</p>
           </div>
         </div>
@@ -171,7 +171,7 @@ export function SalaryPro() {
       </div>
 
       <div className="flex justify-center mt-8">
-        <button type="submit" className="inline-flex items-center gap-3 rounded-2xl px-10 py-4 text-lg font-bold text-white shadow-lg" style={{ background: "linear-gradient(90deg,#16a34a,#22c55e)" }}>
+        <button type="submit" className="inline-flex items-center gap-3 rounded-2xl px-10 py-4 text-lg font-bold text-white shadow-lg" style={{ background: "linear-gradient(90deg,#1d4ed8,#3b82f6)" }}>
           <Calculator size={20} /> Work out my pay
         </button>
       </div>
@@ -200,7 +200,7 @@ export function SalaryPro() {
       <div ref={top} className="space-y-6 scroll-mt-24">
         <nav aria-label="Breadcrumb" className="hidden" />
         <section className="card p-6 md:p-8">
-          <h2 className="text-2xl md:text-4xl font-extrabold" style={{ color: "#16a34a" }}>{gbp(gross, 0)} a year after tax in the UK (2026/27)</h2>
+          <h2 className="text-2xl md:text-4xl font-extrabold" style={{ color: "#1d4ed8" }}>{gbp(gross, 0)} a year after tax in the UK (2026/27)</h2>
           <p className="mt-4 leading-7">
             On a gross salary of <b>{gbp(gross, 0)}</b> in the 2026/27 tax year you would take home about <b>{gbp(r.net, 0)}</b> a year, which works out at
             <b> {gbp(r.net / 12, 0)}</b> a month. That figure already allows for <b>income tax</b>, <b>National Insurance</b> and any extras you added.
@@ -209,7 +209,7 @@ export function SalaryPro() {
         </section>
 
         <section className="card p-4 md:p-8">
-          <div className="rounded-3xl text-white text-center px-6 py-12 shadow-2xl" style={{ background: "linear-gradient(135deg,#16a34a 0%,#22c55e 55%,#a3e635 100%)" }}>
+          <div className="rounded-3xl text-white text-center px-6 py-12 shadow-2xl" style={{ background: "linear-gradient(135deg,#1d4ed8 0%,#3b82f6 55%,#38bdf8 100%)" }}>
             <span className="inline-grid place-items-center w-16 h-16 rounded-2xl bg-white/20"><Wallet size={30} /></span>
             <div className="mt-5 text-sm font-semibold tracking-widest uppercase text-emerald-50">Your yearly take-home pay</div>
             <div className="text-5xl md:text-7xl font-extrabold mt-3 break-words">{gbp(r.net, 2)}</div>
@@ -228,15 +228,15 @@ export function SalaryPro() {
             <div className="space-y-6">
               <Block icon={Wallet} title="Where your pay goes" color={TEAL}>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  <Tile icon={Wallet} label="Gross pay" value={gbp(gross, 0)} color="#22c55e" />
-                  <Tile icon={CheckCircle2} label="Tax-free amount" value={gbp(r.allowance, 0)} color="#16a34a" />
+                  <Tile icon={Wallet} label="Gross pay" value={gbp(gross, 0)} color="#3b82f6" />
+                  <Tile icon={CheckCircle2} label="Tax-free amount" value={gbp(r.allowance, 0)} color="#1d4ed8" />
                   <Tile icon={ArrowDownToLine} label="Income tax" value={gbp(r.incomeTax, 0)} color="#e11d48" />
                   <Tile icon={ShieldCheck} label="National Insurance" value={gbp(r.ni, 0)} color="#0284c7" />
                   <Tile icon={Eye} label="Taxable income" value={gbp(Math.max(0, r.taxable - r.allowance), 0)} color="#d97706" />
                   <Tile icon={Percent} label="Effective tax rate" value={`${effective.toFixed(2)}%`} color="#7c3aed" />
                 </div>
               </Block>
-              <Block icon={Layers} title="Allowances and deductions used" color="#16a34a">
+              <Block icon={Layers} title="Allowances and deductions used" color="#1d4ed8">
                 {applied.length === 0 ? (
                   <p className="text-sm text-muted flex items-center gap-2"><UserRound size={16} /> No extra allowances or deductions were applied.</p>
                 ) : (
@@ -330,7 +330,7 @@ export function SalaryPro() {
       </section>
 
       <section className="card p-6 md:p-8">
-        <h2 className="text-2xl font-extrabold" style={{ color: "#16a34a" }}>Questions about this calculator</h2>
+        <h2 className="text-2xl font-extrabold" style={{ color: "#1d4ed8" }}>Questions about this calculator</h2>
         <div className="mt-4 divide-y divide-line">
           {faqs.map((f) => (
             <details key={f.q} className="py-3 group">

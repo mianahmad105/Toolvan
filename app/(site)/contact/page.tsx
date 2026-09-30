@@ -23,7 +23,7 @@ const TRIO = [
 export default function Contact() {
   return (
     <>
-      <section className="text-white text-center px-4 py-16 md:py-20" style={{ background: "linear-gradient(120deg,#0f172a 0%,#16a34a 55%,#65a30d 130%)" }}>
+      <section className="text-white text-center px-4 py-16 md:py-20" style={{ background: "linear-gradient(120deg,#0f172a 0%,#1d4ed8 55%,#0284c7 130%)" }}>
         <div className="mx-auto max-w-2xl">
           <h1 className="text-4xl md:text-5xl font-extrabold">Contact Us</h1>
           <p className="mt-5 text-white/90 leading-7">
@@ -74,7 +74,7 @@ export default function Contact() {
             </ul>
           </div>
 
-          <div className="rounded-2xl p-6 text-white text-center" style={{ background: "linear-gradient(120deg,#16a34a,#a3e635)" }}>
+          <div className="rounded-2xl p-6 text-white text-center" style={{ background: "linear-gradient(120deg,#1d4ed8,#38bdf8)" }}>
             <h3 className="text-lg font-extrabold">Need Quick Answers?</h3>
             <p className="text-white/90 text-sm mt-1.5">Check our comprehensive FAQ section for common questions</p>
             <Link href="/tools" className="inline-block mt-4 rounded-xl bg-white text-accent2 px-5 py-2.5 font-bold text-sm">View FAQ</Link>

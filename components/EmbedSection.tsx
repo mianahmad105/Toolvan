@@ -5,17 +5,17 @@ import { CopyCodeButton } from "./CopyCodeButton";
 const FEATURES = [
   { icon: Zap, label: "Ready in a minute", bg: "#dbeafe", fg: "#2563eb" },
   { icon: Globe, label: "Works on every screen", bg: "#f3e8ff", fg: "#9333ea" },
-  { icon: Sparkles, label: "No cost to use", bg: "#dcfce7", fg: "#16a34a" },
+  { icon: Sparkles, label: "No cost to use", bg: "#dcfce7", fg: "#1d4ed8" },
 ];
 
 const CARDS = [
   {
     slug: "salary-calculator", title: "Salary Calculator", tag: "Top pick", tagBg: "linear-gradient(90deg,#f97316,#f59e0b)",
-    text: "Turn gross pay into take-home pay", gradient: "linear-gradient(90deg,#16a34a,#22c55e)",
+    text: "Turn gross pay into take-home pay", gradient: "linear-gradient(90deg,#1d4ed8,#3b82f6)",
     points: ["Gross to net pay", "Tax and NI deductions", "Pension and student loan", "Scottish tax bands"],
   },
   {
-    slug: "income-tax-calculator", title: "Income Tax Calculator", tag: "Must-have", tagBg: "linear-gradient(90deg,#22c55e,#10b981)",
+    slug: "income-tax-calculator", title: "Income Tax Calculator", tag: "Must-have", tagBg: "linear-gradient(90deg,#3b82f6,#10b981)",
     text: "Show tax band by band", gradient: "linear-gradient(90deg,#1e3a8a,#2563eb)",
     points: ["England and Scotland bands", "Personal Allowance taper", "Effective tax rate", "2026/27 rates"],
   },
@@ -66,7 +66,7 @@ export function EmbedSection() {
                 </ul>
                 <div className="flex gap-3 mt-7">
                   <CopyCodeButton slug={c.slug} title={c.title} />
-                  <a href={`/widgets/${c.slug}`} target="_blank" className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold text-white" style={{ background: "#16a34a" }}>
+                  <a href={`/widgets/${c.slug}`} target="_blank" className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold text-white" style={{ background: "#1d4ed8" }}>
                     Live preview <ArrowRight size={15} />
                   </a>
                 </div>
@@ -79,7 +79,7 @@ export function EmbedSection() {
           <h3 className="text-2xl font-extrabold">Ready to add a calculator to your site?</h3>
           <p className="text-muted mt-3">Setup takes about a minute: copy one line of code and paste it into your page where you want the calculator to appear.</p>
           <div className="flex flex-wrap justify-center gap-4 mt-7">
-            <Link href="/widgets" className="inline-flex items-center gap-2 rounded-xl px-6 py-3.5 font-semibold text-white" style={{ background: "#16a34a" }}>
+            <Link href="/widgets" className="inline-flex items-center gap-2 rounded-xl px-6 py-3.5 font-semibold text-white" style={{ background: "#1d4ed8" }}>
               <Code2 size={18} /> View all widgets
             </Link>
             <Link href="/salary-calculator" className="inline-flex items-center gap-2 rounded-xl px-6 py-3.5 font-semibold border-2 border-line text-ink hover:border-accent transition">

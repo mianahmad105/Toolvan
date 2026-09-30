@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { BookOpen, CheckCircle2, ChevronDown, ClipboardCopy, FileDown, Link2, Lock, Plus, Share2, Smartphone, Zap } from "lucide-react";
+import { BookOpen, CheckCircle2, ChevronDown, ClipboardCopy, FileDown, Link2, Plus, Share2, Smartphone, Zap } from "lucide-react";
 import { gbp } from "@/lib/tax";
 import { CONTENT } from "@/lib/content";
 
@@ -94,7 +94,7 @@ export function Hero({ icon: Icon, eyebrow, value, sub, from, to }: { icon: any;
   );
 }
 
-export function ShareButton({ text, color = "#22c55e" }: { text: string; color?: string }) {
+export function ShareButton({ text, color = "#3b82f6" }: { text: string; color?: string }) {
   const [shared, setShared] = useState(false);
   const share = async () => {
     try {
@@ -185,8 +185,8 @@ export function PageHero({ title, subtitle }: { title: string; subtitle: string 
       <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">{title}</h1>
       <p className="text-muted text-lg leading-8 mt-4">{subtitle}</p>
       <div className="flex flex-wrap justify-center gap-3 mt-6">
-        {[{ i: Zap, t: "Instant results" }, { i: Lock, t: "Private by design" }, { i: Smartphone, t: "Works on any device" }].map(({ i: I, t }) => (
-          <span key={t} className="inline-flex items-center gap-2 rounded-full bg-surface px-5 py-2.5 text-sm shadow-md border border-line"><I size={15} style={{ color: "#16a34a" }} /> {t}</span>
+        {[{ i: Zap, t: "Instant results" }, { i: Smartphone, t: "Works on any device" }].map(({ i: I, t }) => (
+          <span key={t} className="inline-flex items-center gap-2 rounded-full bg-surface px-5 py-2.5 text-sm shadow-md border border-line"><I size={15} style={{ color: "#1d4ed8" }} /> {t}</span>
         ))}
       </div>
     </header>
@@ -365,7 +365,7 @@ export function BarCompare({ rows, aLabel, bLabel, color, otherColor = "#f59e0b"
           <div className="flex items-center justify-between gap-4"><span className="inline-flex items-center gap-2 text-muted"><span className="w-2.5 h-2.5 rounded" style={{ background: otherColor }} />{bLabel}</span><b>{gbp(hr.b, 0)}</b></div>
           <div className="flex items-center justify-between gap-4 mt-1.5 pt-1.5 border-t border-line">
             <span className="text-muted">Difference</span>
-            <b style={{ color: diff === 0 ? "var(--muted)" : diff > 0 ? "#16a34a" : "#e11d48" }}>{diff >= 0 ? "+" : "-"}{gbp(Math.abs(diff), 0)} ({diffPct >= 0 ? "+" : ""}{diffPct.toFixed(1)}%)</b>
+            <b style={{ color: diff === 0 ? "var(--muted)" : diff > 0 ? "#1d4ed8" : "#e11d48" }}>{diff >= 0 ? "+" : "-"}{gbp(Math.abs(diff), 0)} ({diffPct >= 0 ? "+" : ""}{diffPct.toFixed(1)}%)</b>
           </div>
         </div>
       )}

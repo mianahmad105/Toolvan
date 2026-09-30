@@ -3,15 +3,14 @@ import { SITE_NAME } from "@/lib/tools";
 
 const FEATURES = [
   { icon: Zap, label: "Answers in seconds", bg: "#f3e8ff", fg: "#9333ea" },
-  { icon: Lock, label: "Private by design", bg: "#dbeafe", fg: "#2563eb" },
-  { icon: BadgePercent, label: "Up-to-date rates", bg: "#dcfce7", fg: "#16a34a" },
+  { icon: BadgePercent, label: "Up-to-date rates", bg: "#dcfce7", fg: "#1d4ed8" },
   { icon: Clock, label: "Fast on any phone", bg: "#ffedd5", fg: "#ea580c" },
 ];
 
 const APP_CARDS = [
   { icon: Wallet, title: "Take Home Pay", sub: "Net salary", gradient: "linear-gradient(135deg,#8b5cf6,#a78bfa)", tag: true },
-  { icon: Briefcase, title: "National Insurance", sub: "Class 1 NI", gradient: "linear-gradient(135deg,#22c55e,#4ade80)" },
-  { icon: DollarSign, title: "Income Tax", sub: "Tax by band", gradient: "linear-gradient(135deg,#022c22,#16a34a)" },
+  { icon: Briefcase, title: "National Insurance", sub: "Class 1 NI", gradient: "linear-gradient(135deg,#3b82f6,#60a5fa)" },
+  { icon: DollarSign, title: "Income Tax", sub: "Tax by band", gradient: "linear-gradient(135deg,#022c22,#1d4ed8)" },
 ];
 
 export function AppPromo() {
@@ -40,7 +39,7 @@ export function AppPromo() {
           </div>
 
           <div className="flex flex-wrap gap-4 mt-9">
-            <span className="inline-flex items-center gap-3 rounded-xl px-6 py-3.5 text-white font-semibold opacity-60 cursor-not-allowed" style={{ background: "linear-gradient(135deg,#15803d,#22c55e)" }}>
+            <span className="inline-flex items-center gap-3 rounded-xl px-6 py-3.5 text-white font-semibold opacity-60 cursor-not-allowed" style={{ background: "linear-gradient(135deg,#1e40af,#3b82f6)" }}>
               <Play size={20} />
               <span className="leading-tight text-left"><span className="block text-[11px] uppercase">Google Play</span>Coming soon</span>
             </span>
@@ -59,9 +58,9 @@ export function AppPromo() {
 
         {/* Phone mock-up */}
         <div className="relative flex justify-center lg:justify-end lg:pr-10">
-          <span className="absolute -top-2 right-8 w-9 h-9 rounded-full bg-green-400/70" />
+          <span className="absolute -top-2 right-8 w-9 h-9 rounded-full bg-blue-400/70" />
           <span className="absolute top-1/3 -right-1 w-4 h-4 rounded-full bg-purple-400" />
-          <span className="absolute bottom-2 left-10 w-6 h-6 rounded-full bg-green-500" />
+          <span className="absolute bottom-2 left-10 w-6 h-6 rounded-full bg-blue-500" />
           <div className="relative w-[260px] rounded-[2.4rem] bg-black p-2.5 shadow-2xl">
             <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-24 h-5 bg-black rounded-b-2xl z-10" />
             <div className="rounded-[1.9rem] bg-white text-slate-800 overflow-hidden h-[500px] px-4 pt-9">
@@ -83,7 +82,7 @@ export function AppPromo() {
               <div className="mt-5 font-bold text-sm">Browse by type</div>
               <div className="flex gap-1.5 mt-3 text-[9px]">
                 {["Income Tax", "Investment", "Vehicle"].map((t, i) => (
-                  <span key={t} className={`rounded-full px-2.5 py-1 border ${i === 1 ? "bg-green-800 text-white border-green-800" : "border-slate-200"}`}>{t}</span>
+                  <span key={t} className={`rounded-full px-2.5 py-1 border ${i === 1 ? "bg-blue-800 text-white border-blue-800" : "border-slate-200"}`}>{t}</span>
                 ))}
               </div>
               <div className="mt-4 rounded-xl border border-slate-100 p-3 shadow-sm text-[10px]">

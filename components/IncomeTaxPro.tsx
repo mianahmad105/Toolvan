@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import {
-  BarChart3, Calculator, CheckCircle2, ClipboardCopy, FileDown, Globe2, LineChart, Link2, Lock,
+  BarChart3, Calculator, CheckCircle2, ClipboardCopy, FileDown, Globe2, LineChart, Link2,
   PieChart, Plus, Smartphone, Target, Zap, Scale, Landmark, BookOpen,
 } from "lucide-react";
 import { BLIND_ALLOWANCE, calcSalary, gbp, incomeTax, type Region, type StudentPlan } from "@/lib/tax";
@@ -31,7 +31,7 @@ function run(i: Inputs, override: Partial<Inputs> = {}, grossMult = 1) {
   return { gross, r };
 }
 
-const TEAL = "#16a34a";
+const TEAL = "#1d4ed8";
 const tint = (c: string, pct = 12) => `color-mix(in srgb, ${c} ${pct}%, var(--surface))`;
 const pct = (n: number) => `${isFinite(n) ? n.toFixed(1) : "0.0"}%`;
 
@@ -129,7 +129,7 @@ function BarCompare({ rows, bLabel }: { rows: { label: string; a: number; b: num
           return (
             <g key={r.label}>
               <rect x={padL + i * gw} y={0} width={gw} height={H - padB} rx="8"
-                fill={hover?.i === i ? "color-mix(in srgb, #16a34a 10%, transparent)" : "transparent"}
+                fill={hover?.i === i ? "color-mix(in srgb, #1d4ed8 10%, transparent)" : "transparent"}
                 style={{ cursor: "pointer" }}
                 onMouseEnter={(e) => point(i, e)} onMouseMove={(e) => point(i, e)} onClick={(e) => point(i, e)} />
               <rect x={x0} y={H - padB - h(r.a)} width={bw} height={h(r.a)} rx="6" fill={TEAL} pointerEvents="none" />
@@ -149,7 +149,7 @@ function BarCompare({ rows, bLabel }: { rows: { label: string; a: number; b: num
           <div className="flex items-center justify-between gap-4"><span className="inline-flex items-center gap-2 text-muted"><span className="w-2.5 h-2.5 rounded" style={{ background: "#f59e0b" }} />{bLabel}</span><b>{gbp(hr.b, 0)}</b></div>
           <div className="flex items-center justify-between gap-4 mt-1.5 pt-1.5 border-t border-line">
             <span className="text-muted">Difference</span>
-            <b style={{ color: diff === 0 ? "var(--muted)" : diff > 0 ? "#16a34a" : "#e11d48" }}>{diff >= 0 ? "+" : "-"}{gbp(Math.abs(diff), 0)} ({diffPct >= 0 ? "+" : ""}{diffPct.toFixed(1)}%)</b>
+            <b style={{ color: diff === 0 ? "var(--muted)" : diff > 0 ? "#1d4ed8" : "#e11d48" }}>{diff >= 0 ? "+" : "-"}{gbp(Math.abs(diff), 0)} ({diffPct >= 0 ? "+" : ""}{diffPct.toFixed(1)}%)</b>
           </div>
         </div>
       )}
@@ -221,7 +221,7 @@ export function IncomeTaxPro() {
     const niTaxRate = gross > 0 ? ((r.incomeTax + r.ni) / gross) * 100 : 0;
     const taxable = Math.max(0, r.taxable - r.allowance);
     const marginal = (() => { const b = calcSalary({ gross: gross + 100, region: snap.region, plan: snap.plan, pensionPct: 0, blind: snap.blind, over66: snap.over66 }); const a = calcSalary({ gross, region: snap.region, plan: snap.plan, pensionPct: 0, blind: snap.blind, over66: snap.over66 }); return gross > 0 ? (1 - (b.net - a.net) / 100) * 100 : 0; })();
-    const badge = dRate < 15 ? { t: "Light overall deductions", c: "#16a34a" } : dRate < 30 ? { t: "Moderate overall deductions", c: "#d97706" } : { t: "Heavy overall deductions", c: "#e11d48" };
+    const badge = dRate < 15 ? { t: "Light overall deductions", c: "#1d4ed8" } : dRate < 30 ? { t: "Moderate overall deductions", c: "#d97706" } : { t: "Heavy overall deductions", c: "#e11d48" };
     const periods: [string, number][] = [["Yearly", 1], ["Monthly", 12], ["Weekly", 52], ["Daily", 260]];
     const rows: { label: string; v: number; tone?: "tax" | "net"; muted?: boolean }[] = [
       { label: "Gross pay", v: gross }, { label: "Personal Allowance", v: r.allowance }, { label: "Taxable income", v: taxable },
@@ -260,7 +260,7 @@ export function IncomeTaxPro() {
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           <StatCard label="Gross pay" value={gbp(gross, 0)} note="Yearly income" color="#64748b" />
-          <StatCard label="Take-home pay" value={gbp(r.net, 0)} note={`${gbp(r.net / 12, 0)} a month · ${gbp(r.net / 52, 0)} a week`} color="#16a34a" />
+          <StatCard label="Take-home pay" value={gbp(r.net, 0)} note={`${gbp(r.net / 12, 0)} a month · ${gbp(r.net / 52, 0)} a week`} color="#1d4ed8" />
           <StatCard label="Total deductions" value={gbp(deductions, 0)} note={`${pct(dRate)} of your pay`} color="#e11d48" />
         </div>
         <div className="flex justify-center">
@@ -283,7 +283,7 @@ export function IncomeTaxPro() {
               <tbody>
                 {rows.map((row) => (
                   <tr key={row.label} className="border-b border-line last:border-0"
-                    style={row.tone === "tax" ? { background: tint("#e11d48", 8), color: "#be123c", boxShadow: "inset 4px 0 0 #f43f5e" } : row.tone === "net" ? { background: tint("#16a34a", 9), color: "#15803d", boxShadow: "inset 4px 0 0 #22c55e" } : undefined}>
+                    style={row.tone === "tax" ? { background: tint("#e11d48", 8), color: "#be123c", boxShadow: "inset 4px 0 0 #f43f5e" } : row.tone === "net" ? { background: tint("#1d4ed8", 9), color: "#1e40af", boxShadow: "inset 4px 0 0 #3b82f6" } : undefined}>
                     <td className="px-5 py-3.5">{row.label}</td>
                     {periods.map(([n, d]) => <td key={n} className={`px-5 py-3.5 text-right ${row.muted ? "text-muted" : "font-semibold"}`}>{gbp(row.v / d)}</td>)}
                   </tr>
@@ -363,7 +363,7 @@ export function IncomeTaxPro() {
             </label>
           </div>
           <div className="grid gap-4 md:grid-cols-3 mt-6">
-            <StatCard label="Take-home pay" value={signed(dNet)} note={`${pct(r.net > 0 ? (dNet / r.net) * 100 : 0)} change a year`} color="#16a34a" />
+            <StatCard label="Take-home pay" value={signed(dNet)} note={`${pct(r.net > 0 ? (dNet / r.net) * 100 : 0)} change a year`} color="#1d4ed8" />
             <StatCard label="Income tax" value={signed(dTax)} note={`${pct(r.incomeTax > 0 ? (dTax / r.incomeTax) * 100 : 0)} change a year`} color="#e11d48" />
             <StatCard label="Overall deduction rate" value={`${(sDed - dRate) >= 0 ? "+" : "-"}${Math.abs(sDed - dRate).toFixed(1)} pts`} note={`${pct(dRate)} now, ${pct(sDed)} in this scenario`} color="#0284c7" />
           </div>
@@ -392,7 +392,7 @@ export function IncomeTaxPro() {
           </div>
         </Section>
 
-        <Section icon={PieChart} title="Where your pay goes" sub="A visual split of your yearly pay" from="#155e75" to="#16a34a">
+        <Section icon={PieChart} title="Where your pay goes" sub="A visual split of your yearly pay" from="#155e75" to="#1d4ed8">
           <div className="grid gap-8 lg:grid-cols-2 items-center">
             <div>
               <PieChartSvg parts={parts} />
@@ -425,14 +425,14 @@ export function IncomeTaxPro() {
         <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">Find Out What You Owe in Income Tax</h1>
         <p className="text-muted text-lg leading-8 mt-4">Enter your pay, choose your region and see your income tax, National Insurance, pension and student loan worked out for the 2026/27 tax year.</p>
         <div className="flex flex-wrap justify-center gap-3 mt-6">
-          {[{ i: Zap, t: "Instant results" }, { i: Lock, t: "Private by design" }, { i: Smartphone, t: "Works on any device" }].map(({ i: I, t }) => (
+          {[{ i: Zap, t: "Instant results" }, { i: Smartphone, t: "Works on any device" }].map(({ i: I, t }) => (
             <span key={t} className="inline-flex items-center gap-2 rounded-full bg-surface px-5 py-2.5 text-sm shadow-md border border-line"><I size={15} style={{ color: TEAL }} /> {t}</span>
           ))}
         </div>
       </header>
 
       <section className="card overflow-hidden">
-        <div className="px-6 md:px-8 py-6 text-white no-print" style={{ background: "linear-gradient(100deg,#16a34a,#22c55e 55%,#a3e635)" }}>
+        <div className="px-6 md:px-8 py-6 text-white no-print" style={{ background: "linear-gradient(100deg,#1d4ed8,#3b82f6 55%,#38bdf8)" }}>
           <h2 className="text-2xl font-extrabold flex items-center gap-3"><Calculator size={24} /> Run your numbers</h2>
           <p className="text-white/90 text-sm mt-1">Fill in the boxes on the left and press Calculate</p>
         </div>
@@ -481,7 +481,7 @@ export function IncomeTaxPro() {
                   <label className="flex items-center gap-2.5 text-sm"><input type="checkbox" className="sal-check" checked={inp.marriage} onChange={(e) => set("marriage", e.target.checked)} /> I receive Marriage Allowance</label>
                 </div>
               )}
-              <button type="submit" className="w-full rounded-xl py-3.5 font-bold text-white shadow-md" style={{ background: "linear-gradient(90deg,#16a34a,#22c55e)" }}>Calculate</button>
+              <button type="submit" className="w-full rounded-xl py-3.5 font-bold text-white shadow-md" style={{ background: "linear-gradient(90deg,#1d4ed8,#3b82f6)" }}>Calculate</button>
             </div>
           </form>
 
