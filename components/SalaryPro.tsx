@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { calcSalary, gbp, type Region, type StudentPlan } from "@/lib/tax";
 import { PLANS } from "./ui";
+import { TaxBandsReference } from "./proui";
 
 const FREQ = { year: 1, month: 12, week: 52, day: 260 } as const;
 type Freq = keyof typeof FREQ;
@@ -320,6 +321,7 @@ export function SalaryPro() {
 
   const extras = (
     <div className="space-y-6">
+      <TaxBandsReference />
       <section className="card p-5">
         <div className="font-extrabold">More tools to try</div>
         <div className="flex flex-wrap gap-3 mt-3">

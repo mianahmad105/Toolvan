@@ -430,3 +430,50 @@ export function Understanding({ slug, color, from, to, title, points, more, sour
     </Section>
   );
 }
+
+const ENGLAND_BANDS = [
+  { band: "Personal Allowance", range: "Up to £12,570", rate: "0%" },
+  { band: "Basic rate", range: "£12,571 to £50,270", rate: "20%" },
+  { band: "Higher rate", range: "£50,271 to £125,140", rate: "40%" },
+  { band: "Additional rate", range: "Over £125,140", rate: "45%" },
+];
+const SCOTLAND_BANDS = [
+  { band: "Personal Allowance", range: "Up to £12,570", rate: "0%" },
+  { band: "Starter rate", range: "£12,571 to £15,397", rate: "19%" },
+  { band: "Basic rate", range: "£15,398 to £27,491", rate: "20%" },
+  { band: "Intermediate rate", range: "£27,492 to £43,662", rate: "21%" },
+  { band: "Higher rate", range: "£43,663 to £75,000", rate: "42%" },
+  { band: "Advanced rate", range: "£75,001 to £125,140", rate: "45%" },
+  { band: "Top rate", range: "Over £125,140", rate: "48%" },
+];
+
+/** Static reference table of the full 2026/27 Income Tax bands — not tied to the user's own
+ *  numbers, just the published rates, so the page has real reference content even before a
+ *  calculation is run. */
+export function TaxBandsReference() {
+  const [tab, setTab] = useState<"england" | "scotland">("england");
+  const rows = tab === "england" ? ENGLAND_BANDS : SCOTLAND_BANDS;
+  return (
+    <Block icon={BookOpen} title="2026/27 Income Tax bands" color="#1d4ed8">
+      <div className="flex gap-2 mb-4">
+        <button type="button" onClick={() => setTab("england")}
+          className={`rounded-lg px-4 py-2 text-sm font-semibold border ${tab === "england" ? "text-white border-transparent" : "bg-surface2 border-line text-muted"}`}
+          style={tab === "england" ? { background: "#1d4ed8" } : undefined}>England, Wales &amp; NI</button>
+        <button type="button" onClick={() => setTab("scotland")}
+          className={`rounded-lg px-4 py-2 text-sm font-semibold border ${tab === "scotland" ? "text-white border-transparent" : "bg-surface2 border-line text-muted"}`}
+          style={tab === "scotland" ? { background: "#1d4ed8" } : undefined}>Scotland</button>
+      </div>
+      <div className="overflow-x-auto rounded-xl border border-line">
+        <table className="w-full text-sm min-w-[420px]">
+          <thead><tr className="bg-surface2 text-left"><th className="px-4 py-2.5">Band</th><th className="px-4 py-2.5">Taxable income</th><th className="px-4 py-2.5">Rate</th></tr></thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.band} className="border-t border-line"><td className="px-4 py-2.5">{r.band}</td><td className="px-4 py-2.5">{r.range}</td><td className="px-4 py-2.5 font-semibold">{r.rate}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="text-xs text-muted mt-3">Personal Allowance reduces by £1 for every £2 earned above £100,000, reaching £0 at £125,140. Employee National Insurance is separate: 8% between £12,570 and £50,270, then 2% above that.</p>
+    </Block>
+  );
+}
