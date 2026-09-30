@@ -58,7 +58,7 @@ export const TAB_CATEGORIES: ("All Tools" | Category)[] = [
 ];
 export const getTool = (slug: string) => TOOLS.find((t) => t.slug === slug);
 export const SITE_NAME = "Toolvan";
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://toolvan.site";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.toolvan.site";
 
 export const CONTACT_EMAIL = "support@toolvan.site";
 

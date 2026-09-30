@@ -98,6 +98,10 @@ export function StampDutyCalculatorPro() {
           { href: toolHref("salary-calculator"), label: "Take-home pay", sub: "full income tax and NI breakdown" },
           { href: toolHref("gross-salary-calculator"), label: "Gross salary calculator", sub: "work backwards from net pay" },
           { href: toolHref("loan-repayment-calculator"), label: "Loan repayment calculator", sub: "work out mortgage-style repayments" },
+        ]}
+        sources={[
+          { label: "GOV.UK: Stamp Duty Land Tax rates", href: "https://www.gov.uk/stamp-duty-land-tax" },
+          { label: "GOV.UK: SDLT relief for first-time buyers", href: "https://www.gov.uk/stamp-duty-land-tax/relief-for-first-time-buyers" },
         ]} />
     </div>
   );
@@ -193,6 +197,10 @@ export function InheritanceTaxCalculatorPro() {
           { href: toolHref("capital-gains-tax-calculator"), label: "Capital Gains Tax calculator", sub: "tax on gains when selling assets" },
           { href: toolHref("savings-interest-calculator"), label: "Savings interest calculator", sub: "compound growth on savings" },
           { href: toolHref("stamp-duty-calculator"), label: "Stamp Duty calculator", sub: "tax when buying a home" },
+        ]}
+        sources={[
+          { label: "GOV.UK: How Inheritance Tax works", href: "https://www.gov.uk/inheritance-tax" },
+          { label: "GOV.UK: Residence nil-rate band", href: "https://www.gov.uk/guidance/inheritance-tax-additional-threshold-residence-nil-rate-band" },
         ]} />
     </div>
   );
@@ -281,7 +289,8 @@ export function SavingsInterestCalculatorPro() {
           { href: toolHref("pension-tax-relief-calculator"), label: "Pension tax relief calculator", sub: "relief on pension contributions" },
           { href: toolHref("loan-repayment-calculator"), label: "Loan repayment calculator", sub: "monthly payments on a loan" },
           { href: toolHref("salary-calculator"), label: "Take-home pay", sub: "full income tax and NI breakdown" },
-        ]} />
+        ]}
+        sources={[{ label: "GOV.UK: Tax on savings interest", href: "https://www.gov.uk/apply-tax-free-interest-on-savings" }]} />
     </div>
   );
 }
@@ -366,7 +375,8 @@ export function LoanRepaymentCalculatorPro() {
           { href: toolHref("savings-interest-calculator"), label: "Savings interest calculator", sub: "compound growth on savings" },
           { href: toolHref("stamp-duty-calculator"), label: "Stamp Duty calculator", sub: "tax when buying a home" },
           { href: toolHref("salary-calculator"), label: "Take-home pay", sub: "full income tax and NI breakdown" },
-        ]} />
+        ]}
+        sources={[{ label: "MoneyHelper: Loans and borrowing", href: "https://www.moneyhelper.org.uk/en/everyday-money/credit-loans-and-debt" }]} />
     </div>
   );
 }
@@ -443,7 +453,8 @@ export function VehicleTaxCalculatorPro() {
           { href: toolHref("loan-repayment-calculator"), label: "Loan repayment calculator", sub: "monthly payments on a loan" },
           { href: toolHref("stamp-duty-calculator"), label: "Stamp Duty calculator", sub: "tax when buying a home" },
           { href: toolHref("salary-calculator"), label: "Take-home pay", sub: "full income tax and NI breakdown" },
-        ]} />
+        ]}
+        sources={[{ label: "GOV.UK: Vehicle tax rate tables", href: "https://www.gov.uk/vehicle-tax-rate-tables" }]} />
     </div>
   );
 }

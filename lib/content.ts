@@ -10,7 +10,7 @@ export const CONTENT: Record<string, ToolContent> = {
       "The results are shown per year, month, four weeks, week and day, so you can compare a job offer against your monthly outgoings without doing any sums yourself.",
     ],
     faqs: [
-      { q: "Which tax year does it use?", a: "All figures follow the 2025/26 UK tax year, which runs from 6 April 2025 to 5 April 2026." },
+      { q: "Which tax year does it use?", a: "All figures follow the 2026/27 UK tax year, which runs from 6 April 2026 to 5 April 2027." },
       { q: "Does it work for Scotland?", a: "Yes. Choose Scotland in the tax region box and the Scottish income tax bands are applied instead of the England, Wales and Northern Ireland ones." },
       { q: "How is pension treated?", a: "The percentage you enter is taken from your gross pay before tax (a net pay arrangement), so it lowers the amount of income that is taxed." },
     ],
@@ -21,7 +21,7 @@ export const CONTENT: Record<string, ToolContent> = {
       "The table also shows your effective rate, which is your total tax divided by your income. It is always lower than the rate of your highest band.",
     ],
     faqs: [
-      { q: "What is the Personal Allowance?", a: "It is the part of your income, £12,570 for 2025/26, that is not taxed. It shrinks by £1 for every £2 you earn above £100,000." },
+      { q: "What is the Personal Allowance?", a: "It is the part of your income, £12,570 for 2026/27, that is not taxed. It shrinks by £1 for every £2 you earn above £100,000." },
       { q: "What are the tax rates?", a: "In England, Wales and Northern Ireland the rates are 20%, 40% and 45%. Scotland has six bands running from 19% to 48%." },
       { q: "Is dividend or savings income included?", a: "No. This tool covers earnings and similar income taxed at standard rates only." },
     ],
@@ -29,7 +29,7 @@ export const CONTENT: Record<string, ToolContent> = {
   "ni-calculator": {
     how: [
       "National Insurance builds your entitlement to the State Pension and some benefits. Employees pay Class 1 contributions straight from their wages.",
-      "For 2025/26 you pay 8% on earnings between £12,570 and £50,270 a year, then 2% on everything above that. Enter your gross earnings to see each part and the total.",
+      "For 2026/27 you pay 8% on earnings between £12,570 and £50,270 a year, then 2% on everything above that. Enter your gross earnings to see each part and the total.",
     ],
     faqs: [
       { q: "Do I pay NI and tax on the same income?", a: "They are separate systems with different thresholds. NI is worked out on your gross earnings and is not reduced by a pension contribution in the way tax is." },
@@ -65,7 +65,7 @@ export const CONTENT: Record<string, ToolContent> = {
       "The number is your tax-free allowance divided by ten, plus nine. The letter shows your situation, and a prefix of S or C indicates Scotland or Wales.",
     ],
     faqs: [
-      { q: "What does 1257L mean?", a: "It is the standard code for 2025/26. It gives you £12,570 of tax-free income." },
+      { q: "What does 1257L mean?", a: "It is the standard code for 2026/27. It gives you £12,570 of tax-free income." },
       { q: "What is a K code?", a: "A K code means you owe tax on income or benefits that is not taxed elsewhere, so an amount is added to your taxable pay instead of an allowance being given." },
       { q: "What do BR, D0 and D1 mean?", a: "They tax all your income at 20%, 40% and 45% respectively with no allowance. They are often used for a second job." },
     ],
@@ -150,7 +150,7 @@ export const CONTENT: Record<string, ToolContent> = {
   "capital-gains-tax-calculator": {
     how: [
       "Capital gains tax is charged on the profit when you sell something that has gone up in value, such as shares or a second property.",
-      "Each person has a yearly tax-free amount of £3,000 in 2025/26. The rest of your gain is taxed at 18% or 24% depending on your income.",
+      "Each person has a yearly tax-free amount of £3,000 in 2026/27. The rest of your gain is taxed at 18% or 24% depending on your income.",
     ],
     faqs: [
       { q: "Do I pay CGT on my main home?", a: "Usually not. Private Residence Relief covers most homes you have lived in." },

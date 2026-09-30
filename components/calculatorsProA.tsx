@@ -351,7 +351,8 @@ export function TaxCodeCheckerPro() {
           { href: toolHref("salary-calculator"), label: "Take-home pay", sub: "see your full breakdown" },
           { href: toolHref("income-tax-calculator"), label: "Income tax calculator", sub: "tax by band" },
           { href: toolHref("marriage-allowance-calculator"), label: "Marriage Allowance calculator", sub: "check eligibility" },
-        ]} />
+        ]}
+        sources={[{ label: "GOV.UK: Tax codes explained", href: "https://www.gov.uk/tax-codes" }]} />
     </div>
   );
 }
@@ -489,7 +490,8 @@ export function MarriageAllowanceCalculatorPro() {
           { href: toolHref("tax-code-checker"), label: "Tax code checker", sub: "M and N code suffixes" },
           { href: toolHref("salary-calculator"), label: "Take-home pay", sub: "full tax breakdown" },
           { href: toolHref("income-tax-calculator"), label: "Income tax calculator", sub: "tax by band" },
-        ]} />
+        ]}
+        sources={[{ label: "GOV.UK: Marriage Allowance", href: "https://www.gov.uk/marriage-allowance" }]} />
     </div>
   );
 }

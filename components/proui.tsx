@@ -201,7 +201,7 @@ export function RunCard({ icon: Icon, from, to, formTitle, formSub, submitLabel,
     <section className="card overflow-hidden">
       <div className="px-6 md:px-8 py-6 text-white no-print" style={{ background: `linear-gradient(100deg, ${from}, ${to})` }}>
         <h2 className="text-2xl font-extrabold flex items-center gap-3"><Icon size={24} /> Run your numbers</h2>
-        <p className="text-white/90 text-sm mt-1">Fill in the boxes on the left and press Calculate</p>
+        <p className="text-white/90 text-sm mt-1">Fill in your details and press Calculate</p>
       </div>
       <div className="grid lg:grid-cols-[360px_1fr]">
         <form onSubmit={onSubmit} className="p-6 bg-surface2 lg:border-r border-line no-print">
@@ -373,10 +373,16 @@ export function BarCompare({ rows, aLabel, bLabel, color, otherColor = "#f59e0b"
   );
 }
 
+const DEFAULT_SOURCES = [
+  { label: "GOV.UK: Income Tax rates and Personal Allowances", href: "https://www.gov.uk/income-tax-rates" },
+  { label: "GOV.UK: National Insurance rates and categories", href: "https://www.gov.uk/national-insurance-rates-letters" },
+];
+
 /** The closing "Understanding X" education block used by every calculator: how it works,
  *  what it covers, common questions (pulled from lib/content.ts) and links to related tools. */
-export function Understanding({ slug, color, from, to, title, points, more }: {
-  slug: string; color: string; from: string; to: string; title: string; points: string[]; more: { href: string; label: string; sub: string }[];
+export function Understanding({ slug, color, from, to, title, points, more, sources = DEFAULT_SOURCES }: {
+  slug: string; color: string; from: string; to: string; title: string; points: string[];
+  more: { href: string; label: string; sub: string }[]; sources?: { label: string; href: string }[];
 }) {
   const content = CONTENT[slug];
   return (
@@ -412,8 +418,13 @@ export function Understanding({ slug, color, from, to, title, points, more }: {
         )}
         <div className="rounded-xl bg-surface2 border border-line p-4 text-sm">
           <div className="font-bold mb-1">Where to check the official figures</div>
-          <ul className="text-muted space-y-0.5"><li>GOV.UK: Income Tax rates and Personal Allowances</li><li>GOV.UK: National Insurance rates and thresholds</li></ul>
+          <ul className="space-y-0.5">
+            {sources.map((s) => (
+              <li key={s.href}><a href={s.href} target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color }}>{s.label}</a></li>
+            ))}
+          </ul>
           <p className="text-xs text-muted mt-2">These results are estimates for general guidance and are not financial advice. Always confirm important figures with an official source.</p>
+          <p className="text-xs text-muted mt-2">Rates last reviewed: 30 September 2026 · Built around the 2026/27 UK tax year</p>
         </div>
       </div>
     </Section>
