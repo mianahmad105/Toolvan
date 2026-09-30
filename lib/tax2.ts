@@ -26,8 +26,10 @@ export function stampDuty(price: number, buyer: BuyerType) {
 }
 
 // Inheritance Tax
-export function inheritanceTax(estate: number, homeToChildren: number, transferable: boolean) {
-  const mult = transferable ? 2 : 1;
+/** transferablePct: 0-100, the % of a late spouse/civil partner's unused nil-rate
+ *  and residence nil-rate bands being transferred in (0 = none, 100 = fully unused). */
+export function inheritanceTax(estate: number, homeToChildren: number, transferablePct: number) {
+  const mult = 1 + Math.max(0, Math.min(100, transferablePct)) / 100;
   const nrb = 325000 * mult;
   const taper = Math.max(0, (estate - 2000000) / 2);
   const rnrb = Math.max(0, Math.min(homeToChildren, 175000 * mult) - taper);

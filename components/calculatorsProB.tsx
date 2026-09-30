@@ -473,10 +473,13 @@ export function CGTCalculatorPro() {
   return (
     <div className="space-y-10">
       <PageHero title="Capital Gains Tax Calculator" subtitle="Estimate the Capital Gains Tax due when you sell shares or other assets." />
-      <RunCard icon={BarChart3} from="#4338ca" to="#818cf8" formTitle="Your gain" formSub="Tell us your gain and taxable income" submitLabel="Work out my CGT" onSubmit={submit}
+      <RunCard icon={BarChart3} from="#4338ca" to="#818cf8" formTitle="Your gain" formSub="Tell us your gain and income" submitLabel="Work out my CGT" onSubmit={submit}
         form={<>
           <NumField label="Total capital gain" value={gain} onChange={setGain} step={500} />
-          <NumField label="Your taxable income" value={income} onChange={setIncome} step={500} />
+          <div>
+            <NumField label="Your salary / total income (before tax)" value={income} onChange={setIncome} step={500} />
+            <p className="text-xs text-muted mt-1.5">Enter your gross income before any tax-free allowance — we work out the rest for you.</p>
+          </div>
         </>}>
         {results}
       </RunCard>
