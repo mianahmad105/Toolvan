@@ -328,7 +328,10 @@ export const GUIDES: Guide[] = [
     title: "Understanding your payslip",
     dek: "A line-by-line guide to what's on a UK payslip, from gross pay and tax code to the deductions that make up the difference to your net pay.",
     updated: UPDATED,
-    related: ["salary-calculator", "tax-code-checker", "ni-calculator"],
+    related: [
+      "salary-calculator", "tax-code-checker", "ni-calculator", "gross-salary-calculator",
+      "pro-rata-calculator", "overtime-pay-calculator", "hourly-to-yearly", "salary-to-hourly", "daily-rate-to-annual-salary",
+    ],
     sections: [
       {
         heading: "Gross pay and net pay",
@@ -529,6 +532,128 @@ export const GUIDES: Guide[] = [
       { q: "Do I automatically get full tax relief on my pension?", a: "Only if you're a basic-rate taxpayer, or your pension uses a net pay arrangement. Under relief at source, higher and additional-rate taxpayers need to claim the extra relief above 20% themselves, usually via Self Assessment." },
       { q: "What's the difference between relief at source and a net pay arrangement?", a: "Relief at source takes your contribution from already-taxed pay and has the pension provider claim back 20% automatically; a net pay arrangement takes the contribution from your gross pay before tax, giving relief at your full rate immediately through payroll." },
       { q: "How much can I pay into a pension and still get tax relief?", a: "Up to the lower of your UK earnings or £60,000 a year for most people, tapering down for very high earners with total income above £260,000, with some ability to carry forward unused allowance from the previous three years." },
+    ],
+  },
+  {
+    slug: "savings-interest-and-tax-explained",
+    title: "Do you pay tax on savings interest?",
+    dek: "How the Personal Savings Allowance works, who still owes tax on interest, and how HMRC actually collects it.",
+    updated: UPDATED,
+    related: ["savings-interest-calculator"],
+    sections: [
+      {
+        heading: "The Personal Savings Allowance",
+        paragraphs: [
+          "Most people don't pay any tax on their savings interest, thanks to the Personal Savings Allowance (PSA). Basic-rate taxpayers can earn up to £1,000 of savings interest a year tax-free, higher-rate taxpayers get a reduced £500, and additional-rate taxpayers (income over £125,140) get no PSA at all — every pound of their interest is potentially taxable.",
+          "Which band applies depends on your total income, not just your interest — a basic-rate taxpayer whose interest tips their total income into higher-rate territory could lose some of their £1,000 allowance for that year.",
+        ],
+      },
+      {
+        heading: "There's a second allowance for low earners",
+        paragraphs: [
+          "On top of the PSA, there's a 0% starting rate for savings of up to £5,000, available to anyone whose other income (salary, pension, etc.) is low enough that it doesn't fully use up their Personal Allowance and basic-rate band. In practice this mostly helps people with little or no earned income — a pensioner with a small private pension and large savings balance, for example — rather than the average full-time employee.",
+          "Combining the Personal Allowance, the starting rate for savings, and the PSA, it's entirely possible for someone with low earned income to receive several thousand pounds of interest a year completely tax-free.",
+        ],
+      },
+      {
+        heading: "ISAs sit outside all of this",
+        paragraphs: [
+          "Interest earned inside a Cash ISA (or the cash portion of a Stocks and Shares ISA) is always tax-free, no matter how large the balance or how much interest it generates, and it doesn't use up any part of your PSA. For anyone already holding a large savings balance outside an ISA and paying tax on the interest, moving money into an ISA (within the annual £20,000 ISA allowance) is usually the simplest way to stop that happening going forward.",
+        ],
+      },
+      {
+        heading: "How the tax actually gets collected",
+        paragraphs: [
+          "You don't need to tell HMRC about interest that stays within your PSA. Banks and building societies report interest they pay you directly to HMRC each year, and if you owe tax on interest above your allowance, HMRC usually collects it automatically by adjusting your PAYE tax code for the following year, rather than asking you to file anything. Only people already filing a Self Assessment return (for other reasons, such as self-employment) typically report savings interest that way instead.",
+          "Our Savings Interest Calculator projects how a balance grows with compound interest — use the allowances above to work out whether the interest it shows would actually be taxable for you.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "How much savings interest can I earn tax-free?", a: "Up to £1,000 a year if you're a basic-rate taxpayer, £500 if you're higher-rate, and £0 if you're an additional-rate taxpayer — on top of that, a 0% starting rate for savings of up to £5,000 is available to people with low other income." },
+      { q: "Do I need to declare savings interest to HMRC myself?", a: "Usually not. Banks and building societies report interest paid to you directly to HMRC, who collect any tax owed by adjusting your tax code — you only need to report it yourself if you already file a Self Assessment return." },
+      { q: "Does interest in an ISA count towards my Personal Savings Allowance?", a: "No — interest earned inside an ISA is always tax-free and doesn't use up any of your Personal Savings Allowance, regardless of how much you hold or earn." },
+    ],
+  },
+  {
+    slug: "vehicle-tax-ved-explained",
+    title: "How Vehicle Tax (VED) actually works",
+    dek: "First-year rates, the flat standard rate, the expensive car supplement, and what changes for older and electric cars.",
+    updated: UPDATED,
+    related: ["vehicle-tax-calculator"],
+    sections: [
+      {
+        heading: "Two different systems, depending on age",
+        paragraphs: [
+          "Vehicle Excise Duty (VED) works differently depending on when a car was first registered. Cars registered on or after 1 April 2017 use the CO₂-emissions-based first year rate, then a flat standard rate, system described below. Cars registered before that date are taxed under an older system based on either engine size (pre-2001) or a wider set of CO₂ emissions bands (2001-2017), which generally works out cheaper for smaller, older cars than the current system would.",
+        ],
+      },
+      {
+        heading: "First year, then a flat rate",
+        paragraphs: [
+          "For a car registered after 1 April 2017, the first year's VED is tiered by the car's CO₂ emissions — the higher the emissions, the higher the rate, found on the V5C registration certificate. From the second year onwards, almost all cars switch to a flat standard rate of £200 a year, regardless of their emissions figure, so a small efficient car and a large performance car on the road since year two cost the same to tax.",
+        ],
+      },
+      {
+        heading: "The expensive car supplement",
+        paragraphs: [
+          "Cars with a list price (the manufacturer's price when new, not what you paid) over £50,000 pay an extra £440 a year on top of the standard rate, for 5 years starting from the second year of registration. A car in this bracket therefore pays £640 a year in years two to six, dropping back to the standard £200 from year seven onwards.",
+          "Electric cars lost their VED exemption from April 2025 and now follow the same rules as petrol and diesel cars, including the expensive car supplement where the list price exceeds £50,000 — though their first-year rate is usually low, since it's still based on their minimal CO₂ emissions figure.",
+        ],
+      },
+      {
+        heading: "SORN and exemptions",
+        paragraphs: [
+          "If a vehicle is off the road and not being used or parked on a public road, you can declare a Statutory Off Road Notification (SORN) and stop paying VED on it until it's back in use. A small number of vehicle classes are exempt from VED entirely regardless of age — including vehicles used by a disabled person under certain schemes, and vehicles over 40 years old registered under the 'historic vehicle' tax class.",
+          "Our Vehicle Tax Calculator estimates the first-year and standard-rate VED for cars registered after April 2017 — use it alongside your V5C's CO₂ figure and the car's original list price for the most accurate estimate.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "Why does my older car not fit the £200 standard rate?", a: "Cars registered before 1 April 2017 are taxed under an earlier system based on engine size or a different set of CO₂ bands, which can work out cheaper than the current flat rate for smaller or older cars." },
+      { q: "Do electric cars pay vehicle tax?", a: "Yes, since April 2025. Electric cars now follow the same VED rules as petrol and diesel cars, including the expensive car supplement if their list price when new was over £50,000." },
+      { q: "What happens if I don't drive my car for a while?", a: "You can declare a SORN (Statutory Off Road Notification) to stop paying VED while the vehicle is off the road and not in use, rather than paying tax on a car that's parked up." },
+    ],
+  },
+  {
+    slug: "understanding-loan-repayments-and-apr",
+    title: "Understanding loan repayments and APR",
+    dek: "Why your monthly payment stays the same but its makeup changes, what APR actually includes, and how overpaying really saves you money.",
+    updated: UPDATED,
+    related: ["loan-repayment-calculator"],
+    sections: [
+      {
+        heading: "Every payment is part interest, part capital",
+        paragraphs: [
+          "On a standard repayment loan — most personal loans, car finance and repayment mortgages — your monthly payment is fixed, but what it's made of changes every month. Interest is charged on whatever you still owe, which is highest at the very start of the loan, so early payments are mostly interest with only a small amount reducing the balance. As the balance falls, less interest is charged on it, so later payments tip increasingly towards paying off capital instead.",
+        ],
+      },
+      {
+        heading: "APR isn't just the interest rate",
+        paragraphs: [
+          "APR (Annual Percentage Rate) rolls the interest rate and any mandatory fees into a single yearly figure, specifically so loans with different fee structures can be compared fairly. A loan advertised with a lower interest rate but a large arrangement fee can have a higher APR — and cost more overall — than a loan with a slightly higher rate but no fees, which is why APR, not the headline interest rate, is the number worth comparing between offers.",
+          "Advertised rates are often a 'representative APR', meaning at least 51% of successful applicants get that rate or better — the rest, often including anyone with a thinner credit history, get a higher personal rate once they actually apply.",
+        ],
+      },
+      {
+        heading: "Term length is a real trade-off, not just a bigger or smaller payment",
+        paragraphs: [
+          "Stretching a loan over a longer term lowers the monthly payment, which helps affordability, but it also means paying interest for longer — so the total cost of the loan rises even though the interest rate hasn't changed. A £10,000 loan at 6% APR costs roughly £1,601 in interest over 5 years, but around £2,276 over 7 years — about £675 more, purely from extending the term. It's worth weighing a lower monthly payment against that extra lifetime cost deliberately, not choosing the longest term by default.",
+        ],
+      },
+      {
+        heading: "Overpaying works — but check for a penalty first",
+        paragraphs: [
+          "Because interest is charged on the outstanding balance, any extra payment beyond the required monthly amount reduces the balance immediately, which cuts the interest charged on it every month afterwards — extra payments made earlier in the loan save more interest than the same amount paid later. Many lenders cap the amount you can overpay each year (commonly 10% of the balance) without an early repayment charge, so it's worth checking your loan's terms before making a large lump-sum overpayment.",
+          "Our Loan Repayment Calculator shows the fixed monthly payment and total interest for a given amount, rate and term — try a couple of different term lengths to see the affordability-versus-total-cost trade-off for yourself.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "Why is so much of my early payment just interest?", a: "Interest is charged on your outstanding balance, which is at its highest at the start of the loan, so a bigger share of each payment goes on interest early on and a bigger share goes on capital later, once the balance has fallen." },
+      { q: "Is APR the same as the interest rate?", a: "No — APR includes both the interest rate and any mandatory fees in a single yearly figure, which is why it's the number to compare between loans rather than the headline interest rate alone." },
+      { q: "Does a longer loan term cost more overall?", a: "Yes, even at the same interest rate, because you're paying interest on the outstanding balance for longer — a lower monthly payment over a longer term usually means more total interest paid by the end." },
+      { q: "Can I pay off my loan early to save money?", a: "Usually yes, since overpaying reduces the balance interest is charged on. Check your loan agreement first though, as some lenders charge an early repayment fee above a certain overpayment amount." },
     ],
   },
 ];

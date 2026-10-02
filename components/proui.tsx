@@ -424,7 +424,7 @@ export function Understanding({ slug, color, from, to, title, points, more, sour
             ))}
           </ul>
           <p className="text-xs text-muted mt-2">These results are estimates for general guidance and are not financial advice. Always confirm important figures with an official source.</p>
-          <p className="text-xs text-muted mt-2">Rates last reviewed: 30 September 2026 · Built around the 2026/27 UK tax year</p>
+          <p className="text-xs text-muted mt-2">Rates last reviewed: 2 October 2026 · Built around the 2026/27 UK tax year</p>
         </div>
       </div>
     </Section>

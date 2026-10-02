@@ -105,6 +105,10 @@ export function OvertimePayCalculatorPro() {
           { href: toolHref("salary-calculator"), label: "Take-home pay", sub: "full income tax and NI breakdown" },
           { href: toolHref("hourly-to-yearly"), label: "Hourly to yearly", sub: "convert an hourly wage" },
           { href: toolHref("salary-to-hourly"), label: "Salary to hourly", sub: "find your hourly rate" },
+        ]}
+        sources={[
+          { label: "GOV.UK: National Minimum Wage and National Living Wage rates", href: "https://www.gov.uk/national-minimum-wage-rates" },
+          { label: "GOV.UK: Income Tax rates and Personal Allowances", href: "https://www.gov.uk/income-tax-rates" },
         ]} />
     </div>
   );
@@ -262,6 +266,9 @@ export function HourlyToYearlyPro() {
           { href: toolHref("salary-to-hourly"), label: "Salary to hourly", sub: "the reverse conversion" },
           { href: toolHref("pro-rata-calculator"), label: "Pro rata calculator", sub: "part-time salary" },
           { href: toolHref("daily-rate-to-annual-salary"), label: "Daily rate to annual salary", sub: "for contractors" },
+        ]}
+        sources={[
+          { label: "GOV.UK: National Minimum Wage and National Living Wage rates", href: "https://www.gov.uk/national-minimum-wage-rates" },
         ]} />
     </div>
   );
@@ -332,6 +339,9 @@ export function SalaryToHourlyPro() {
           { href: toolHref("hourly-to-yearly"), label: "Hourly to yearly", sub: "the reverse conversion" },
           { href: toolHref("pro-rata-calculator"), label: "Pro rata calculator", sub: "part-time salary" },
           { href: toolHref("salary-calculator"), label: "Take-home pay", sub: "after tax and NI" },
+        ]}
+        sources={[
+          { label: "GOV.UK: National Minimum Wage and National Living Wage rates", href: "https://www.gov.uk/national-minimum-wage-rates" },
         ]} />
     </div>
   );
@@ -400,6 +410,10 @@ export function DailyRateToAnnualPro() {
           { href: toolHref("hourly-to-yearly"), label: "Hourly to yearly", sub: "convert an hourly wage" },
           { href: toolHref("salary-to-hourly"), label: "Salary to hourly", sub: "find your hourly rate" },
           { href: toolHref("salary-calculator"), label: "Take-home pay", sub: "after tax and NI" },
+        ]}
+        sources={[
+          { label: "GOV.UK: Off-payroll working rules (IR35)", href: "https://www.gov.uk/guidance/understanding-off-payroll-working-ir35" },
+          { label: "GOV.UK: Income Tax rates and Personal Allowances", href: "https://www.gov.uk/income-tax-rates" },
         ]} />
     </div>
   );

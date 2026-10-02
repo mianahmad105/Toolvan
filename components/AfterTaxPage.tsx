@@ -1,11 +1,17 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Banknote, CircleDollarSign, HelpCircle, Info, ListChecks, PoundSterling } from "lucide-react";
+import { ArrowRight, Banknote, BookOpen, CircleDollarSign, HelpCircle, Info, ListChecks, PoundSterling } from "lucide-react";
 import { calcSalary, gbp, PERSONAL_ALLOWANCE, type Region } from "@/lib/tax";
+import { CONTENT } from "@/lib/content";
 import { toolHref } from "@/lib/tools";
 import { SelectField, NumField } from "./ui";
 import { StatCard } from "./proui";
+
+const SOURCES = [
+  { label: "GOV.UK: Income Tax rates and Personal Allowances", href: "https://www.gov.uk/income-tax-rates" },
+  { label: "GOV.UK: National Insurance rates and categories", href: "https://www.gov.uk/national-insurance-rates-letters" },
+];
 
 const FREQ_MULT: Record<string, number> = { year: 1, month: 12, week: 52, day: 260, hour: 1950 };
 const FREQ_OPTIONS = [
@@ -45,6 +51,7 @@ const FAQS = [
   { q: "How much tax would I pay on a £30,000 salary?", a: `On a £30,000 salary you'd pay income tax and National Insurance based on the 2026/27 thresholds — use the calculator above with £30,000 selected to see the exact income tax, NI and take-home figures.` },
   { q: "What's the tax-free Personal Allowance for 2026/27?", a: `It's ${gbp(PERSONAL_ALLOWANCE, 0)} for most people. It reduces by £1 for every £2 you earn above £100,000, and disappears completely once you reach £125,140.` },
   { q: "How accurate is this after-tax figure?", a: "It's built on the same published UK tax bands and National Insurance thresholds as the rest of this site. It won't capture every personal detail — like pension contributions or a non-standard tax code — for that, use the full Salary Calculator." },
+  CONTENT["after-tax"].faqs[1], CONTENT["after-tax"].faqs[4], CONTENT["after-tax"].faqs[7],
 ];
 
 export function AfterTaxPage() {
@@ -165,11 +172,17 @@ export function AfterTaxPage() {
           </ul>
         </section>
 
-        <p className="text-xs text-muted flex items-start gap-2 px-1">
-          <Info size={14} className="mt-0.5 shrink-0" />
-          This tool uses the same 2026/27 tax thresholds as the rest of the site. For pension, tax code or student loan
-          adjustments, use our <Link href={toolHref("income-tax-calculator")} className="text-accent hover:underline">Income Tax Calculator</Link>.
-        </p>
+        <section className="card p-6 sm:p-8">
+          <h2 className="font-extrabold text-lg flex items-center gap-2"><BookOpen size={19} className="text-accent" /> How this calculator works</h2>
+          <div className="mt-4 space-y-3 text-[15px] leading-7">
+            {CONTENT["after-tax"].how.map((p, i) => <p key={i} className="text-muted">{p}</p>)}
+          </div>
+          <p className="text-xs text-muted flex items-start gap-2 mt-4">
+            <Info size={14} className="mt-0.5 shrink-0" />
+            For pension, tax code or student loan adjustments, use our{" "}
+            <Link href={toolHref("salary-calculator")} className="text-accent hover:underline">Salary Calculator</Link> instead.
+          </p>
+        </section>
 
         <section className="card p-6 sm:p-8">
           <h2 className="font-extrabold text-lg flex items-center gap-2"><HelpCircle size={19} className="text-accent" /> Frequently asked questions</h2>
@@ -182,6 +195,17 @@ export function AfterTaxPage() {
             ))}
           </div>
         </section>
+
+        <div className="rounded-xl bg-surface2 border border-line p-5 text-sm">
+          <div className="font-bold mb-1">Where to check the official figures</div>
+          <ul className="space-y-0.5">
+            {SOURCES.map((s) => (
+              <li key={s.href}><a href={s.href} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">{s.label}</a></li>
+            ))}
+          </ul>
+          <p className="text-xs text-muted mt-2">These results are estimates for general guidance and are not financial or tax advice.</p>
+          <p className="text-xs text-muted mt-2">Rates last reviewed: 2 October 2026 · Built around the 2026/27 UK tax year</p>
+        </div>
       </div>
 
       <aside className="space-y-6">

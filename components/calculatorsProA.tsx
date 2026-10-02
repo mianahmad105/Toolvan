@@ -291,6 +291,10 @@ export function GrossSalaryCalculatorPro() {
           { href: toolHref("salary-calculator"), label: "Take-home pay", sub: "gross to net" },
           { href: toolHref("after-tax"), label: "After-tax salary", sub: "net from gross" },
           { href: toolHref("income-tax-calculator"), label: "Income tax calculator", sub: "tax by band" },
+        ]}
+        sources={[
+          { label: "GOV.UK: Income Tax rates and Personal Allowances", href: "https://www.gov.uk/income-tax-rates" },
+          { label: "GOV.UK: National Insurance rates and categories", href: "https://www.gov.uk/national-insurance-rates-letters" },
         ]} />
     </div>
   );
@@ -439,6 +443,10 @@ export function ProRataCalculatorPro() {
           { href: toolHref("hourly-to-yearly"), label: "Hourly to yearly", sub: "convert an hourly wage" },
           { href: toolHref("salary-to-hourly"), label: "Salary to hourly", sub: "find your hourly rate" },
           { href: toolHref("salary-calculator"), label: "Take-home pay", sub: "after tax and NI" },
+        ]}
+        sources={[
+          { label: "GOV.UK: National Minimum Wage and National Living Wage rates", href: "https://www.gov.uk/national-minimum-wage-rates" },
+          { label: "GOV.UK: Holiday entitlement for part-time and irregular hours", href: "https://www.gov.uk/holiday-entitlement-rights" },
         ]} />
     </div>
   );
