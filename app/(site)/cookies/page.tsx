@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CONTACT_EMAIL } from "@/lib/tools";
+import { ADSENSE_CLIENT_ID, CONTACT_EMAIL } from "@/lib/tools";
 
 export const metadata = {
   title: "Cookie Policy",
@@ -53,7 +53,9 @@ export default function Cookies() {
                 <thead><tr className="bg-surface2 text-left"><th className="px-4 py-2.5">Name</th><th className="px-4 py-2.5">Purpose</th><th className="px-4 py-2.5">Duration</th></tr></thead>
                 <tbody>
                   <Row cookie="theme" purpose="Remembers whether you last chose light or dark mode" duration="Until you clear your browser data" />
-                  <Row cookie="cookieConsent" purpose="Remembers whether you accepted or rejected our cookie notice" duration="Until you clear your browser data" />
+                  {!ADSENSE_CLIENT_ID && (
+                    <Row cookie="cookieConsent" purpose="Remembers whether you accepted or rejected our cookie notice" duration="Until you clear your browser data" />
+                  )}
                 </tbody>
               </table>
             </div>
@@ -66,6 +68,13 @@ export default function Cookies() {
               Google and its advertising partners use cookies to serve ads and measure how they perform, and — where
               you haven&apos;t opted out — to personalise ads based on your visits to this and other sites.
             </p>
+            {ADSENSE_CLIENT_ID && (
+              <p className="text-muted mb-3">
+                If you&apos;re visiting from the UK, EEA or Switzerland, Google&apos;s own certified consent message —
+                not a banner of ours — asks for your choice on these advertising cookies before any personalised
+                ads are shown, in line with UK and EU rules on advertising consent.
+              </p>
+            )}
             <div className="overflow-x-auto rounded-xl border border-line">
               <table className="w-full text-sm min-w-[480px]">
                 <thead><tr className="bg-surface2 text-left"><th className="px-4 py-2.5">Name</th><th className="px-4 py-2.5">Purpose</th><th className="px-4 py-2.5">Duration</th></tr></thead>
