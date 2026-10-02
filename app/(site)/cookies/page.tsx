@@ -7,7 +7,7 @@ export const metadata = {
   alternates: { canonical: "/cookies" },
 };
 
-const LAST_UPDATED = "30 September 2026";
+const LAST_UPDATED = "2 October 2026";
 
 function Row({ cookie, purpose, duration }: { cookie: string; purpose: string; duration: string }) {
   return (

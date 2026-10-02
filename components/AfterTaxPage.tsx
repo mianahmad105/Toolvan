@@ -74,6 +74,11 @@ export function AfterTaxPage() {
             This free calculator estimates how much of your salary you&apos;ll actually take home for the 2026/27 tax year.
             Whether you&apos;re paid yearly, monthly, weekly, daily or by the hour, enter a figure below to see your income tax, National Insurance and net pay.
           </p>
+          <p className="text-xs text-muted mt-3">
+            Looking for pension, student loan or tax code adjustments too? Use the full{" "}
+            <Link href={toolHref("salary-calculator")} className="text-accent hover:underline">Salary Calculator</Link> instead — this
+            page is the quick version, built for comparing hourly, daily and weekly rates fast.
+          </p>
         </section>
 
         <section className="card p-6 sm:p-8">

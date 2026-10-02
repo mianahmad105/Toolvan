@@ -7,6 +7,7 @@ import { ToolSuite } from "@/components/ToolSuite";
 import { AppPromo } from "@/components/AppPromo";
 import { EmbedSection } from "@/components/EmbedSection";
 import { NewsletterSection } from "@/components/NewsletterSection";
+import { GUIDES } from "@/lib/guides";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
@@ -42,6 +43,24 @@ export default function Home() {
       <ToolSuite />
 
       <AppPromo />
+
+      <section className="mx-auto max-w-6xl px-4 py-14">
+        <div className="flex items-end justify-between gap-4 flex-wrap">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-extrabold">UK Tax Guides</h2>
+            <p className="text-muted mt-2 max-w-xl">Plain-English explainers for the rules behind the numbers — tax codes, Scottish tax, salary sacrifice and more.</p>
+          </div>
+          <Link href="/guides" className="font-semibold text-accent hover:underline shrink-0">See all guides <ArrowRight size={15} className="inline" /></Link>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-3 mt-7">
+          {GUIDES.slice(0, 3).map((g) => (
+            <Link key={g.slug} href={`/guides/${g.slug}`} className="card p-5 hover:border-accent transition">
+              <div className="font-bold leading-snug">{g.title}</div>
+              <p className="text-sm text-muted mt-2">{g.dek}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <EmbedSection />
 

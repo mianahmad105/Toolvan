@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Calculator, Home, Mail, TrendingUp, X } from "lucide-react";
+import { BookOpen, Calculator, Home, Mail, TrendingUp, X } from "lucide-react";
 import { SITE_NAME } from "@/lib/tools";
 import { ToolSearch } from "./ToolSearch";
 
@@ -9,6 +9,7 @@ const MOBILE_NAV = [
   { href: "/", label: "Home", icon: Home },
   { href: "/tools", label: "Calculators", icon: Calculator },
   { href: "/salary-calculator", label: "Salary Calculator", icon: TrendingUp },
+  { href: "/guides", label: "Guides", icon: BookOpen },
   { href: "/contact", label: "Contact Us", icon: Mail },
 ];
 
@@ -52,6 +53,7 @@ export function Header() {
             <Link href="/" className="hover:text-ink">Home</Link>
             <Link href="/tools" className="hover:text-ink">Calculators</Link>
             <Link href="/salary-calculator" className="hover:text-ink">Salary Calculator</Link>
+            <Link href="/guides" className="hover:text-ink">Guides</Link>
           </nav>
           <div className="flex items-center gap-2 ml-auto md:ml-0">
             <button onClick={toggle} aria-label="Toggle theme" className="w-9 h-9 rounded-lg border border-line grid place-items-center">{dark ? "☀️" : "🌙"}</button>
@@ -97,6 +99,7 @@ const QUICK_LINKS = [
   { href: "/salary-calculator", label: "Salary Calculator" },
   { href: "/after-tax", label: "After-tax pay" },
   { href: "/salary", label: "Salary after tax" },
+  { href: "/guides", label: "Guides" },
   { href: "/about", label: "About us" },
   { href: "/contact", label: "Contact Us" },
   { href: "/privacy", label: "Privacy notice" },

@@ -24,7 +24,7 @@ export function CookieConsent() {
       <div className="mx-auto max-w-2xl rounded-2xl border border-line bg-surface shadow-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <Cookie size={22} className="text-accent shrink-0 mt-0.5 sm:mt-0" />
         <p className="text-sm text-muted flex-1">
-          We store a small local preference (your light/dark theme choice) on your device, and use Google
+          We store a small local preference (your light/dark theme choice) on your device, and use Google AdSense
           advertising cookies to help fund these free tools. See our <Link href="/cookies" className="text-accent hover:underline">Cookie Policy</Link> for details and how to opt out.
         </p>
         <div className="flex gap-2 shrink-0 w-full sm:w-auto">

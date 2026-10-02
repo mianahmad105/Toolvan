@@ -62,6 +62,9 @@ export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.toolvan
 
 export const CONTACT_EMAIL = "support@toolvan.site";
 
+/** Set once Google AdSense approves the site — see NEXT_PUBLIC_ADSENSE_CLIENT_ID in .env. */
+export const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID ?? "";
+
 /** Public URL of each tool. */
 export function toolHref(slug: string): string {
   if (slug === "salary-calculator" || slug === "after-tax") return `/${slug}`;
