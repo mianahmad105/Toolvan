@@ -18,6 +18,9 @@ export async function generateMetadata({ params }: { params: Promise<{ amount: s
     title: `${gbp(gross, 0)} After Tax UK — Take-Home Pay 2026/27`,
     description: `See exactly how much of a ${gbp(gross, 0)} salary you take home after Income Tax and National Insurance in the UK for 2026/27, with a full yearly, monthly, weekly and daily breakdown.`,
     alternates: { canonical: `/salary/${gross}` },
+    // Templated pages covering the same figures as the Salary Calculator — kept out of the
+    // index so they don't read as thin/duplicate content, but still linked and crawlable.
+    robots: { index: false, follow: true },
   };
 }
 
