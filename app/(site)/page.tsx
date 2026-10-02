@@ -4,7 +4,6 @@ import { ArrowRight, Calculator, TrendingUp } from "lucide-react";
 import { QuickCalc } from "@/components/QuickCalc";
 import { PopularSection } from "@/components/PopularSection";
 import { ToolSuite } from "@/components/ToolSuite";
-import { AppPromo } from "@/components/AppPromo";
 import { EmbedSection } from "@/components/EmbedSection";
 import { NewsletterSection } from "@/components/NewsletterSection";
 import { GUIDES } from "@/lib/guides";
@@ -41,8 +40,6 @@ export default function Home() {
       <PopularSection />
 
       <ToolSuite />
-
-      <AppPromo />
 
       <section className="mx-auto max-w-6xl px-4 py-14">
         <div className="flex items-end justify-between gap-4 flex-wrap">
