@@ -62,6 +62,9 @@ export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.toolvan
 
 export const CONTACT_EMAIL = "support@toolvan.site";
 
+/** Byline shown on the About page and every guide. */
+export const AUTHOR_NAME = "Jack Dev";
+
 /** Set once Google AdSense approves the site — see NEXT_PUBLIC_ADSENSE_CLIENT_ID in .env. */
 export const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID ?? "";
 
