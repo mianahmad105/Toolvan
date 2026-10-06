@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BookOpen, Calculator, Home, Mail, TrendingUp, X } from "lucide-react";
 import { SITE_NAME } from "@/lib/tools";
@@ -13,20 +14,26 @@ const MOBILE_NAV = [
   { href: "/contact", label: "Contact Us", icon: Mail },
 ];
 
-const BRAND_GRADIENT = "linear-gradient(135deg, #1d4ed8 0%, #3b82f6 55%, #38bdf8 100%)";
-
+/** Icon-only mark in a white badge, so it stays legible on both the light header and the dark footer. */
 function BrandMark({ size = 32 }: { size?: number }) {
   return (
     <span
-      className="grid place-items-center rounded-lg text-white font-extrabold shrink-0"
-      style={{ width: size, height: size, background: BRAND_GRADIENT, fontSize: size * 0.6 }}
+      className="grid place-items-center rounded-lg bg-white shrink-0 shadow-sm"
+      style={{ width: size, height: size, padding: size * 0.12 }}
     >
-      £
+      <img src="/logo-mark.png" alt="" width={size} height={size} className="w-full h-full object-contain" />
     </span>
   );
 }
 
+/** Full lockup (icon + "ToolVan" wordmark baked into the artwork) used alone, with no adjacent text. */
+function FullLogo({ height = 40 }: { height?: number }) {
+  return <img src="/logo-full.png" alt={SITE_NAME} style={{ height }} className="w-auto" />;
+}
+
 export function Header() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [dark, setDark] = useState(false);
   const [open, setOpen] = useState(false);
   useEffect(() => {
@@ -45,8 +52,8 @@ export function Header() {
     <>
       <header className="sticky top-0 z-40 backdrop-blur bg-bg/80 border-b border-line">
         <div className="mx-auto max-w-6xl px-4 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 font-extrabold text-lg">
-            <BrandMark /> {SITE_NAME}
+          <Link href="/" className="flex items-center gap-2 font-extrabold text-lg" aria-label={SITE_NAME}>
+            {isHome ? <FullLogo /> : <><BrandMark /> {SITE_NAME}</>}
           </Link>
           <div className="hidden md:block flex-1 max-w-sm mx-6"><ToolSearch /></div>
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted">
