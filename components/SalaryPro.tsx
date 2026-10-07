@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { calcSalary, gbp, type Region, type StudentPlan } from "@/lib/tax";
 import { CONTENT } from "@/lib/content";
-import { PLANS } from "./ui";
+import { NumBox, PLANS } from "./ui";
 import { TaxBandsReference } from "./proui";
 
 const SOURCES = [
@@ -125,8 +125,7 @@ export function SalaryPro() {
             </label>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 font-bold text-muted">£</span>
-              <input className="field sal-input" style={{ paddingLeft: "2.3rem" }} type="number" min={0} step={100} value={amount}
-                onFocus={(e) => e.target.select()} onChange={(e) => setAmount(parseFloat(e.target.value) || 0)} />
+              <NumBox className="field sal-input" style={{ paddingLeft: "2.3rem" }} min={0} step={100} value={amount} onChange={setAmount} />
             </div>
           </div>
           <div>
@@ -169,8 +168,7 @@ export function SalaryPro() {
                 <select className="field sal-input !w-28 shrink-0" value={pensionUnit} onChange={(e) => setPensionUnit(e.target.value as "pct" | "gbp")}>
                   <option value="pct">%</option><option value="gbp">£ a year</option>
                 </select>
-                <input className="field sal-input" type="number" min={0} step={0.5} value={pensionVal}
-                  onFocus={(e) => e.target.select()} onChange={(e) => setPensionVal(parseFloat(e.target.value) || 0)} />
+                <NumBox className="field sal-input" min={0} step={0.5} value={pensionVal} onChange={setPensionVal} />
               </div>
             </div>
             <div>
