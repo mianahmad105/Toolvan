@@ -97,7 +97,7 @@ export function AfterTaxPage() {
 
         <section className="card p-6 sm:p-8">
           <h2 className="font-extrabold text-lg">What&apos;s your gross salary?</h2>
-          <form onSubmit={submit} className="mt-4">
+          <form onSubmit={submit} noValidate className="mt-4">
             <div className="grid sm:grid-cols-3 gap-3">
               <NumField label="Gross pay" value={amount} onChange={setAmount} step={100} />
               <SelectField label="Paid" value={freq} onChange={setFreq} options={FREQ_OPTIONS} />
