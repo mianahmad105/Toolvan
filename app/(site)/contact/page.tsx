@@ -45,7 +45,7 @@ export default function Contact() {
                 <span className="grid place-items-center w-10 h-10 rounded-xl bg-surface2 text-accent shrink-0"><Mail size={18} /></span>
                 <div>
                   <div className="font-bold">Email Support</div>
-                  <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">{CONTACT_EMAIL}</a>
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent underline">{CONTACT_EMAIL}</a>
                   <div className="text-xs text-muted mt-0.5">We typically respond within 24 hours</div>
                 </div>
               </div>

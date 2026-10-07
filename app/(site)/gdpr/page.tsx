@@ -45,7 +45,7 @@ export default function Gdpr() {
             <p className="text-muted mt-3">
               We don&apos;t run our own analytics trackers, and we don&apos;t collect this data ourselves — the advertising
               data above is collected directly by Google and its partners through the cookies described in our{" "}
-              <Link href="/cookies" className="text-accent hover:underline">Cookie Policy</Link>, not by us. You can opt out
+              <Link href="/cookies" className="text-accent underline">Cookie Policy</Link>, not by us. You can opt out
               of personalised ads at any time through Google Ads Settings.
             </p>
           </section>
@@ -91,7 +91,7 @@ export default function Gdpr() {
               <li><b className="text-ink">Withdraw consent</b> at any time, for anything based on your consent</li>
             </ul>
             <p className="text-muted mt-3">
-              To use any of these rights, email <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">{CONTACT_EMAIL}</a>.
+              To use any of these rights, email <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent underline">{CONTACT_EMAIL}</a>.
               We aim to respond within one month, as required by law.
             </p>
           </section>
@@ -101,7 +101,7 @@ export default function Gdpr() {
             <p className="text-muted">
               We only collect what&apos;s described above, keep it for as short a time as possible, and don&apos;t sell it or
               share it with anyone beyond the advertising cookies described on this page and in our{" "}
-              <Link href="/cookies" className="text-accent hover:underline">Cookie Policy</Link>. If we ever became aware
+              <Link href="/cookies" className="text-accent underline">Cookie Policy</Link>. If we ever became aware
               of a data breach affecting your personal data, we would notify the ICO and anyone affected without undue
               delay, as UK GDPR requires.
             </p>
@@ -112,7 +112,7 @@ export default function Gdpr() {
             <p className="text-muted">
               If you&apos;re not satisfied with how we&apos;ve handled your data, you can complain to the UK&apos;s data
               protection regulator, the{" "}
-              <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Information Commissioner&apos;s Office (ICO)</a>.
+              <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-accent underline">Information Commissioner&apos;s Office (ICO)</a>.
             </p>
           </section>
 
@@ -120,15 +120,15 @@ export default function Gdpr() {
             <h2 className="text-xl font-extrabold mb-2">Changes to this page</h2>
             <p className="text-muted">
               We&apos;ll update the &ldquo;last updated&rdquo; date above whenever this page changes. For our full data
-              handling practices, see our <Link href="/privacy" className="text-accent hover:underline">Privacy Policy</Link>.
+              handling practices, see our <Link href="/privacy" className="text-accent underline">Privacy Policy</Link>.
             </p>
           </section>
         </div>
 
         <hr className="my-8 border-line" />
         <p className="text-sm text-muted">
-          Questions about your data? <Link href="/contact" className="text-accent hover:underline">Contact Us</Link> or email{" "}
-          <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">{CONTACT_EMAIL}</a>.
+          Questions about your data? <Link href="/contact" className="text-accent underline">Contact Us</Link> or email{" "}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent underline">{CONTACT_EMAIL}</a>.
         </p>
       </div>
     </div>

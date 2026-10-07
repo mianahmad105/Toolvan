@@ -48,7 +48,7 @@ export default function Cookies() {
               These run the basic functionality of the site and don&apos;t track you. They&apos;re set automatically and
               don&apos;t require consent.
             </p>
-            <div className="overflow-x-auto rounded-xl border border-line">
+            <div tabIndex={0} className="overflow-x-auto rounded-xl border border-line">
               <table className="w-full text-sm min-w-[480px]">
                 <thead><tr className="bg-surface2 text-left"><th className="px-4 py-2.5">Name</th><th className="px-4 py-2.5">Purpose</th><th className="px-4 py-2.5">Duration</th></tr></thead>
                 <tbody>
@@ -75,7 +75,7 @@ export default function Cookies() {
                 ads are shown, in line with UK and EU rules on advertising consent.
               </p>
             )}
-            <div className="overflow-x-auto rounded-xl border border-line">
+            <div tabIndex={0} className="overflow-x-auto rounded-xl border border-line">
               <table className="w-full text-sm min-w-[480px]">
                 <thead><tr className="bg-surface2 text-left"><th className="px-4 py-2.5">Name</th><th className="px-4 py-2.5">Purpose</th><th className="px-4 py-2.5">Duration</th></tr></thead>
                 <tbody>
@@ -87,7 +87,7 @@ export default function Cookies() {
             <p className="text-muted mt-3">
               We don&apos;t control what these cookies store or how long they last — that&apos;s set by Google and its
               partners. For the full detail, see Google&apos;s{" "}
-              <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+              <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-accent underline">
                 &ldquo;How Google uses information from sites or apps that use our services&rdquo;
               </a> page.
             </p>
@@ -98,12 +98,12 @@ export default function Cookies() {
             <ul className="list-disc pl-6 space-y-1.5 text-muted">
               <li>
                 <b className="text-ink">Turn off personalised ads:</b> visit{" "}
-                <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Google Ads Settings</a>{" "}
+                <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-accent underline">Google Ads Settings</a>{" "}
                 to opt out of personalised advertising from Google.
               </li>
               <li>
                 <b className="text-ink">Opt out with other ad networks:</b> the{" "}
-                <a href="https://youronlinechoices.eu" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Your Online Choices</a>{" "}
+                <a href="https://youronlinechoices.eu" target="_blank" rel="noopener noreferrer" className="text-accent underline">Your Online Choices</a>{" "}
                 site lists further opt-outs for other advertising partners.
               </li>
               <li>
@@ -118,7 +118,7 @@ export default function Cookies() {
             <h2 className="text-xl font-extrabold mb-2">Changes to this policy</h2>
             <p className="text-muted">
               If the cookies we or our advertising partners use change, we&apos;ll update this page. See our{" "}
-              <Link href="/privacy" className="text-accent hover:underline">Privacy Policy</Link> for how we handle personal
+              <Link href="/privacy" className="text-accent underline">Privacy Policy</Link> for how we handle personal
               data more generally.
             </p>
           </section>
@@ -126,8 +126,8 @@ export default function Cookies() {
 
         <hr className="my-8 border-line" />
         <p className="text-sm text-muted">
-          Questions about our cookies? <Link href="/contact" className="text-accent hover:underline">Contact Us</Link> or email{" "}
-          <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">{CONTACT_EMAIL}</a>.
+          Questions about our cookies? <Link href="/contact" className="text-accent underline">Contact Us</Link> or email{" "}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent underline">{CONTACT_EMAIL}</a>.
         </p>
       </div>
     </div>

@@ -38,7 +38,7 @@ export default function About() {
           <h2 className="text-xl font-extrabold mb-2 flex items-center gap-2"><BookOpen size={19} className="text-accent" /> Where our figures come from</h2>
           <p className="text-muted">
             Every rate, band and threshold used in our calculators is taken from published UK government sources —
-            mainly <a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">GOV.UK</a> and HMRC guidance, plus the Scottish Government&apos;s published Budget for the
+            mainly <a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener noreferrer" className="text-accent underline">GOV.UK</a> and HMRC guidance, plus the Scottish Government&apos;s published Budget for the
             Scottish Income Tax bands. I don&apos;t estimate or guess a figure: when a Budget, Autumn Statement or Scottish
             Budget changes a threshold, I check it directly against the GOV.UK or HMRC page for that tax, update every
             calculator that uses it, and re-run the worked examples on the site to make sure they still match. Each
@@ -63,15 +63,15 @@ export default function About() {
             <li>They are not financial, tax or legal advice, and can&apos;t account for every personal circumstance</li>
             <li>For anything that affects a real financial decision, always check with HMRC or a qualified adviser</li>
           </ul>
-          <p className="text-muted mt-3">See our <Link href="/terms" className="text-accent hover:underline">Terms of Use</Link> for the full picture.</p>
+          <p className="text-muted mt-3">See our <Link href="/terms" className="text-accent underline">Terms of Use</Link> for the full picture.</p>
         </section>
 
         <section>
           <h2 className="text-xl font-extrabold mb-2 flex items-center gap-2"><Mail size={19} className="text-accent" /> Found a mistake?</h2>
           <p className="text-muted">
             If a figure looks wrong, or you think a rate is out of date, please tell us — every report gets checked
-            against the official source. <Link href="/contact" className="text-accent hover:underline">Contact us</Link> or
-            email <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">{CONTACT_EMAIL}</a>.
+            against the official source. <Link href="/contact" className="text-accent underline">Contact us</Link> or
+            email <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent underline">{CONTACT_EMAIL}</a>.
           </p>
         </section>
       </div>

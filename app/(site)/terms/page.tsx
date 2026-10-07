@@ -57,7 +57,7 @@ export default function Terms() {
             </p>
             <p className="text-muted mt-3">
               Tax rules change often. Always double-check important figures directly with{" "}
-              <a href="https://www.gov.uk" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">GOV.UK</a> or a qualified professional.
+              <a href="https://www.gov.uk" target="_blank" rel="noopener noreferrer" className="text-accent underline">GOV.UK</a> or a qualified professional.
             </p>
           </section>
 
@@ -110,8 +110,8 @@ export default function Terms() {
             <p className="text-muted">
               The Site is free to use, and we display advertising through Google AdSense to help cover the cost of
               running it. Ads may be personalised based on your browsing activity, using the cookies described in our{" "}
-              <Link href="/privacy" className="text-accent hover:underline">Privacy Policy</Link> and{" "}
-              <Link href="/cookies" className="text-accent hover:underline">Cookie Policy</Link>. You can control ad
+              <Link href="/privacy" className="text-accent underline">Privacy Policy</Link> and{" "}
+              <Link href="/cookies" className="text-accent underline">Cookie Policy</Link>. You can control ad
               personalisation at any time through Google Ads Settings.
             </p>
             <p className="text-muted mt-3">
@@ -140,9 +140,9 @@ export default function Terms() {
 
         <hr className="my-8 border-line" />
         <p className="text-sm text-muted">
-          Questions about these terms? <Link href="/contact" className="text-accent hover:underline">Contact Us</Link> or see our{" "}
-          <Link href="/privacy" className="text-accent hover:underline">Privacy Policy</Link>. You can also email{" "}
-          <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">{CONTACT_EMAIL}</a>.
+          Questions about these terms? <Link href="/contact" className="text-accent underline">Contact Us</Link> or see our{" "}
+          <Link href="/privacy" className="text-accent underline">Privacy Policy</Link>. You can also email{" "}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent underline">{CONTACT_EMAIL}</a>.
         </p>
       </div>
     </div>

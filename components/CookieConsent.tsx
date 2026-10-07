@@ -25,7 +25,7 @@ export function CookieConsent() {
         <Cookie size={22} className="text-accent shrink-0 mt-0.5 sm:mt-0" />
         <p className="text-sm text-muted flex-1">
           We store a small local preference (your light/dark theme choice) on your device, and use Google AdSense
-          advertising cookies to help fund these free tools. See our <Link href="/cookies" className="text-accent hover:underline">Cookie Policy</Link> for details and how to opt out.
+          advertising cookies to help fund these free tools. See our <Link href="/cookies" className="text-accent underline">Cookie Policy</Link> for details and how to opt out.
         </p>
         <div className="flex gap-2 shrink-0 w-full sm:w-auto">
           <button onClick={() => choose("rejected")} className="rounded-xl border border-line px-4 py-2.5 text-sm font-bold flex-1 sm:flex-none">Reject</button>
