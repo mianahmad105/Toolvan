@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { BookOpen, Calculator, Home, Mail, TrendingUp, X } from "lucide-react";
+import { BookOpen, Calculator, ChevronDown, Home, LayoutGrid, Mail, TrendingUp, X } from "lucide-react";
 import { SITE_NAME } from "@/lib/tools";
 import { ToolSearch } from "./ToolSearch";
 
@@ -12,6 +12,19 @@ const MOBILE_NAV = [
   { href: "/salary-calculator", label: "Salary Calculator", icon: TrendingUp },
   { href: "/guides", label: "Guides", icon: BookOpen },
   { href: "/contact", label: "Contact Us", icon: Mail },
+];
+
+/** Pages that aren't already one click away from the homepage's main nav or body content. */
+const MORE_LINKS = [
+  { href: "/after-tax", label: "After-tax pay" },
+  { href: "/salary", label: "Salary after tax" },
+  { href: "/widgets", label: "Widgets" },
+  { href: "/about", label: "About us" },
+  { href: "/contact", label: "Contact Us" },
+  { href: "/privacy", label: "Privacy notice" },
+  { href: "/cookies", label: "Cookie Policy" },
+  { href: "/gdpr", label: "GDPR" },
+  { href: "/terms", label: "Terms of service" },
 ];
 
 /** Icon-only mark in a white badge, so it stays legible on both the light header and the dark footer. */
@@ -36,6 +49,7 @@ export function Header() {
   const isHome = pathname === "/";
   const [dark, setDark] = useState(false);
   const [open, setOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   useEffect(() => {
     const d = localStorage.getItem("theme") === "dark";
     setDark(d);
@@ -61,6 +75,29 @@ export function Header() {
             <Link href="/tools" className="hover:text-ink">Calculators</Link>
             <Link href="/salary-calculator" className="hover:text-ink">Salary Calculator</Link>
             <Link href="/guides" className="hover:text-ink">Guides</Link>
+            <div className="relative">
+              <button
+                onClick={() => setMoreOpen((v) => !v)}
+                aria-expanded={moreOpen}
+                aria-haspopup="true"
+                className="flex items-center gap-1 hover:text-ink"
+              >
+                More <ChevronDown size={14} className={`transition ${moreOpen ? "rotate-180" : ""}`} />
+              </button>
+              {moreOpen && (
+                <>
+                  <div className="fixed inset-0 z-40" onClick={() => setMoreOpen(false)} />
+                  <div className="absolute right-0 top-full mt-2 w-56 rounded-xl border border-line bg-surface shadow-xl py-2 z-50">
+                    {MORE_LINKS.map((l) => (
+                      <Link key={l.href} href={l.href} onClick={() => setMoreOpen(false)}
+                        className="block px-4 py-2 text-sm text-ink hover:bg-surface2 transition">
+                        {l.label}
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
           </nav>
           <div className="flex items-center gap-2 ml-auto md:ml-0">
             <button onClick={toggle} aria-label="Toggle theme" className="w-9 h-9 rounded-lg border border-line grid place-items-center">{dark ? "☀️" : "🌙"}</button>
@@ -87,6 +124,20 @@ export function Header() {
               <Icon size={19} className="text-accent shrink-0" /> {label}
             </Link>
           ))}
+          <details className="group mt-1">
+            <summary className="flex items-center justify-between px-2 py-3 rounded-xl text-[15px] font-medium hover:bg-surface2 transition cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+              <span className="flex items-center gap-3"><LayoutGrid size={19} className="text-accent shrink-0" /> More</span>
+              <ChevronDown size={16} className="text-muted transition group-open:rotate-180" />
+            </summary>
+            <div className="pl-3">
+              {MORE_LINKS.map((l) => (
+                <Link key={l.href} href={l.href} onClick={() => setOpen(false)}
+                  className="block px-2 py-2.5 rounded-xl text-[14px] text-muted hover:bg-surface2 hover:text-ink transition">
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+          </details>
         </nav>
         <div className="border-t border-line p-5 text-center text-sm shrink-0">
           <div className="font-bold">{SITE_NAME}</div>
