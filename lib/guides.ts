@@ -27,36 +27,36 @@ export const GUIDES: Guide[] = [
       {
         heading: "It isn't a new tax band — it's your allowance disappearing",
         paragraphs: [
-          "There's no official '£100,000 tax band' in the UK system — the headline Income Tax rates are still 20%, 40% and 45%. What actually happens at £100,000 is that your tax-free Personal Allowance starts being withdrawn. For every £2 you earn above £100,000, you lose £1 of the £12,570 Personal Allowance, until it's gone completely at £125,140.",
-          "Because that lost allowance becomes taxable at the 40% higher rate, the effective marginal rate on income between £100,000 and £125,140 works out at 60% — you keep only 40p of every extra pound, not the 60p a higher-rate taxpayer normally keeps.",
+          "Let's clear something up first: there's no secret '£100k tax band' hiding in the tax tables. The headline Income Tax rates are still 20%, 40% and 45% — nothing new kicks in at six figures. What actually happens is sneakier: your tax-free Personal Allowance starts getting clawed back. For every £2 you earn over £100,000, HMRC takes away £1 of your £12,570 allowance, until there's nothing left by £125,140.",
+          "Here's the part that catches people out: that withdrawn allowance doesn't just vanish quietly — it becomes taxable at 40%. Stack that on top of the tax you're already paying, and the real marginal rate between £100,000 and £125,140 works out at 60%. You keep 40p of every extra pound, not the 60p a normal higher-rate taxpayer keeps.",
         ],
       },
       {
         heading: "A worked example",
         paragraphs: [
-          "Say your salary rises from £100,000 to £101,000. Without the taper, that extra £1,000 would be taxed at 40%, costing £400 in tax and leaving £600. With the taper, £500 of your Personal Allowance is also withdrawn and becomes taxable at 40%, adding another £200 of tax. You pay £600 tax on £1,000 of extra income — an effective rate of 60%, even though your 'tax bracket' hasn't officially changed.",
-          "Our Income Tax Calculator shows this directly: enter any taxable income between £100,000 and £125,140 and you'll see the shrinking allowance reflected in the tax figure.",
+          "Picture your salary creeping from £100,000 to £101,000. Normally that extra grand would just cost £400 in tax at 40%, leaving £600 in your pocket. But because you're also losing £500 of Personal Allowance to the taper — and that £500 gets taxed at 40% too — you lose an extra £200 on top. Total damage: £600 tax on £1,000 of extra income. On paper you're still a '40% taxpayer'. In practice, 60% of that raise just disappeared.",
+          "If you want to see this for your own number, drop any income between £100,000 and £125,140 into our Income Tax Calculator — the shrinking allowance shows up automatically in the result.",
         ],
       },
       {
         heading: "Why it's worse than it looks",
         paragraphs: [
-          "The 60% zone often overlaps with other means-tested withdrawals that use 'adjusted net income' as the trigger — most notably Tax-Free Childcare and the 30 hours of free childcare, both of which cut off entirely once either parent's adjusted net income passes £100,000. Lose those and the real cost of crossing £100,000 can run into several thousand pounds a year for a family with young children, well beyond the extra Income Tax alone.",
-          "High Income Child Benefit Charge works similarly from £60,000 upward, clawing back Child Benefit gradually and fully by £80,000, so some households effectively face two separate tapering zones at different income levels.",
+          "And it doesn't stop at the tax bill. That same 60% zone usually overlaps with other things measured against 'adjusted net income' — Tax-Free Childcare and the 30 free childcare hours both disappear entirely the moment either parent crosses £100,000. For a family with young kids, losing those can cost more than the extra tax itself. We're talking several thousand pounds a year, not a rounding error.",
+          "There's a second trap lurking from £60,000 too: the High Income Child Benefit Charge, which claws back Child Benefit gradually until it's gone completely by £80,000. Cross both thresholds and you're effectively navigating two separate tapers at once.",
         ],
       },
       {
         heading: "What you can do about it",
         paragraphs: [
-          "The taper is based on 'adjusted net income', which is total taxable income minus certain reliefs — most usefully, pension contributions and Gift Aid donations. Paying extra into a pension through salary sacrifice or a net pay arrangement reduces your taxable income pound-for-pound, which can pull you back under £100,000 (or under £60,000 for Child Benefit purposes) and avoid the taper rather than just paying tax at a higher rate.",
-          "Because the pension contribution also escapes the 60% band itself, extra pension contributions in this income range effectively attract up to 60% tax relief — among the most efficient pension contributions you can make. Our Pension Tax Relief Calculator shows how much relief a contribution at your income level would attract.",
+          "The good news: the £100,000 threshold isn't based on your salary — it's based on 'adjusted net income', and that figure comes down if you pay into a pension or give to charity through Gift Aid. Push enough into a pension through salary sacrifice (or a net pay arrangement) and you can pull your adjusted net income back under £100,000 — or under £60,000, if Child Benefit is what you're protecting — instead of just accepting the 60% hit.",
+          "This is genuinely one of the better pension tricks going: because the contribution also escapes the 60% band itself, money you put in here attracts up to 60% effective tax relief. Not many other corners of the tax system are this generous. Our Pension Tax Relief Calculator will tell you exactly how much relief a contribution at your income level attracts.",
         ],
       },
     ],
     faqs: [
-      { q: "Is there really a 60% tax rate?", a: "There's no official 60% band on the tax tables, but the combination of the 40% higher rate and the loss of £1 of Personal Allowance for every £2 earned creates an effective marginal rate of 60% on income between £100,000 and £125,140." },
-      { q: "Does the 100k trap affect National Insurance too?", a: "No — National Insurance has its own separate thresholds and isn't affected by the Personal Allowance taper. The 60% effect is purely an Income Tax phenomenon." },
-      { q: "How do I get back under £100,000?", a: "Pension contributions and Gift Aid donations reduce your 'adjusted net income', which is what the £100,000 threshold is measured against — so increasing pension contributions is the most common way to avoid or reduce the taper." },
+      { q: "Is there really a 60% tax rate?", a: "Not officially — you won't find a 60% band on any tax table. But the combination of the 40% higher rate and losing £1 of Personal Allowance for every £2 you earn creates an effective marginal rate of 60% on income between £100,000 and £125,140." },
+      { q: "Does the 100k trap affect National Insurance too?", a: "No. NI has its own thresholds and doesn't care about the Personal Allowance taper — this 60% effect is purely an Income Tax thing." },
+      { q: "How do I get back under £100,000?", a: "Pension contributions and Gift Aid donations both reduce your 'adjusted net income', which is what the £100,000 threshold actually measures. Topping up a pension is by far the most common way people avoid or reduce the taper." },
     ],
   },
   {
@@ -69,36 +69,36 @@ export const GUIDES: Guide[] = [
       {
         heading: "Same allowance, different bands",
         paragraphs: [
-          "Income Tax is partly devolved to the Scottish Parliament. Anyone whose main home is in Scotland pays Income Tax under the Scottish rates and bands (shown on payslips with an 'S' prefix on their tax code, e.g. S1257L), while the rest of the UK uses the rates set by the UK government. Crucially, the tax-free Personal Allowance — £12,570 for 2026/27 — is set UK-wide and is identical in both systems.",
-          "What differs is what happens to the income above that allowance. England, Wales and Northern Ireland use three bands: 20% basic rate, 40% higher rate, and 45% additional rate. Scotland uses six: 19% starter, 20% basic, 21% intermediate, 42% higher, 45% advanced and 48% top.",
+          "Income Tax is one of the few taxes that isn't identical everywhere in the UK — it's partly devolved to the Scottish Parliament. If your main home is in Scotland, you're taxed under Scottish rates and bands (you'll spot it on your payslip: an S in front of your tax code, like S1257L). Everyone else uses the rates set at Westminster. One thing that doesn't change, though: the tax-free Personal Allowance. At £12,570 for 2026/27, it's set UK-wide and identical either way.",
+          "What's actually different is what happens above that allowance. England, Wales and Northern Ireland keep it to three bands — 20%, 40%, 45%. Scotland splits things into six: 19% starter, 20% basic, 21% intermediate, 42% higher, 45% advanced, 48% top. More bands, smaller gaps between them.",
         ],
       },
       {
         heading: "Where the bands sit for 2026/27",
         paragraphs: [
-          "In England, Wales and Northern Ireland: the 20% basic rate applies up to £50,270 of total income, 40% from there to £125,140, and 45% above that.",
-          "In Scotland: 19% applies up to £16,537, 20% up to £29,526, 21% up to £43,662, 42% up to £75,000, 45% up to £125,140, and 48% above that.",
+          "Rest of the UK: 20% up to £50,270 of total income, 40% from there to £125,140, 45% above that.",
+          "Scotland: 19% up to £16,537, 20% up to £29,526, 21% up to £43,662, 42% up to £75,000, 45% up to £125,140, and 48% beyond that.",
         ],
       },
       {
         heading: "Who actually pays more",
         paragraphs: [
-          "At low incomes, Scotland is marginally cheaper — the 19% starter rate on the first slice of taxable income saves a small amount compared with the 20% rate used elsewhere. The crossover happens around £30,000-£35,000 of income, above which Scotland's bands bite harder, mainly because the 42% higher rate starts at £43,662 — more than £6,500 lower than the £50,270 point where the rest of the UK's 40% rate begins.",
-          "Someone earning £60,000 pays £11,432 in Income Tax in England, Wales or Northern Ireland, but £13,213.80 in Scotland — about £1,780 more a year, almost entirely because of that earlier, higher 42% band. Use our Income Tax Calculator with the region switched to Scotland to see the exact figure for any income.",
+          "At the low end, Scotland's a touch cheaper — that 19% starter rate shaves a little off compared with the 20% used elsewhere. But the crossover arrives earlier than most people expect, somewhere around £30,000–£35,000, and above that Scotland starts to sting more. The main culprit is the 42% higher rate kicking in at £43,662 — over £6,500 earlier than the 40% rate down south.",
+          "Take someone on £60,000: £11,432 in tax in England, Wales or Northern Ireland, but £13,213.80 north of the border — nearly £1,780 more, almost entirely down to that earlier 42% band. Switch the region toggle to Scotland in our Income Tax Calculator and you'll see exactly what it means for any income.",
         ],
       },
       {
         heading: "What stays the same regardless of region",
         paragraphs: [
-          "National Insurance is not devolved — it's identical across the whole of the UK, so the 8%/2% employee rates and the £12,570/£50,270 thresholds apply equally whether you're in Edinburgh or Exeter. Dividend tax, savings interest tax (including the Personal Savings Allowance), Capital Gains Tax and Inheritance Tax are also all set at UK level and apply the same way in Scotland as elsewhere.",
-          "Your region for Income Tax purposes is based on where your main home is during the tax year, not where your employer is based or where you work day to day — someone living in Scotland but commuting to an office in England still pays the Scottish rates.",
+          "National Insurance doesn't care which side of the border you're on — it's identical everywhere, same 8%/2% rates and the same thresholds whether you're in Glasgow or Guildford. Dividend tax, savings interest tax, Capital Gains Tax and Inheritance Tax are all set at UK level too, with no Scottish variant.",
+          "One thing worth knowing: your tax region is decided by where your main home actually is, not where you work. Commute into England from a house in Scotland and you're still taxed under Scottish rates — HMRC goes by your address, not your desk.",
         ],
       },
     ],
     faqs: [
-      { q: "How do I know if I'm taxed under Scottish rates?", a: "Check your tax code — Scottish tax codes start with the letter S (for example S1257L). HMRC assigns this based on your main home address, not your workplace." },
-      { q: "Is the tax-free Personal Allowance different in Scotland?", a: "No. The £12,570 Personal Allowance for 2026/27 is set UK-wide and is exactly the same whether you're taxed under Scottish or rest-of-UK rates." },
-      { q: "Does National Insurance differ in Scotland?", a: "No — National Insurance isn't devolved, so the same 8% and 2% employee rates and thresholds apply across the whole of the UK." },
+      { q: "How do I know if I'm taxed under Scottish rates?", a: "Check your tax code. Scottish codes start with S (S1257L, for example), assigned based on your main home address rather than your workplace." },
+      { q: "Is the tax-free Personal Allowance different in Scotland?", a: "No — £12,570 for 2026/27, set UK-wide, exactly the same whichever set of bands applies to you." },
+      { q: "Does National Insurance differ in Scotland?", a: "No. NI isn't devolved, so the same 8% and 2% rates and thresholds apply across the whole of the UK." },
     ],
   },
   {
@@ -111,14 +111,14 @@ export const GUIDES: Guide[] = [
       {
         heading: "Breaking down the numbers",
         paragraphs: [
-          "A tax code tells your employer or pension provider how much of your income to pay before Income Tax is deducted. In 1257L, the number 1257 multiplied by 10 gives your tax-free Personal Allowance for the year: £12,570 — exactly the standard allowance for 2026/27. If your code were 1000L instead, your tax-free amount would be £10,000.",
-          "This is the most common tax code in the UK, used for most people with one job, no taxable benefits, and no adjustments for under- or overpaid tax from previous years.",
+          "Your tax code looks cryptic, but it's really just an instruction to your employer: here's how much of this person's pay to leave untaxed. Take the number in 1257L, multiply by 10, and you've got your tax-free Personal Allowance for the year — £12,570, which happens to be exactly the standard allowance for 2026/27. Change the number and the allowance changes with it: 1000L would mean £10,000 tax-free instead.",
+          "1257L is also just about the most common code in the country — the default for anyone with one job, no taxable perks, and no history of under- or overpaid tax to square up.",
         ],
       },
       {
         heading: "What the letter means",
         paragraphs: [
-          "The letter tells HMRC's system (and your payslip) something extra about how the code applies. L means you're entitled to the standard Personal Allowance with no special adjustments — it's the default for most employees.",
+          "The letter does a different job — it flags something specific to HMRC's system, and it shows up on your payslip too. L is the boring-but-common one: standard allowance, nothing unusual going on.",
         ],
         bullets: [
           "L — Standard Personal Allowance, no adjustments",
@@ -134,22 +134,22 @@ export const GUIDES: Guide[] = [
       {
         heading: "Why your code might not be 1257L",
         paragraphs: [
-          "Your code changes if you receive a taxable benefit like a company car or private medical insurance (which reduces your allowance), if you owe tax from a previous year that's being collected through your current pay, if you have more than one income source (where only one usually gets the full allowance), or if you're claiming Marriage Allowance.",
-          "If your home is in Scotland, you'll see an S prefix (S1257L); in Wales, a C prefix (C1257L) — the number still represents the same £12,570 allowance, but tells HMRC which set of Income Tax bands to apply.",
+          "Codes drift away from 1257L for a handful of reasons: a company car or private medical insurance eating into your allowance, an old tax bill being clawed back through your current pay, having more than one income source (only one of which usually gets the full allowance), or claiming Marriage Allowance.",
+          "Live in Scotland and you'll see an S stuck on the front (S1257L); in Wales, a C (C1257L). Same £12,570 allowance underneath — the letter's just telling HMRC which set of bands to apply.",
         ],
       },
       {
         heading: "Checking your own code",
         paragraphs: [
-          "Your tax code appears on your payslip, your P60, and any PAYE coding notice HMRC sends you. If it looks wrong — for example, if you've changed jobs, lost a benefit, or started a second job — contact HMRC, since an incorrect code can mean you pay too much or too little tax throughout the year.",
-          "Enter any code into our Tax Code Checker to see exactly what allowance and meaning it represents, or use the Salary Calculator with your own code entered to see how it changes your take-home pay compared with the standard 1257L.",
+          "You'll find your code on your payslip, your P60, or any coding notice HMRC sends you directly. If it looks off — you've changed jobs, lost a benefit, picked up a second role — it's worth flagging to HMRC, because a wrong code quietly means you're paying too much or too little all year without realising.",
+          "Curious what a specific code actually means? Drop it into our Tax Code Checker. Or if you want to see the real-money difference it makes, put your own code into the Salary Calculator and compare it against the standard 1257L.",
         ],
       },
     ],
     faqs: [
-      { q: "Is 1257L the same for everyone?", a: "It's the standard code for most employees with one job and no adjustments, representing the full £12,570 Personal Allowance for 2026/27 — but your own code can differ based on your circumstances." },
-      { q: "What does a K code mean?", a: "A K code means your allowance is negative — usually because taxable benefits or previous underpaid tax exceed your Personal Allowance, so extra income is added to what gets taxed rather than subtracted from it." },
-      { q: "Why do I have a BR code on my second job?", a: "BR means all income from that source is taxed at the basic 20% rate with no Personal Allowance applied, because your allowance has already been given against your main job's tax code." },
+      { q: "Is 1257L the same for everyone?", a: "It's the default for most employees with one job and nothing unusual going on — the full £12,570 Personal Allowance for 2026/27. Your own code can still differ depending on your circumstances." },
+      { q: "What does a K code mean?", a: "Your allowance has gone negative — usually because taxable benefits or old underpaid tax outweigh your Personal Allowance, so extra income gets added to what's taxed rather than taken off it." },
+      { q: "Why do I have a BR code on my second job?", a: "Because your Personal Allowance has already been allocated to your main job's tax code, so everything from the second job is taxed at a flat 20% with no allowance of its own." },
     ],
   },
   {
@@ -162,36 +162,36 @@ export const GUIDES: Guide[] = [
       {
         heading: "What salary sacrifice actually is",
         paragraphs: [
-          "Salary sacrifice means contractually agreeing to give up part of your gross salary in exchange for a non-cash benefit — most commonly extra pension contributions, but sometimes childcare vouchers, a cycle-to-work scheme, or an electric car lease. Because your contractual salary is genuinely reduced, the sacrificed amount is removed before either Income Tax or National Insurance is calculated.",
-          "This is different from a standard 'net pay' pension contribution, which reduces your taxable income for Income Tax but not the earnings National Insurance is calculated on. Salary sacrifice reduces both.",
+          "Salary sacrifice sounds painful, but it's really just a contractual swap: you agree to take a bit less salary in exchange for something else — usually extra pension contributions, sometimes a cycle-to-work scheme, an electric car lease, or childcare. Because your actual contractual salary drops, that sacrificed chunk never gets taxed or NI'd in the first place.",
+          "Compare that with a normal 'net pay' pension contribution, which only sidesteps Income Tax — National Insurance still gets charged on the full amount. Salary sacrifice dodges both.",
         ],
       },
       {
         heading: "Why it saves more than a normal pension contribution",
         paragraphs: [
-          "Take a basic-rate taxpayer contributing £100 a month to a pension. Under a standard net pay arrangement, they save 20% Income Tax (£20) but still pay 8% National Insurance on that £100, so the real cost to their take-home pay is £92. Under salary sacrifice, the same £100 never counts as earnings at all, so neither the 20% tax nor the 8% NI applies — the cost to take-home pay drops to £72, with the employer also saving their 15% employer NI on the sacrificed amount (sometimes passed on as an extra pension boost).",
-          "The saving is proportionally similar for higher-rate taxpayers, though the NI rate above £50,270 drops to 2%, so the extra benefit from avoiding NI is smaller in cash terms at that point — but the Income Tax saving at 40% is larger.",
+          "Numbers make this clearer. A basic-rate taxpayer paying £100 a month into a pension the normal way saves the 20% tax (£20) but still pays 8% NI on it — so it actually costs them £92 of take-home pay. Do the same £100 through salary sacrifice instead, and it never counts as earnings at all: no 20% tax, no 8% NI. Real cost: £72. Even the employer saves their 15% NI on it, and plenty pass some of that saving straight back into your pension.",
+          "Higher-rate taxpayers see a similar story, just with smaller NI savings (the rate drops to 2% above £50,270) offset by a bigger Income Tax saving at 40%.",
         ],
       },
       {
         heading: "Where it can also help with the £100,000 and £60,000 traps",
         paragraphs: [
-          "Because salary sacrifice reduces your gross salary — not just your taxable income — it's an effective way to bring your income back under thresholds like the £100,000 Personal Allowance taper or the £60,000 point where Child Benefit starts being clawed back, since both are measured against income after pension contributions.",
-          "See our guide on how the £100,000 tax trap works for how this plays out in practice.",
+          "Because it genuinely lowers your gross salary — not just your taxable income on paper — salary sacrifice is one of the cleanest ways to duck under thresholds like the £100,000 Personal Allowance taper, or the £60,000 point where Child Benefit starts disappearing. Both are measured after pension contributions, so this actually moves the needle rather than just shuffling numbers around.",
+          "Worth reading alongside our guide on how the £100,000 tax trap works if that's the threshold you're trying to dodge.",
         ],
       },
       {
         heading: "What to watch out for",
         paragraphs: [
-          "Salary sacrifice reduces your 'official' salary, which can affect anything calculated from it — mortgage affordability assessments, life insurance multiples, statutory maternity pay, and some means-tested benefits can all be affected if your sacrifice is large. It can also reduce how much you're allowed to pay into a pension tax-efficiently if it pushes your income close to the £60,000 Annual Allowance (tapered for very high earners), so it's worth checking the numbers before sacrificing a large amount.",
-          "Also check that sacrificing doesn't take your pay below the National Minimum Wage, which employers aren't allowed to let happen — most pension salary sacrifice schemes build in a safeguard for this automatically.",
+          "It's not free money, though. Sacrificing your salary lowers the 'official' number used for things like mortgage affordability checks, life insurance multiples, statutory maternity pay, and some means-tested benefits — if you're sacrificing a big chunk, it's worth checking what else that number feeds into first. It can also eat into how much pension Annual Allowance you've got left if it pushes you close to the tapered £60,000 limit for high earners.",
+          "One more thing: your employer legally can't let salary sacrifice drop your pay below the National Minimum Wage. Most schemes build in a safeguard for this automatically, but it's still worth knowing the rule exists.",
         ],
       },
     ],
     faqs: [
-      { q: "Does salary sacrifice reduce my National Insurance as well as my tax?", a: "Yes — that's the main advantage over a standard pension contribution. Because your contractual salary is genuinely reduced, the sacrificed amount avoids both Income Tax and employee National Insurance." },
-      { q: "Can salary sacrifice affect my mortgage application?", a: "Potentially, yes. Lenders usually assess affordability on your actual contractual salary, so a large sacrifice can reduce the amount you're assessed as able to borrow." },
-      { q: "Is salary sacrifice only for pensions?", a: "Pensions are the most common use, but employers also offer it for benefits like cycle-to-work schemes, electric car leases and, in some cases, childcare." },
+      { q: "Does salary sacrifice reduce my National Insurance as well as my tax?", a: "Yes — that's the main thing it has over a normal pension contribution. Because your contractual salary genuinely drops, the sacrificed amount avoids both Income Tax and employee NI." },
+      { q: "Can salary sacrifice affect my mortgage application?", a: "It can. Lenders usually assess affordability on your actual contractual salary, so a large sacrifice can shrink what you're assessed as able to borrow." },
+      { q: "Is salary sacrifice only for pensions?", a: "Pensions are the most common use by far, but plenty of employers also run it for cycle-to-work schemes, electric car leases, and sometimes childcare." },
     ],
   },
   {
@@ -204,36 +204,36 @@ export const GUIDES: Guide[] = [
       {
         heading: "What NI is for",
         paragraphs: [
-          "Unlike Income Tax, which funds general government spending, National Insurance contributions build your entitlement to specific state benefits — most importantly the State Pension, but also contributory Jobseeker's Allowance and Employment and Support Allowance. You generally need at least 35 qualifying years of contributions (or credits) for the full new State Pension.",
-          "Employees pay what's called Class 1 National Insurance, deducted automatically from your pay by your employer, alongside a separate employer contribution that doesn't appear on your payslip and isn't deducted from your pay.",
+          "Income Tax pays for pretty much everything — roads, schools, the NHS, general government spending. National Insurance is different: it's specifically building your entitlement to the State Pension, plus a few contributory benefits like Jobseeker's Allowance. You need roughly 35 qualifying years to get the full new State Pension, and NI is how those years get counted.",
+          "What shows up on your payslip is Class 1 NI, deducted automatically by your employer. There's also a separate employer contribution running alongside it that never touches your pay at all — don't go looking for it on your payslip, because it isn't there.",
         ],
       },
       {
         heading: "The 2026/27 rates",
         paragraphs: [
-          "Employee Class 1 NI is charged at 8% on earnings between £12,570 and £50,270 a year, and at 2% on everything above £50,270, with no upper limit on that 2% band. Below £12,570, no employee NI is due at all. Unlike Income Tax bands, there's no equivalent of the Personal Allowance taper above £100,000 — the 2% rate simply continues indefinitely.",
-          "This is worked out on your gross earnings directly, not your taxable income — so a standard pension contribution that reduces your Income Tax bill (a net pay arrangement) does nothing to reduce the earnings NI is calculated on. Only salary sacrifice, which lowers your actual contractual salary, reduces your NI bill too.",
+          "The actual numbers: 8% on everything you earn between £12,570 and £50,270, then 2% on anything above that, with no ceiling on the 2% band — it just keeps going. Below £12,570, you pay nothing at all. And unlike Income Tax, there's no taper above £100,000 to worry about here; the 2% rate simply carries on regardless of how much you earn.",
+          "NI is worked out on your gross earnings, full stop — not your taxable income. So a standard pension contribution that knocks down your Income Tax bill does absolutely nothing to your NI bill. Only salary sacrifice, which genuinely lowers your contractual pay, touches the NI side too.",
         ],
       },
       {
         heading: "How NI differs from Income Tax in practice",
         paragraphs: [
-          "Because the NI rate drops from 8% to 2% once you cross £50,270, National Insurance as a share of income actually falls for higher earners, even as Income Tax rises from 20% to 40% at the same point. The two taxes move in opposite directions around that threshold, which is why total deductions don't rise as sharply as the Income Tax rate alone would suggest.",
-          "NI is also calculated separately for each job if you have more than one employment, each against its own threshold — which can mean paying slightly more combined NI across two jobs than you would on the same total income from a single job, since the lower NI-free portion effectively applies twice (though HMRC can arrange deferment in some cases).",
+          "Here's a quirk worth knowing: once you cross £50,270, your NI rate actually drops (8% to 2%), even as your Income Tax rate climbs (20% to 40%). The two taxes pull in opposite directions right at that threshold — part of why total deductions don't rise quite as steeply as the headline 40% rate alone would suggest.",
+          "Two jobs complicates things slightly, since NI is worked out separately against each job's own threshold — which can mean paying a touch more combined NI than if the same total income came through one employer. HMRC can sometimes arrange deferment if this applies to you.",
         ],
       },
       {
         heading: "When NI stops",
         paragraphs: [
-          "Once you reach State Pension age, you stop paying employee Class 1 National Insurance altogether, even if you keep working — though your employer's contribution continues as normal. This is one of the few genuine tax advantages of working past State Pension age.",
-          "Self-employed people pay under a different system — Class 2 and Class 4 National Insurance — calculated on profits rather than earnings, with different thresholds and rates to the employee figures above.",
+          "Reach State Pension age and your employee NI stops dead, even if you're still working full-time. Your employer's contribution carries on regardless, but yours doesn't — genuinely one of the only tax perks that comes with getting older.",
+          "Self-employed? Different system entirely — Class 2 and Class 4 NI, charged on profits rather than earnings, with its own thresholds that don't match anything above.",
         ],
       },
     ],
     faqs: [
-      { q: "What does National Insurance actually pay for?", a: "Mainly your entitlement to the State Pension, plus certain contributory benefits like Jobseeker's Allowance — unlike Income Tax, which funds general government spending." },
-      { q: "Does a pension contribution reduce my NI?", a: "Only if it's taken through salary sacrifice, which genuinely lowers your contractual salary. A standard net pay pension contribution reduces your Income Tax but not the earnings NI is calculated on." },
-      { q: "Do I stop paying NI at State Pension age?", a: "Yes — employee Class 1 National Insurance stops once you reach State Pension age, regardless of how much you continue to earn." },
+      { q: "What does National Insurance actually pay for?", a: "Mainly your entitlement to the State Pension, plus certain contributory benefits like Jobseeker's Allowance — unlike Income Tax, which just funds general government spending." },
+      { q: "Does a pension contribution reduce my NI?", a: "Only through salary sacrifice, which genuinely lowers your contractual salary. A standard net pay pension contribution cuts your Income Tax but leaves your NI bill untouched." },
+      { q: "Do I stop paying NI at State Pension age?", a: "Yes — employee Class 1 NI stops the moment you reach State Pension age, no matter how much you keep earning after that." },
     ],
   },
   {
@@ -246,13 +246,13 @@ export const GUIDES: Guide[] = [
       {
         heading: "Why there are several plans",
         paragraphs: [
-          "Which repayment plan you're on depends on when and where you started your course, not on how much you borrowed or which university you went to. Each plan has its own repayment threshold — the income level above which you start repaying — and the plan follows you for the life of the loan unless you take out a later loan that moves you onto a newer plan.",
+          "Nobody chooses their repayment plan — it's decided entirely by when and where you started your course, not how much you borrowed or which university you went to. Each plan comes with its own repayment threshold, and once you're on one, you generally stay on it for the life of the loan, unless a later course moves you onto something newer.",
         ],
       },
       {
         heading: "The 2026/27 thresholds",
         paragraphs: [
-          "Repayments are calculated as a percentage of your income above the threshold, deducted automatically through payroll if you're employed, in addition to — not instead of — Income Tax and National Insurance.",
+          "Whatever plan you're on, the repayment works the same way: a percentage of your income above the threshold, taken straight out of your pay alongside — not instead of — Income Tax and National Insurance.",
         ],
         bullets: [
           "Plan 1 (mostly pre-2012 English/Welsh starters, and Northern Ireland): threshold £26,900, repayment rate 9%",
@@ -265,22 +265,22 @@ export const GUIDES: Guide[] = [
       {
         heading: "A worked example",
         paragraphs: [
-          "Someone on Plan 2 earning £40,000 a year repays 9% of the amount above £29,385 — that's 9% of £10,615, or £955.35 a year, deducted on top of Income Tax and National Insurance. If their income instead sat at or below £29,385, nothing would be deducted at all that year, even though the loan balance continues accruing interest in the background.",
-          "If you're on a Postgraduate Loan and still repaying an undergraduate plan, both repayments apply simultaneously against their own separate thresholds — so it's possible to have 9% and 6% being deducted from different slices of your income at the same time.",
+          "Say you're on Plan 2, earning £40,000. You repay 9% of whatever's above £29,385 — that's 9% of £10,615, or £955.35 a year. Dip to or below the threshold and the deduction stops completely for that year, though interest keeps quietly accruing in the background regardless.",
+          "Got a Postgraduate Loan running alongside an old undergraduate one? Both apply at once, each against its own threshold — so it's entirely possible to have 9% and 6% coming out of different slices of your pay at the same time.",
         ],
       },
       {
         heading: "What it doesn't affect",
         paragraphs: [
-          "Student loan repayments are calculated on gross earnings in a similar way to National Insurance, not on taxable income — so they aren't reduced by a standard net pay pension contribution, though a salary sacrifice arrangement that lowers your contractual salary will reduce them, just as it reduces tax and NI.",
-          "Repayments stop automatically once the loan (plus accrued interest) is fully repaid, or after the loan is written off at the end of its term — typically 30 or 40 years after you became eligible to repay, depending on the plan — whichever comes first.",
+          "Like NI, student loan repayments are calculated on gross earnings rather than taxable income, so a standard pension contribution won't touch them. Salary sacrifice will, though, since it genuinely lowers your contractual pay.",
+          "And it doesn't go on forever: once the loan (plus whatever interest has piled up) is cleared, or the write-off date arrives — typically 30 or 40 years after you became eligible to repay, depending on the plan — the deductions simply stop.",
         ],
       },
     ],
     faqs: [
-      { q: "How do I know which plan I'm on?", a: "It depends on where and when you started your course. You can check on your student loan online account at gov.uk, or ask the Student Loans Company directly if you're unsure." },
+      { q: "How do I know which plan I'm on?", a: "It comes down to where and when you started your course. Check your student loan account at gov.uk, or ask the Student Loans Company directly if you're not sure." },
       { q: "Can I be on two plans at once?", a: "Yes — a Postgraduate Loan can run alongside an undergraduate Plan 1, 2, 4 or 5 repayment at the same time, each calculated against its own threshold." },
-      { q: "Does a pension contribution reduce my student loan repayment?", a: "Only if it's taken through salary sacrifice. A standard net pay pension contribution doesn't reduce the earnings your student loan repayment is calculated on." },
+      { q: "Does a pension contribution reduce my student loan repayment?", a: "Only if it's taken through salary sacrifice. A standard net pay pension contribution doesn't touch the earnings your repayment is calculated on." },
     ],
   },
   {
@@ -293,34 +293,34 @@ export const GUIDES: Guide[] = [
       {
         heading: "What it does",
         paragraphs: [
-          "Marriage Allowance lets one spouse or civil partner transfer £1,260 of their unused tax-free Personal Allowance to the other, as long as neither of them is a higher or additional-rate taxpayer. The receiving partner's tax bill is reduced by 20% of the transferred amount — £252 a year for 2026/27 — because that £1,260 would otherwise have been taxed at the basic rate.",
-          "It only makes sense where one partner isn't using their full Personal Allowance — typically because they earn below £12,570, or don't work at all — and the other earns enough to benefit from extra tax-free income, but not so much that they've become a higher-rate taxpayer.",
+          "Marriage Allowance is a fairly simple idea: one partner hands over £1,260 of their unused tax-free Personal Allowance to the other. Do the maths and that's worth £252 a year for 2026/27 — 20% of £1,260, since that's the rate it would otherwise have been taxed at.",
+          "It only actually helps if one of you isn't using your full allowance — typically because you earn under £12,570, or don't work — and the other earns enough to make use of extra tax-free income without tipping into higher-rate territory.",
         ],
       },
       {
         heading: "Who's eligible",
         paragraphs: [
-          "You can claim if you're married or in a civil partnership (not just living together), one of you earns below the £12,570 Personal Allowance (or has no income), and the other is a basic-rate taxpayer — meaning their income stays below £50,270 in England, Wales and Northern Ireland, or the equivalent higher-rate threshold in Scotland. If the recipient's income crosses into higher-rate territory, the allowance isn't available that year.",
+          "The rules: you need to be married or in a civil partnership (living together doesn't count, however long you've been together), one of you earning below £12,570 or nothing at all, and the other sitting as a basic-rate taxpayer — under £50,270 in England, Wales and Northern Ireland, or the Scottish equivalent. Cross into higher-rate territory and the allowance stops being available for that year.",
         ],
       },
       {
         heading: "How it shows up on a payslip",
         paragraphs: [
-          "If you transfer your allowance away, your tax code gets the suffix N (for example 1131N instead of 1257L), showing a reduced allowance. If you receive a transferred allowance, your code gets the suffix M instead, showing an increased one. Both partners' codes change, even though only one person's tax bill actually falls.",
+          "Transfer your allowance away and your code picks up an N (1131N instead of 1257L). Receive one and yours gets an M instead. Both of you will notice your code change, even though only one of you actually sees a smaller tax bill.",
         ],
       },
       {
         heading: "Backdating and how to claim",
         paragraphs: [
-          "You can backdate a claim for up to four previous tax years if you were eligible but didn't claim at the time, potentially bringing in several years' worth of the saving — up to roughly £1,250 in backdated claims on top of the current year, depending on exact historic allowance amounts. The claim is made online through gov.uk, and once accepted it continues automatically each year until one of you cancels it or your circumstances change.",
-          "Use our Marriage Allowance Calculator to check whether you're likely to be eligible and see the saving for your own numbers.",
+          "Here's a bit most people miss: you can backdate a claim up to four tax years if you were eligible but never got around to it — potentially worth up to roughly £1,250 on top of the current year, depending on the exact historic allowance amounts. It's a quick form on gov.uk, and once it's approved it just renews itself automatically every year until someone cancels it or your circumstances change.",
+          "Not sure if it's worth it for you? Our Marriage Allowance Calculator will tell you in about ten seconds.",
         ],
       },
     ],
     faqs: [
-      { q: "How much can Marriage Allowance save?", a: "Up to £252 a year for 2026/27, worked out as 20% of the £1,260 Personal Allowance that can be transferred between partners." },
-      { q: "Can we claim if we're not married, just living together?", a: "No — Marriage Allowance is only available to married couples and registered civil partners, not unmarried couples." },
-      { q: "Can I backdate a claim?", a: "Yes, for up to four previous tax years if you were eligible but didn't claim, in addition to the current year." },
+      { q: "How much can Marriage Allowance save?", a: "Up to £252 a year for 2026/27 — 20% of the £1,260 Personal Allowance that can be transferred between partners." },
+      { q: "Can we claim if we're not married, just living together?", a: "No — it's restricted to married couples and registered civil partners, however long an unmarried couple has lived together." },
+      { q: "Can I backdate a claim?", a: "Yes, up to four previous tax years if you were eligible but didn't claim at the time, on top of the current year." },
     ],
   },
   {
@@ -336,13 +336,13 @@ export const GUIDES: Guide[] = [
       {
         heading: "Gross pay and net pay",
         paragraphs: [
-          "Gross pay is your full salary before anything is taken off — the figure usually quoted in a job offer. Net pay (sometimes called take-home pay) is what actually lands in your bank account after every deduction. Everything else on a payslip exists to explain the gap between those two numbers.",
+          "Two numbers matter on a payslip, and pretty much everything else just explains the gap between them. Gross pay is the headline figure — what's in the job offer, before anything's taken off. Net pay (take-home pay) is what actually hits your bank account once every deduction has done its thing.",
         ],
       },
       {
         heading: "The deductions you'll usually see",
         paragraphs: [
-          "Most payslips break deductions into the same handful of categories, though the exact layout varies by employer and payroll software.",
+          "The exact layout differs by employer and whatever payroll software they use, but the deductions themselves tend to fall into the same handful of buckets.",
         ],
         bullets: [
           "Income Tax (PAYE) — calculated against your tax code and the current Income Tax bands for your region",
@@ -355,22 +355,22 @@ export const GUIDES: Guide[] = [
       {
         heading: "Your tax code and pay period figures",
         paragraphs: [
-          "Your tax code (commonly 1257L) tells payroll software how much tax-free allowance to apply — see our guide to what tax code 1257L means for the full breakdown of what the letters and numbers represent.",
-          "Most payslips also show 'year to date' figures alongside the current period's numbers — your total gross pay, tax and NI paid so far in the tax year (which runs 6 April to 5 April). These are worth checking periodically, since PAYE assumes an even income across the year, so a payslip after a bonus, pay rise, or missed pay period can look unusually taxed in isolation even though it evens out over the year.",
+          "Your tax code — usually 1257L — tells the payroll software how much to leave untaxed. We've got a whole guide on what 1257L actually means, if that string of letters and numbers has ever bugged you.",
+          "Most payslips also carry 'year to date' totals next to the current period's numbers — running totals of pay, tax and NI since 6 April. Worth a glance now and then: PAYE assumes your income is spread evenly across the year, so a payslip right after a bonus or a missed pay period can look oddly over- or under-taxed in isolation, even though it balances out by year-end.",
         ],
       },
       {
         heading: "When something looks wrong",
         paragraphs: [
-          "If your tax code doesn't match what you expect, if National Insurance looks miscalculated, or if a deduction appears that you don't recognise, the first step is usually to ask your payroll or HR team, since most discrepancies come down to a tax code that hasn't updated after a change in circumstances. If HMRC needs to correct your tax code, they'll normally issue a new one directly to your employer.",
-          "You can check your own numbers against our Salary Calculator (for the full picture) or the NI Calculator (for National Insurance specifically) using your actual gross pay and tax code to see what the figures should look like.",
+          "Tax code looks off, NI seems miscalculated, or there's a deduction you don't recognise? Start with payroll or HR — nine times out of ten it's a tax code that hasn't caught up with a change in your circumstances. If HMRC needs to fix it, they'll send the new code straight to your employer.",
+          "Or just run your actual gross pay and tax code through our Salary Calculator (for the full picture) or the NI Calculator (just the National Insurance line) and see what the numbers should actually look like.",
         ],
       },
     ],
     faqs: [
-      { q: "Why is my payslip different every month even though my salary hasn't changed?", a: "Small month-to-month differences are often down to the number of working days or pay-period rounding; larger swings usually come from a bonus, overtime, or a change in your tax code partway through the year." },
-      { q: "What's the difference between gross and net pay?", a: "Gross pay is your salary before any deductions; net pay is what you actually receive after Income Tax, National Insurance, pension and any other deductions." },
-      { q: "What does 'year to date' mean on my payslip?", a: "It's the running total of your pay, tax and National Insurance since the start of the current tax year on 6 April, which can be useful for spotting whether you're on track to overpay or underpay tax." },
+      { q: "Why is my payslip different every month even though my salary hasn't changed?", a: "Usually just the number of working days or pay-period rounding. Bigger swings tend to come from a bonus, some overtime, or a tax code that changed partway through the year." },
+      { q: "What's the difference between gross and net pay?", a: "Gross pay is your salary before anything's taken off. Net pay is what you actually receive once Income Tax, National Insurance, pension and any other deductions have come out." },
+      { q: "What does 'year to date' mean on my payslip?", a: "A running total of your pay, tax and National Insurance since the tax year started on 6 April — handy for spotting whether you're on track to over- or underpay tax." },
     ],
   },
   {
@@ -383,33 +383,33 @@ export const GUIDES: Guide[] = [
       {
         heading: "It's a slice tax, like Income Tax",
         paragraphs: [
-          "Stamp Duty Land Tax (SDLT) applies when you buy a property or land in England or Northern Ireland over a certain value (Scotland and Wales have their own equivalent taxes — Land and Buildings Transaction Tax and Land Transaction Tax respectively, with different rates). Like Income Tax, SDLT is charged in slices: each band of the purchase price is taxed at its own rate, so buying a slightly more expensive home never retroactively increases the rate on the cheaper slices you've already paid for.",
+          "Buy a property over a certain price in England or Northern Ireland, and Stamp Duty Land Tax (SDLT) applies. Scotland and Wales run their own versions instead — Land and Buildings Transaction Tax and Land Transaction Tax — with different rates, so this guide is specifically about the English and Northern Irish system. Like Income Tax, SDLT is charged in slices: each band of the price gets its own rate, so paying a bit more for a house never retroactively bumps up the rate on the cheaper slices underneath.",
         ],
       },
       {
         heading: "Standard residential rates",
         paragraphs: [
-          "For a main residence, nothing is due on the portion of the price up to £125,000, 2% is charged on the portion from £125,001 to £250,000, 5% from £250,001 to £925,000, 10% from £925,001 to £1.5 million, and 12% above that. Each rate only applies to its own slice of the price, not the whole purchase.",
+          "For a main residence: nothing on the first £125,000, 2% from £125,001 to £250,000, 5% from £250,001 to £925,000, 10% from £925,001 to £1.5 million, and 12% above that. Each rate only bites on its own slice of the price, never the whole purchase.",
         ],
       },
       {
         heading: "First-time buyer relief",
         paragraphs: [
-          "First-time buyers pay no SDLT on the first £300,000 of a property price (provided the whole property costs £500,000 or less), then 5% on the portion between £300,000 and £500,000. Above £500,000, first-time buyers lose the relief entirely and pay the standard rates on the full price instead. To qualify, every buyer on the purchase must be a genuine first-time buyer who has never owned a residential property anywhere in the world before.",
+          "First-time buyers get a better deal — nothing at all on the first £300,000, provided the whole property costs £500,000 or less, then 5% on the slice between £300,000 and £500,000. Go even a pound over £500,000, though, and the relief disappears entirely — you're back on the standard rates for the full price. Every buyer on the purchase needs to be a genuine first-timer, anywhere in the world, for this to apply.",
         ],
       },
       {
         heading: "The extra-property surcharge",
         paragraphs: [
-          "Buying an additional residential property — a second home or a buy-to-let — usually adds a 5% surcharge on top of the standard rates for every band, including the portion that would otherwise be tax-free. There are two notable exceptions: the surcharge doesn't apply if you're replacing your main residence (even if you briefly own two homes while the sale and purchase overlap, provided the old home is sold within 36 months), and it doesn't apply to purchases below £40,000, which are exempt from the surcharge regardless of how many other properties you own.",
-          "Our Stamp Duty Calculator applies all of these rules automatically — enter the price, whether you're a first-time buyer, and whether the surcharge applies, and it works out the exact SDLT due slice by slice.",
+          "Buying a second home or a buy-to-let usually means an extra 5% on top of every band — including the slice that would otherwise be tax-free. Two exceptions worth knowing: it doesn't apply if you're replacing your main home (even briefly owning two while a sale and purchase overlap, as long as the old one sells within 36 months), and it doesn't apply to purchases below £40,000, regardless of how many other properties you own.",
+          "Our Stamp Duty Calculator handles all of this automatically — price, first-time buyer status, surcharge or not — and works out the exact bill slice by slice.",
         ],
       },
     ],
     faqs: [
-      { q: "Is Stamp Duty charged on the whole price or in slices?", a: "In slices — each band of the purchase price is taxed at its own rate, similar to how Income Tax bands work, so a higher price only increases the rate on the portion above each threshold." },
-      { q: "Do first-time buyers always avoid Stamp Duty?", a: "Only up to £300,000, and only if the total property price is £500,000 or less. Above £500,000, first-time buyer relief doesn't apply at all and standard rates are charged on the full price." },
-      { q: "Does the extra-property surcharge apply if I'm selling my old home at the same time?", a: "No, provided you're replacing your main residence and sell your previous home within 36 months of the new purchase — in that case the surcharge doesn't apply." },
+      { q: "Is Stamp Duty charged on the whole price or in slices?", a: "In slices, much like Income Tax bands — each portion of the price is taxed at its own rate, so a higher price only increases the rate on the bit above each threshold." },
+      { q: "Do first-time buyers always avoid Stamp Duty?", a: "Only up to £300,000, and only if the total property price is £500,000 or less. Go above £500,000 and the relief disappears completely — standard rates apply to the full price." },
+      { q: "Does the extra-property surcharge apply if I'm selling my old home at the same time?", a: "No, as long as you're replacing your main residence and sell the previous one within 36 months of the new purchase — the surcharge doesn't apply in that case." },
     ],
   },
   {
@@ -422,35 +422,35 @@ export const GUIDES: Guide[] = [
       {
         heading: "What Capital Gains Tax applies to",
         paragraphs: [
-          "Capital Gains Tax (CGT) is charged on the profit — the gain — you make when you sell or dispose of most assets that have increased in value, including shares, investment funds, and property that isn't your main home. It's charged on the gain only, not the full sale price, and only once that gain exceeds your annual tax-free allowance.",
-          "Your main home is normally exempt under Private Residence Relief, and personal possessions worth under £6,000 each (like most cars and everyday belongings) are also outside the scope of CGT entirely.",
+          "Sell something that's gone up in value — shares, a fund, a second property — and Capital Gains Tax (CGT) might apply to the profit. Just the profit, mind, not the sale price, and only once it clears your annual tax-free allowance.",
+          "Your own home is usually safe under Private Residence Relief, and personal items worth under £6,000 each — most cars, most everyday belongings — sit outside CGT entirely.",
         ],
       },
       {
         heading: "The tax-free allowance",
         paragraphs: [
-          "For 2026/27, the first £3,000 of gains in a tax year is tax-free for individuals. Gains above that are taxable at rates that depend on your overall income for the year — not a fixed CGT rate on its own.",
+          "The allowance itself is modest these days: £3,000 of gains a year, tax-free, for 2026/27. Anything above that gets taxed at a rate that depends on your income for the year — there's no single flat CGT rate to quote.",
         ],
       },
       {
         heading: "How the rate is actually worked out",
         paragraphs: [
-          "The taxable gain (after deducting the £3,000 allowance) is effectively stacked on top of your other taxable income. Any part of the gain that falls within your remaining basic-rate Income Tax band is taxed at 18%, and any part above that — in the higher or additional-rate bands — is taxed at 24%.",
-          "For example, someone with £40,000 of other taxable income and a £20,000 gain (after the allowance) has £10,270 of basic-rate band left before reaching the £50,270 higher-rate threshold. That portion of the gain is taxed at 18% (£1,848.60), and the remaining £9,730 is taxed at 24% (£2,335.20) — a total CGT bill of £4,183.80.",
+          "Think of your taxable gain (after the £3,000 allowance) as sitting on top of your other income. Whatever fits inside your remaining basic-rate band gets taxed at 18%; the rest, pushed into higher or additional-rate territory, gets taxed at 24%.",
+          "Worked example: £40,000 of other income, plus a £20,000 gain after the allowance. That leaves £10,270 of basic-rate band before hitting the £50,270 higher-rate line, so that slice is taxed at 18% (£1,848.60), and the remaining £9,730 at 24% (£2,335.20). Total bill: £4,183.80.",
         ],
       },
       {
         heading: "What reduces a taxable gain",
         paragraphs: [
-          "The gain itself is calculated as the sale price minus what you originally paid, minus allowable costs like Stamp Duty on the original purchase, estate agent and legal fees, and the cost of any improvements (though not routine maintenance). Losses on other asset sales in the same tax year — or carried forward from previous years — can also be deducted from gains before the allowance and rates are applied.",
-          "Our Capital Gains Tax Calculator applies the £3,000 allowance and the 18%/24% split automatically once you enter your gain and other taxable income.",
+          "Your actual gain is the sale price minus what you paid, minus costs like the original Stamp Duty, legal and agent fees, and genuine improvements (not routine upkeep — a new kitchen counts, a repainted wall doesn't). Losses from other sales in the same tax year, or carried forward from previous ones, come off before the allowance and rates are applied.",
+          "Enter your gain and other income into our Capital Gains Tax Calculator and it handles the £3,000 allowance and the 18%/24% split for you.",
         ],
       },
     ],
     faqs: [
-      { q: "How much can I make tax-free on Capital Gains Tax?", a: "£3,000 per individual for 2026/27 — gains above that are taxable at 18% or 24% depending on your income." },
-      { q: "Does selling my own home trigger Capital Gains Tax?", a: "Usually not — your main residence is normally covered by Private Residence Relief, which exempts most people from CGT when selling the home they actually live in." },
-      { q: "Why is my CGT rate not just one fixed percentage?", a: "Because the rate depends on how much of your taxable gain falls within your remaining basic-rate Income Tax band (taxed at 18%) versus the higher or additional-rate bands (taxed at 24%) — it's based on your total income for the year, not the gain alone." },
+      { q: "How much can I make tax-free on Capital Gains Tax?", a: "£3,000 per individual for 2026/27 — anything above that is taxed at 18% or 24% depending on your income." },
+      { q: "Does selling my own home trigger Capital Gains Tax?", a: "Usually not. Private Residence Relief covers most people when selling the home they actually live in." },
+      { q: "Why is my CGT rate not just one fixed percentage?", a: "Because it depends on how much of your taxable gain falls within your remaining basic-rate band (18%) versus higher or additional-rate territory (24%) — it's based on your total income for the year, not the gain in isolation." },
     ],
   },
   {
@@ -463,34 +463,34 @@ export const GUIDES: Guide[] = [
       {
         heading: "The standard nil-rate band",
         paragraphs: [
-          "Inheritance Tax is charged at 40% on the value of an estate above the available nil-rate band — the tax-free threshold everyone gets. For 2026/27, the standard nil-rate band is £325,000 per person, a figure that has been frozen at this level since 2009. Anything left to a spouse, civil partner, or a registered charity is exempt from Inheritance Tax entirely, regardless of value, and doesn't use up any of the nil-rate band.",
+          "Inheritance Tax takes 40% of an estate's value above the nil-rate band — the tax-free slice everyone gets. For 2026/27 that's £325,000 per person, a figure that's been frozen since 2009 (yes, really — over fifteen years without moving). Leave anything to a spouse, civil partner or registered charity, though, and it's exempt entirely, no matter the value, and it doesn't even touch your nil-rate band.",
         ],
       },
       {
         heading: "The residence nil-rate band",
         paragraphs: [
-          "On top of the standard band, an extra residence nil-rate band of £175,000 is available if the main home is left to children, grandchildren, or other direct descendants. Combined, that gives most individuals up to £500,000 of tax-free estate value (£325,000 plus £175,000), provided the estate includes a home passing to direct descendants.",
-          "The residence nil-rate band tapers away for larger estates: it reduces by £1 for every £2 the total estate exceeds £2 million, disappearing completely once the estate reaches £2.35 million.",
+          "There's a second allowance on top — £175,000 — if the main home goes to children, grandchildren or other direct descendants. Stack it with the standard band and most people can pass on up to £500,000 tax-free, as long as a home's involved and it's going to direct descendants.",
+          "It does taper away for bigger estates, though: £1 lost for every £2 the estate sits above £2 million, gone completely by £2.35 million.",
         ],
       },
       {
         heading: "Why some couples can shelter up to £1 million",
         paragraphs: [
-          "Any unused nil-rate band from a deceased spouse or civil partner can be transferred to the survivor's estate when they later die — effectively doubling what's available. A married couple who leave everything to each other first, then to their children on the second death, can between them shelter up to £650,000 of standard nil-rate band plus up to £350,000 of residence nil-rate band — a combined £1 million before Inheritance Tax applies, assuming neither used any of their own allowance on an earlier gift or bequest.",
+          "Here's the bit that surprises people: any nil-rate band your spouse didn't use gets transferred to you when they die. Leave everything to each other first, then to the kids on the second death, and a couple can combine up to £650,000 of standard nil-rate band with £350,000 of residence nil-rate band — £1 million, tax-free, before the 40% rate even enters the conversation (assuming neither of you used up your own allowance earlier on other gifts).",
         ],
       },
       {
         heading: "What else affects the bill",
         paragraphs: [
-          "Gifts made in the seven years before death can also count against the nil-rate band under 'taper relief' rules, with the tax rate on those gifts gradually reducing the longer before death they were made. Larger gifts made more than seven years before death generally fall outside the estate altogether for Inheritance Tax purposes.",
-          "Our Inheritance Tax Calculator applies the standard and residence nil-rate bands (including the transferable allowance from a spouse) automatically to estimate the tax due on an estate.",
+          "Gifts made in the seven years before death can still count against the nil-rate band, under what's called taper relief — the tax on them reduces the longer before death they were made. Go further back than seven years with a gift and it generally falls outside the estate altogether.",
+          "Our Inheritance Tax Calculator folds in both nil-rate bands — plus any transferred from a spouse — to give you a working estimate.",
         ],
       },
     ],
     faqs: [
-      { q: "How much can I leave tax-free?", a: "Most individuals can leave up to £500,000 tax-free — £325,000 standard nil-rate band plus £175,000 residence nil-rate band if a home passes to direct descendants. Married couples can potentially combine their allowances for up to £1 million." },
-      { q: "Does everything left to a spouse avoid Inheritance Tax?", a: "Yes — transfers to a spouse or civil partner are exempt from Inheritance Tax regardless of value, and don't use up any nil-rate band." },
-      { q: "Does the residence nil-rate band apply to any property?", a: "Only if the home is left to direct descendants, such as children or grandchildren — leaving it to a sibling, friend, or anyone else doesn't qualify for this extra band." },
+      { q: "How much can I leave tax-free?", a: "Most individuals can pass on up to £500,000 tax-free — £325,000 standard nil-rate band plus £175,000 residence nil-rate band, if a home goes to direct descendants. Couples can potentially combine their allowances for up to £1 million." },
+      { q: "Does everything left to a spouse avoid Inheritance Tax?", a: "Yes — transfers to a spouse or civil partner are exempt regardless of value, and don't use up any nil-rate band." },
+      { q: "Does the residence nil-rate band apply to any property?", a: "Only if it's left to direct descendants — children, grandchildren and so on. Leave it to a sibling or a friend and this extra band doesn't apply." },
     ],
   },
   {
@@ -503,35 +503,35 @@ export const GUIDES: Guide[] = [
       {
         heading: "The basic idea",
         paragraphs: [
-          "Pension tax relief means the government effectively refunds the Income Tax you would otherwise have paid on money you put into a pension, up to certain limits. Put simply, money that would have gone to HMRC as tax goes into your pension instead — which is why pension contributions are often described as costing less than the amount that actually lands in the pot.",
+          "Pension tax relief is the government quietly giving you back the tax you'd otherwise have paid on money you put into a pension. Put another way: cash that would've gone to HMRC goes into your pension pot instead — exactly why a pension contribution always costs less than what actually lands in the pot.",
         ],
       },
       {
         heading: "Relief at source vs net pay arrangements",
         paragraphs: [
-          "There are two common ways relief is given. Under 'relief at source' (typical for personal pensions and some workplace schemes), you pay in from your take-home pay, and the pension provider automatically claims 20% basic-rate relief from HMRC and adds it to your pot — so a £80 contribution from your pocket becomes £100 in the pension.",
-          "Under a 'net pay arrangement' (common for many workplace pensions), your contribution comes out of your gross salary before Income Tax is calculated, so you get relief immediately at your full marginal rate through payroll, with no separate claim needed.",
+          "There are two ways this actually happens. 'Relief at source' — common for personal pensions — takes your contribution from pay you've already been taxed on, then the provider claims back 20% from HMRC and tops up your pot automatically. Put in £80, end up with £100.",
+          "A 'net pay arrangement' — common in workplace schemes — takes the contribution before tax is even worked out, so you get relief at your full rate immediately, through payroll, with nothing to claim afterwards.",
         ],
       },
       {
         heading: "Why higher-rate taxpayers often need to claim extra",
         paragraphs: [
-          "Under relief at source, the pension provider only ever claims the basic 20% automatically — regardless of your actual tax rate. If you're a higher-rate (40%) or additional-rate (45%) taxpayer, you need to claim the extra relief yourself, usually through your Self Assessment return or by contacting HMRC directly, since it isn't given automatically.",
-          "This means a £100 gross pension contribution genuinely costs a higher-rate taxpayer only £60 once the extra relief is claimed back — £20 automatically added by the provider, and a further £20 refunded directly to the taxpayer (not into the pension) after they claim it.",
+          "Here's the catch with relief at source: the provider only ever claims the basic 20%, no matter what you actually pay. Higher-rate (40%) and additional-rate (45%) taxpayers have to go and claim the rest themselves — usually through Self Assessment — because it doesn't happen automatically.",
+          "Work it through and a £100 pension contribution really only costs a higher-rate taxpayer £60 once they've claimed it back: £20 added automatically by the provider, and another £20 refunded straight to them (not into the pension) after they ask for it.",
         ],
       },
       {
         heading: "What limits how much relief you can get",
         paragraphs: [
-          "The Annual Allowance caps how much can go into your pension each year while still getting tax relief — most people can get relief on contributions up to the lower of their UK earnings or £60,000 a year, though this tapers down for very high earners with income (including pension contributions) above £260,000. Unused allowance from the previous three tax years can sometimes be carried forward, letting you contribute — and get relief on — more than the standard annual limit in a single year.",
-          "Our Pension Tax Relief Calculator estimates the relief you'd get on a contribution based on your income, including the extra relief a higher or additional-rate taxpayer would need to claim back separately.",
+          "There's a ceiling, obviously — the Annual Allowance. Most people get relief on contributions up to the lower of their earnings or £60,000 a year, tapering down for very high earners above £260,000. You can sometimes carry forward unused allowance from the previous three years if you want to put in more in a single year.",
+          "Our Pension Tax Relief Calculator works out the relief on a given contribution at your income level, extra claim included.",
         ],
       },
     ],
     faqs: [
-      { q: "Do I automatically get full tax relief on my pension?", a: "Only if you're a basic-rate taxpayer, or your pension uses a net pay arrangement. Under relief at source, higher and additional-rate taxpayers need to claim the extra relief above 20% themselves, usually via Self Assessment." },
-      { q: "What's the difference between relief at source and a net pay arrangement?", a: "Relief at source takes your contribution from already-taxed pay and has the pension provider claim back 20% automatically; a net pay arrangement takes the contribution from your gross pay before tax, giving relief at your full rate immediately through payroll." },
-      { q: "How much can I pay into a pension and still get tax relief?", a: "Up to the lower of your UK earnings or £60,000 a year for most people, tapering down for very high earners with total income above £260,000, with some ability to carry forward unused allowance from the previous three years." },
+      { q: "Do I automatically get full tax relief on my pension?", a: "Only if you're a basic-rate taxpayer, or your scheme uses a net pay arrangement. Under relief at source, higher and additional-rate taxpayers need to claim the extra relief above 20% themselves, usually via Self Assessment." },
+      { q: "What's the difference between relief at source and a net pay arrangement?", a: "Relief at source takes your contribution from already-taxed pay and has the provider claim back 20%; a net pay arrangement takes it from your gross pay before tax, giving full-rate relief immediately through payroll." },
+      { q: "How much can I pay into a pension and still get tax relief?", a: "Up to the lower of your earnings or £60,000 a year for most people, tapering down above £260,000 of total income, with some scope to carry forward unused allowance from the last three years." },
     ],
   },
   {
@@ -544,35 +544,35 @@ export const GUIDES: Guide[] = [
       {
         heading: "The Personal Savings Allowance",
         paragraphs: [
-          "Most people don't pay any tax on their savings interest, thanks to the Personal Savings Allowance (PSA). Basic-rate taxpayers can earn up to £1,000 of savings interest a year tax-free, higher-rate taxpayers get a reduced £500, and additional-rate taxpayers (income over £125,140) get no PSA at all — every pound of their interest is potentially taxable.",
-          "Which band applies depends on your total income, not just your interest — a basic-rate taxpayer whose interest tips their total income into higher-rate territory could lose some of their £1,000 allowance for that year.",
+          "Most people pay zero tax on savings interest — the Personal Savings Allowance (PSA) sees to that. Basic-rate taxpayers get £1,000 of interest tax-free a year, higher-rate taxpayers get £500, and additional-rate taxpayers (over £125,140) get nothing at all — every penny of their interest is potentially taxable.",
+          "Which band you fall into depends on your total income, not just the interest itself — so if interest happens to tip you into higher-rate territory, you could lose part of that £1,000 allowance for the year.",
         ],
       },
       {
         heading: "There's a second allowance for low earners",
         paragraphs: [
-          "On top of the PSA, there's a 0% starting rate for savings of up to £5,000, available to anyone whose other income (salary, pension, etc.) is low enough that it doesn't fully use up their Personal Allowance and basic-rate band. In practice this mostly helps people with little or no earned income — a pensioner with a small private pension and large savings balance, for example — rather than the average full-time employee.",
-          "Combining the Personal Allowance, the starting rate for savings, and the PSA, it's entirely possible for someone with low earned income to receive several thousand pounds of interest a year completely tax-free.",
+          "Less well known: a 0% starting rate for savings worth up to £5,000, available to anyone whose other income doesn't fully use up their Personal Allowance and basic-rate band. In practice that's mostly retirees with a small pension and a decent savings pot, rather than the average employee — but it's worth knowing it exists.",
+          "Stack the Personal Allowance, the starting rate, and the PSA together, and someone with modest earned income can genuinely receive several thousand pounds of interest a year without owing HMRC anything.",
         ],
       },
       {
         heading: "ISAs sit outside all of this",
         paragraphs: [
-          "Interest earned inside a Cash ISA (or the cash portion of a Stocks and Shares ISA) is always tax-free, no matter how large the balance or how much interest it generates, and it doesn't use up any part of your PSA. For anyone already holding a large savings balance outside an ISA and paying tax on the interest, moving money into an ISA (within the annual £20,000 ISA allowance) is usually the simplest way to stop that happening going forward.",
+          "Interest inside a Cash ISA — or the cash side of a Stocks and Shares ISA — is always tax-free, full stop, no matter the balance, and it never touches your PSA. If you're sitting on savings outside an ISA and paying tax on the interest, moving it inside one (up to the £20,000 annual ISA allowance) is usually the easiest fix.",
         ],
       },
       {
         heading: "How the tax actually gets collected",
         paragraphs: [
-          "You don't need to tell HMRC about interest that stays within your PSA. Banks and building societies report interest they pay you directly to HMRC each year, and if you owe tax on interest above your allowance, HMRC usually collects it automatically by adjusting your PAYE tax code for the following year, rather than asking you to file anything. Only people already filing a Self Assessment return (for other reasons, such as self-employment) typically report savings interest that way instead.",
-          "Our Savings Interest Calculator projects how a balance grows with compound interest — use the allowances above to work out whether the interest it shows would actually be taxable for you.",
+          "You don't have to tell HMRC about interest that stays within your PSA — there's nothing to do there. Banks report what they've paid you straight to HMRC each year, and if you do owe tax above your allowance, it's usually collected automatically through next year's tax code rather than a bill landing on your doormat. Only people already doing Self Assessment for other reasons tend to report it that way instead.",
+          "Our Savings Interest Calculator shows how a balance grows with compound interest — use the allowances above to work out whether any of that growth would actually be taxable for you.",
         ],
       },
     ],
     faqs: [
-      { q: "How much savings interest can I earn tax-free?", a: "Up to £1,000 a year if you're a basic-rate taxpayer, £500 if you're higher-rate, and £0 if you're an additional-rate taxpayer — on top of that, a 0% starting rate for savings of up to £5,000 is available to people with low other income." },
-      { q: "Do I need to declare savings interest to HMRC myself?", a: "Usually not. Banks and building societies report interest paid to you directly to HMRC, who collect any tax owed by adjusting your tax code — you only need to report it yourself if you already file a Self Assessment return." },
-      { q: "Does interest in an ISA count towards my Personal Savings Allowance?", a: "No — interest earned inside an ISA is always tax-free and doesn't use up any of your Personal Savings Allowance, regardless of how much you hold or earn." },
+      { q: "How much savings interest can I earn tax-free?", a: "£1,000 a year for basic-rate taxpayers, £500 for higher-rate, and nothing for additional-rate taxpayers — plus a separate 0% starting rate of up to £5,000 for people with low other income." },
+      { q: "Do I need to declare savings interest to HMRC myself?", a: "Usually not. Banks report what they've paid you directly to HMRC, who adjust your tax code to collect anything owed — you'd only report it yourself if you already file a Self Assessment return." },
+      { q: "Does interest in an ISA count towards my Personal Savings Allowance?", a: "No. ISA interest is always tax-free and never touches your PSA, however large the balance." },
     ],
   },
   {
@@ -585,34 +585,34 @@ export const GUIDES: Guide[] = [
       {
         heading: "Two different systems, depending on age",
         paragraphs: [
-          "Vehicle Excise Duty (VED) works differently depending on when a car was first registered. Cars registered on or after 1 April 2017 use the CO₂-emissions-based first year rate, then a flat standard rate, system described below. Cars registered before that date are taxed under an older system based on either engine size (pre-2001) or a wider set of CO₂ emissions bands (2001-2017), which generally works out cheaper for smaller, older cars than the current system would.",
+          "Vehicle Excise Duty (VED) — still called road tax by basically everyone — isn't one simple system, it's two, split by registration date. Cars registered from 1 April 2017 onward use the CO₂-based first-year rate followed by a flat standard rate, covered below. Anything older runs on an earlier system based on engine size (pre-2001) or a different set of CO₂ bands (2001–2017), and it's usually cheaper for smaller, older cars than the current rules would be.",
         ],
       },
       {
         heading: "First year, then a flat rate",
         paragraphs: [
-          "For a car registered after 1 April 2017, the first year's VED is tiered by the car's CO₂ emissions — the higher the emissions, the higher the rate, found on the V5C registration certificate. From the second year onwards, almost all cars switch to a flat standard rate of £200 a year, regardless of their emissions figure, so a small efficient car and a large performance car on the road since year two cost the same to tax.",
+          "For anything registered after April 2017: year one is priced by CO₂ emissions (check the V5C for the figure) — the dirtier the car, the steeper the rate. From year two, nearly everything drops to a flat £200 a year, emissions irrelevant. A thrifty hatchback and a thirsty performance car cost exactly the same to tax from that point on.",
         ],
       },
       {
         heading: "The expensive car supplement",
         paragraphs: [
-          "Cars with a list price (the manufacturer's price when new, not what you paid) over £50,000 pay an extra £440 a year on top of the standard rate, for 5 years starting from the second year of registration. A car in this bracket therefore pays £640 a year in years two to six, dropping back to the standard £200 from year seven onwards.",
-          "Electric cars lost their VED exemption from April 2025 and now follow the same rules as petrol and diesel cars, including the expensive car supplement where the list price exceeds £50,000 — though their first-year rate is usually low, since it's still based on their minimal CO₂ emissions figure.",
+          "Cars with a list price over £50,000 when new get hit with an extra £440 a year on top of the standard rate, for five years starting in year two. Work it through and that's £640 a year for years two through six, dropping back to £200 once the five years are up.",
+          "Electric cars used to dodge all of this — not anymore. Since April 2025 they're taxed exactly like petrol and diesel, expensive car supplement included if the list price was over £50,000. Their first-year rate still tends to be low, though, since it's based on their minimal emissions figure.",
         ],
       },
       {
         heading: "SORN and exemptions",
         paragraphs: [
-          "If a vehicle is off the road and not being used or parked on a public road, you can declare a Statutory Off Road Notification (SORN) and stop paying VED on it until it's back in use. A small number of vehicle classes are exempt from VED entirely regardless of age — including vehicles used by a disabled person under certain schemes, and vehicles over 40 years old registered under the 'historic vehicle' tax class.",
-          "Our Vehicle Tax Calculator estimates the first-year and standard-rate VED for cars registered after April 2017 — use it alongside your V5C's CO₂ figure and the car's original list price for the most accurate estimate.",
+          "Vehicle sitting unused off the road? Declare a SORN (Statutory Off Road Notification) and the VED stops until it's back in use. A handful of vehicle types are exempt regardless of age — certain disabled-driver schemes, and anything over 40 years old registered as a historic vehicle.",
+          "Our Vehicle Tax Calculator estimates the first-year and standard-rate VED for anything registered after April 2017 — grab the CO₂ figure and list price from the V5C for the most accurate number.",
         ],
       },
     ],
     faqs: [
       { q: "Why does my older car not fit the £200 standard rate?", a: "Cars registered before 1 April 2017 are taxed under an earlier system based on engine size or a different set of CO₂ bands, which can work out cheaper than the current flat rate for smaller or older cars." },
-      { q: "Do electric cars pay vehicle tax?", a: "Yes, since April 2025. Electric cars now follow the same VED rules as petrol and diesel cars, including the expensive car supplement if their list price when new was over £50,000." },
-      { q: "What happens if I don't drive my car for a while?", a: "You can declare a SORN (Statutory Off Road Notification) to stop paying VED while the vehicle is off the road and not in use, rather than paying tax on a car that's parked up." },
+      { q: "Do electric cars pay vehicle tax?", a: "Yes, since April 2025 — same rules as petrol and diesel, including the expensive car supplement if the list price when new was over £50,000." },
+      { q: "What happens if I don't drive my car for a while?", a: "Declare a SORN and VED stops while the vehicle is genuinely off the road and unused, rather than paying tax on a car that's just sitting there." },
     ],
   },
   {
@@ -625,35 +625,35 @@ export const GUIDES: Guide[] = [
       {
         heading: "Every payment is part interest, part capital",
         paragraphs: [
-          "On a standard repayment loan — most personal loans, car finance and repayment mortgages — your monthly payment is fixed, but what it's made of changes every month. Interest is charged on whatever you still owe, which is highest at the very start of the loan, so early payments are mostly interest with only a small amount reducing the balance. As the balance falls, less interest is charged on it, so later payments tip increasingly towards paying off capital instead.",
+          "Most loans — personal loans, car finance, repayment mortgages — work the same way: your monthly payment is fixed, but what it's actually made of shifts every single month. Interest gets charged on whatever you still owe, and that's at its highest right at the start, so early payments are mostly interest, barely denting the balance. As the balance shrinks, so does the interest charged on it, and later payments swing increasingly toward paying off capital instead.",
         ],
       },
       {
         heading: "APR isn't just the interest rate",
         paragraphs: [
-          "APR (Annual Percentage Rate) rolls the interest rate and any mandatory fees into a single yearly figure, specifically so loans with different fee structures can be compared fairly. A loan advertised with a lower interest rate but a large arrangement fee can have a higher APR — and cost more overall — than a loan with a slightly higher rate but no fees, which is why APR, not the headline interest rate, is the number worth comparing between offers.",
-          "Advertised rates are often a 'representative APR', meaning at least 51% of successful applicants get that rate or better — the rest, often including anyone with a thinner credit history, get a higher personal rate once they actually apply.",
+          "APR bundles the interest rate and any mandatory fees into one yearly figure, specifically so loans with wildly different fee structures can actually be compared. A loan with a lower headline rate but a chunky arrangement fee can end up with a higher APR — and cost more overall — than one with a slightly higher rate and no fees. APR is the number worth comparing, not the rate on the poster.",
+          "One more thing worth knowing: advertised rates are usually 'representative', meaning at least 51% of successful applicants get that rate or better. Everyone else — often anyone with a thinner credit history — gets offered something worse once they actually apply.",
         ],
       },
       {
         heading: "Term length is a real trade-off, not just a bigger or smaller payment",
         paragraphs: [
-          "Stretching a loan over a longer term lowers the monthly payment, which helps affordability, but it also means paying interest for longer — so the total cost of the loan rises even though the interest rate hasn't changed. A £10,000 loan at 6% APR costs roughly £1,601 in interest over 5 years, but around £2,276 over 7 years — about £675 more, purely from extending the term. It's worth weighing a lower monthly payment against that extra lifetime cost deliberately, not choosing the longest term by default.",
+          "Stretch the term and the monthly payment drops, which helps if affordability's tight — but you pay interest for longer, so the total cost climbs even though the rate hasn't moved an inch. A £10,000 loan at 6% APR costs about £1,601 in interest over 5 years, but roughly £2,276 over 7 — nearly £675 more, purely from stretching it out. Worth weighing that trade-off deliberately rather than just defaulting to the longest term on offer.",
         ],
       },
       {
         heading: "Overpaying works — but check for a penalty first",
         paragraphs: [
-          "Because interest is charged on the outstanding balance, any extra payment beyond the required monthly amount reduces the balance immediately, which cuts the interest charged on it every month afterwards — extra payments made earlier in the loan save more interest than the same amount paid later. Many lenders cap the amount you can overpay each year (commonly 10% of the balance) without an early repayment charge, so it's worth checking your loan's terms before making a large lump-sum overpayment.",
-          "Our Loan Repayment Calculator shows the fixed monthly payment and total interest for a given amount, rate and term — try a couple of different term lengths to see the affordability-versus-total-cost trade-off for yourself.",
+          "Because interest is charged on whatever's still outstanding, any overpayment shrinks the balance immediately, and every month after that you're charged interest on a smaller number. Pay extra early in the loan and you save more than paying the same extra amount later on. Just check first — many lenders cap penalty-free overpayments at around 10% of the balance a year, so a big lump sum could land you a fee.",
+          "Our Loan Repayment Calculator shows the fixed monthly payment and total interest for any amount, rate and term — worth running a couple of different term lengths to see the affordability-versus-cost trade-off for yourself.",
         ],
       },
     ],
     faqs: [
-      { q: "Why is so much of my early payment just interest?", a: "Interest is charged on your outstanding balance, which is at its highest at the start of the loan, so a bigger share of each payment goes on interest early on and a bigger share goes on capital later, once the balance has fallen." },
-      { q: "Is APR the same as the interest rate?", a: "No — APR includes both the interest rate and any mandatory fees in a single yearly figure, which is why it's the number to compare between loans rather than the headline interest rate alone." },
-      { q: "Does a longer loan term cost more overall?", a: "Yes, even at the same interest rate, because you're paying interest on the outstanding balance for longer — a lower monthly payment over a longer term usually means more total interest paid by the end." },
-      { q: "Can I pay off my loan early to save money?", a: "Usually yes, since overpaying reduces the balance interest is charged on. Check your loan agreement first though, as some lenders charge an early repayment fee above a certain overpayment amount." },
+      { q: "Why is so much of my early payment just interest?", a: "Interest is charged on whatever you still owe, which is highest right at the start of the loan — so early payments are mostly interest, and later payments shift increasingly toward capital as the balance falls." },
+      { q: "Is APR the same as the interest rate?", a: "No — APR bundles the interest rate with any mandatory fees into one yearly figure, which is why it's the number to compare between loans rather than the headline rate alone." },
+      { q: "Does a longer loan term cost more overall?", a: "Yes, even at an identical rate, simply because you're paying interest on the outstanding balance for longer — a lower monthly payment over a longer term usually means more total interest by the end." },
+      { q: "Can I pay off my loan early to save money?", a: "Generally yes, since overpaying shrinks the balance interest gets charged on. Check your loan agreement first, though — some lenders charge a fee above a certain overpayment amount." },
     ],
   },
 ];
