@@ -65,8 +65,11 @@ export const CONTACT_EMAIL = "support@toolvan.site";
 /** Byline shown on the About page and every guide. */
 export const AUTHOR_NAME = "Jack Dev";
 
-/** Set once Google AdSense approves the site — see NEXT_PUBLIC_ADSENSE_CLIENT_ID in .env. */
-export const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID ?? "";
+// Google AdSense publisher ID. Not a secret — it's meant to sit directly in every page's
+// <head>, which is exactly what AdSense's own verification snippet asks you to paste.
+// Hardcoded as the default so it works without a host env var; still overridable via
+// NEXT_PUBLIC_ADSENSE_CLIENT_ID if the account/client ID is ever rotated.
+export const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID ?? "ca-pub-3451227710205233";
 
 /** Public URL of each tool. */
 export function toolHref(slug: string): string {
