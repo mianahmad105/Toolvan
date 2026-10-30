@@ -5,7 +5,7 @@ import { HelpCircle } from "lucide-react";
 import { ToolCard } from "@/components/ToolCard";
 import { ContactBand } from "@/components/ContactBand";
 import { GUIDES, getGuide } from "@/lib/guides";
-import { getTool, SITE_URL } from "@/lib/tools";
+import { AUTHOR_NAME, getTool, SITE_URL } from "@/lib/tools";
 
 export function generateStaticParams() {
   return GUIDES.map((g) => ({ slug: g.slug }));
@@ -32,6 +32,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
     description: guide.dek,
     dateModified: guide.updated,
     url: `${SITE_URL}/guides/${slug}`,
+    author: { "@type": "Person", name: AUTHOR_NAME },
   };
   const faqSchema = guide.faqs.length > 0 ? {
     "@context": "https://schema.org",
@@ -58,7 +59,8 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
           <h1 className="text-3xl md:text-4xl font-extrabold leading-tight">{guide.title}</h1>
           <p className="text-muted mt-3 leading-7">{guide.dek}</p>
           <p className="text-xs text-muted mt-3">
-            Last updated: {new Date(guide.updated).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}
+            Written by {AUTHOR_NAME} · Last updated{" "}
+            {new Date(guide.updated).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}
           </p>
           <hr className="my-6 border-line" />
 
