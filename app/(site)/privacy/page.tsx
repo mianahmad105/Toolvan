@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CONTACT_EMAIL, SITE_NAME, SITE_URL } from "@/lib/tools";
+import { ADSENSE_CLIENT_ID, CONTACT_EMAIL, SITE_NAME, SITE_URL } from "@/lib/tools";
 
 export const metadata = {
   title: "Privacy Policy",
@@ -74,7 +74,9 @@ export default function Privacy() {
                 <thead><tr className="bg-surface2 text-left"><th className="px-4 py-2.5">Name</th><th className="px-4 py-2.5">Purpose</th><th className="px-4 py-2.5">Consent needed</th></tr></thead>
                 <tbody>
                   <Row cookie="theme" purpose="Remembers whether you last chose light or dark mode" consent="No — strictly necessary, and not a tracking cookie" />
-                  <Row cookie="cookieConsent" purpose="Remembers whether you accepted or rejected our cookie notice" consent="No — strictly necessary, and not a tracking cookie" />
+                  {!ADSENSE_CLIENT_ID && (
+                    <Row cookie="cookieConsent" purpose="Remembers whether you accepted or rejected our cookie notice" consent="No — strictly necessary, and not a tracking cookie" />
+                  )}
                   <Row cookie="Google advertising cookies (e.g. DoubleClick/IDE)" purpose="Set by Google to serve and measure ads, and to limit how many times you see the same ad" consent="Yes — used only for ads, based on your prior visits to this and other sites" />
                   <Row cookie="Other advertising partner cookies" purpose="Google's advertising partners may set their own cookies to support ad delivery and measurement on our pages" consent="Yes — same basis as the Google advertising cookies above" />
                 </tbody>
@@ -87,6 +89,13 @@ export default function Privacy() {
               the DoubleClick cookie — let Google and its partners show you personalised ads based on your visit to this
               site and other sites you&apos;ve visited.
             </p>
+            {ADSENSE_CLIENT_ID && (
+              <p className="text-muted mt-3">
+                If you&apos;re visiting from the UK, the EEA or Switzerland, Google&apos;s own certified consent message
+                asks for your choice on these advertising cookies the first time you visit — rather than a cookie
+                banner of our own — before any personalised ads are shown, in line with UK and EU rules.
+              </p>
+            )}
             <p className="text-muted mt-3">
               You can turn off personalised advertising at any time through{" "}
               <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Google Ads Settings</a>.
