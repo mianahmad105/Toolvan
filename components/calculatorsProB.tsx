@@ -190,7 +190,8 @@ export function PensionReliefCalculatorPro() {
           { href: toolHref("salary-calculator"), label: "Take-home pay", sub: "full income tax and NI breakdown" },
           { href: toolHref("income-tax-calculator"), label: "Income tax calculator", sub: "tax by band" },
           { href: toolHref("savings-interest-calculator"), label: "Savings interest calculator", sub: "compound growth" },
-        ]} />
+        ]}
+        sources={[{ label: "GOV.UK: Tax on your private pension contributions", href: "https://www.gov.uk/tax-on-your-private-pension" }]} />
     </div>
   );
 }
@@ -420,13 +421,13 @@ export function CGTCalculatorPro() {
   if (snap) {
     const r = calcCGT(snap.gain, snap.income, "shares");
     const bigger = calcCGT(snap.gain * 1.5, snap.income, "shares");
-    const summaryText = `Capital Gains Tax summary (2025/26): gain ${gbp(snap.gain, 0)}, tax due ${gbp(r.tax, 0)}.`;
+    const summaryText = `Capital Gains Tax summary (2026/27): gain ${gbp(snap.gain, 0)}, tax due ${gbp(r.tax, 0)}.`;
 
     results = (
       <div className="space-y-6">
         <div className="text-center">
           <h2 className="text-2xl md:text-3xl font-extrabold">Your Capital Gains Tax</h2>
-          <p className="text-muted mt-1">Tax year 2025/26 · 18% basic rate, 24% higher rate</p>
+          <p className="text-muted mt-1">Tax year 2026/27 · 18% basic rate, 24% higher rate</p>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           <StatCard label="Taxable gain" value={gbp(r.taxableGain, 0)} note="After annual exemption" color={CGT_COLOR} />
@@ -481,12 +482,13 @@ export function CGTCalculatorPro() {
       </RunCard>
       {extra}
       <Understanding slug="capital-gains-tax-calculator" color={CGT_COLOR} from="#1e1b4b" to="#312e81" title="Understanding Capital Gains Tax"
-        points={["Annual exempt amount for 2025/26", "18% basic rate, 24% higher rate on shares", "How your other income affects the rate", "Effect of a bigger gain on your tax bill"]}
+        points={["Annual exempt amount for 2026/27", "18% basic rate, 24% higher rate on shares", "How your other income affects the rate", "Effect of a bigger gain on your tax bill"]}
         more={[
           { href: toolHref("income-tax-calculator"), label: "Income tax calculator", sub: "tax by band" },
           { href: toolHref("savings-interest-calculator"), label: "Savings interest calculator", sub: "compound growth" },
           { href: toolHref("inheritance-tax-calculator"), label: "Inheritance tax calculator", sub: "estate tax" },
-        ]} />
+        ]}
+        sources={[{ label: "GOV.UK: Capital Gains Tax rates and allowances", href: "https://www.gov.uk/capital-gains-tax/rates" }]} />
     </div>
   );
 }

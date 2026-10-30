@@ -1,9 +1,70 @@
-export const metadata = { title: "About" };
+import Link from "next/link";
+import { BookOpen, CheckCircle2, Mail, RefreshCw } from "lucide-react";
+import { CONTACT_EMAIL, SITE_NAME } from "@/lib/tools";
+
+export const metadata = {
+  title: "About",
+  description: "How Toolvan builds and maintains its free UK tax and salary calculators, where the figures come from, and how to get in touch.",
+};
+
+const LAST_REVIEWED = "30 September 2026";
+
 export default function About() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12">
-      <h1 className="text-3xl font-extrabold">About</h1>
-      <p className="mt-4 text-muted">Toolvan offers free UK tax and salary calculators. Calculations use 2025/26 rates and are estimates only.</p>
+      <h1 className="text-3xl md:text-4xl font-extrabold">About {SITE_NAME}</h1>
+      <p className="text-muted mt-2">Last reviewed: {LAST_REVIEWED}</p>
+
+      <div className="mt-8 space-y-8 leading-7">
+        <section>
+          <h2 className="text-xl font-extrabold mb-2">What we do</h2>
+          <p className="text-muted">
+            {SITE_NAME} is an independent, free set of UK tax and salary calculators — take-home pay, income tax,
+            National Insurance, Stamp Duty, Capital Gains Tax and more. It&apos;s built and maintained by a single
+            developer, not a large company, with the aim of giving a quick, clear estimate without needing to sign up
+            or hand over any personal details.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-extrabold mb-2 flex items-center gap-2"><BookOpen size={19} className="text-accent" /> Where our figures come from</h2>
+          <p className="text-muted">
+            Every rate, band and threshold used in our calculators is taken from published UK government sources —
+            mainly <a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">GOV.UK</a> and HMRC guidance. We don&apos;t estimate or guess rates: if a figure changes
+            in an official Budget or Autumn Statement, we update the calculator that uses it. Each tool links out to
+            its relevant GOV.UK page so you can check the source yourself.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-extrabold mb-2 flex items-center gap-2"><RefreshCw size={19} className="text-accent" /> How we keep things current</h2>
+          <p className="text-muted">
+            All calculators on this site are currently built around 2026/27 tax year rates. When HMRC publishes new
+            thresholds, we review and update the relevant tool. This About page&apos;s &ldquo;last reviewed&rdquo; date reflects
+            the most recent full pass over the site&apos;s figures.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-extrabold mb-2 flex items-center gap-2"><CheckCircle2 size={19} className="text-accent" /> What our calculators are — and aren&apos;t</h2>
+          <ul className="list-disc pl-6 space-y-1.5 text-muted">
+            <li>They give a general estimate for a standard tax code and straightforward circumstances</li>
+            <li>They run entirely in your browser — nothing you type is sent to us or stored</li>
+            <li>They are not financial, tax or legal advice, and can&apos;t account for every personal circumstance</li>
+            <li>For anything that affects a real financial decision, always check with HMRC or a qualified adviser</li>
+          </ul>
+          <p className="text-muted mt-3">See our <Link href="/terms" className="text-accent hover:underline">Terms of Use</Link> for the full picture.</p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-extrabold mb-2 flex items-center gap-2"><Mail size={19} className="text-accent" /> Found a mistake?</h2>
+          <p className="text-muted">
+            If a figure looks wrong, or you think a rate is out of date, please tell us — every report gets checked
+            against the official source. <Link href="/contact" className="text-accent hover:underline">Contact us</Link> or
+            email <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">{CONTACT_EMAIL}</a>.
+          </p>
+        </section>
+      </div>
     </div>
   );
 }

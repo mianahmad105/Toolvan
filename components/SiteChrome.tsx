@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Calculator, Home, Mail, TrendingUp, X } from "lucide-react";
 import { SITE_NAME } from "@/lib/tools";
 import { ToolSearch } from "./ToolSearch";
-import { FaFacebookF, FaLinkedinIn, FaMedium, FaPinterestP, FaRedditAlien, FaXTwitter, FaYoutube } from "react-icons/fa6";
 
 const MOBILE_NAV = [
   { href: "/", label: "Home", icon: Home },
@@ -103,17 +102,6 @@ const QUICK_LINKS = [
   { href: "/terms", label: "Terms of service" },
 ];
 
-// Replace these placeholder links with your real profile URLs.
-const SOCIAL = [
-  { label: "X", href: "https://x.com", Icon: FaXTwitter },
-  { label: "Facebook", href: "https://facebook.com", Icon: FaFacebookF },
-  { label: "LinkedIn", href: "https://linkedin.com", Icon: FaLinkedinIn },
-  { label: "YouTube", href: "https://youtube.com", Icon: FaYoutube },
-  { label: "Pinterest", href: "https://pinterest.com", Icon: FaPinterestP },
-  { label: "Medium", href: "https://medium.com", Icon: FaMedium },
-  { label: "Reddit", href: "https://reddit.com", Icon: FaRedditAlien },
-];
-
 export function Footer() {
   return (
     <footer className="mt-0 text-white" style={{ background: "#051f14" }}>
@@ -135,15 +123,15 @@ export function Footer() {
         </div>
 
         <div>
-          <div className="text-sm font-bold uppercase tracking-wide">Find us online</div>
-          <p className="mt-4 text-sm">Stay connected for new calculators and tax tips.</p>
-          <div className="flex flex-wrap gap-5 mt-4">
-            {SOCIAL.map(({ label, href, Icon }) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="text-white hover:text-blue-300 transition">
-                <Icon size={19} />
-              </a>
-            ))}
-          </div>
+          <div className="text-sm font-bold uppercase tracking-wide">About</div>
+          <p className="mt-4 text-sm leading-6">
+            Our figures are built around published rates from{" "}
+            <a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener noreferrer" className="text-blue-200 hover:text-white underline">GOV.UK</a> and HMRC.
+          </p>
+          <ul className="mt-4 space-y-3 text-sm">
+            <li><Link href="/about" className="text-blue-200 hover:text-white transition">About us</Link></li>
+            <li><Link href="/contact" className="text-blue-200 hover:text-white transition">Contact us</Link></li>
+          </ul>
         </div>
       </div>
       <div className="border-t border-white/10 py-5 text-center text-xs text-slate-400 px-4">

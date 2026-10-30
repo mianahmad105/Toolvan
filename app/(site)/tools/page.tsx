@@ -4,7 +4,10 @@ import { Calculator, Sparkles, TrendingUp } from "lucide-react";
 import { ContactBand } from "@/components/ContactBand";
 import { ToolSuite } from "@/components/ToolSuite";
 
-export const metadata: Metadata = { title: "All UK Tax Calculators" };
+export const metadata: Metadata = {
+  title: "All UK Tax Calculators",
+  description: "Browse every free UK tax calculator in one place — salary, income tax, National Insurance, capital gains, inheritance tax, stamp duty and more, for the 2026/27 tax year.",
+};
 
 export default function AllTools() {
   return (

@@ -345,7 +345,8 @@ export function SalaryPro() {
 
       <div className="rounded-xl bg-surface2 p-5 text-sm" style={{ borderLeft: "4px solid #f43f5e" }}>
         <div className="font-bold" style={{ color: "#be123c" }}>Please note</div>
-        <p className="text-muted mt-1">These results are estimates for general guidance and are not financial or tax advice. Your own figures may differ because of your circumstances, employer arrangements or later changes to tax rules. For official information visit GOV.UK.</p>
+        <p className="text-muted mt-1">These results are estimates for general guidance and are not financial or tax advice. Your own figures may differ because of your circumstances, employer arrangements or later changes to tax rules. For official information visit <a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">GOV.UK</a>.</p>
+        <p className="text-xs text-muted mt-2">Rates last reviewed: 30 September 2026 · Built around the 2026/27 UK tax year</p>
       </div>
     </div>
   );
