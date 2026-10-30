@@ -5,6 +5,7 @@ import { CalculatorLoader } from "@/components/CalculatorLoader";
 import { ContactBand } from "@/components/ContactBand";
 import { ToolCard } from "@/components/ToolCard";
 import { CONTENT } from "@/lib/content";
+import { guidesForTool } from "@/lib/guides";
 import { getTool, SITE_NAME, SITE_URL, TOOLS, toolHref } from "@/lib/tools";
 
 export function generateStaticParams() {
@@ -23,6 +24,7 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
   if (!tool) notFound();
   const related = TOOLS.filter((t) => t.slug !== slug && t.category === tool.category).slice(0, 4);
   const faqs = CONTENT[slug]?.faqs ?? [];
+  const relatedGuides = guidesForTool(slug);
 
   const webAppSchema = {
     "@context": "https://schema.org",
@@ -58,6 +60,20 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
         <section className="mt-12">
           <h2 className="text-xl font-bold">Related calculators</h2>
           <div className="grid gap-4 mt-4 grid-cols-2 md:grid-cols-4">{related.map((t) => <ToolCard key={t.slug} tool={t} />)}</div>
+        </section>
+      )}
+
+      {relatedGuides.length > 0 && (
+        <section className="mt-12">
+          <h2 className="text-xl font-bold">Related guides</h2>
+          <div className="grid gap-4 mt-4 sm:grid-cols-3">
+            {relatedGuides.map((g) => (
+              <Link key={g.slug} href={`/guides/${g.slug}`} className="card p-4 hover:border-accent transition">
+                <div className="font-bold text-sm leading-snug">{g.title}</div>
+                <p className="text-xs text-muted mt-2">{g.dek}</p>
+              </Link>
+            ))}
+          </div>
         </section>
       )}
     </div>

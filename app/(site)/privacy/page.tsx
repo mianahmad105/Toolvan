@@ -7,7 +7,7 @@ export const metadata = {
   alternates: { canonical: "/privacy" },
 };
 
-const LAST_UPDATED = "30 September 2026";
+const LAST_UPDATED = "2 October 2026";
 
 function Row({ cookie, purpose, consent }: { cookie: string; purpose: string; consent: string }) {
   return (
@@ -37,7 +37,8 @@ export default function Privacy() {
             <p className="text-muted">
               {SITE_URL.replace("https://", "")} is a free set of UK tax and salary calculators, run by {SITE_NAME}.
               For the purposes of UK data protection law, {SITE_NAME} is the data controller for any personal data
-              collected through this website.
+              collected through this website. We show advertising through Google AdSense, so Google acts as an
+              independent data controller for the advertising cookies described in section 3 below.
             </p>
             <p className="text-muted mt-3">
               If you have any questions about this policy, you can reach us at{" "}
@@ -80,7 +81,8 @@ export default function Privacy() {
               </table>
             </div>
             <p className="text-muted mt-3">
-              We use Google and other third-party vendors to show advertising on this site. These vendors use cookies to
+              We use <b className="text-ink">Google AdSense</b> to show advertising on this site, which helps cover the
+              cost of running these free calculators. Google and the third-party vendors it works with use cookies to
               serve ads based on your past visits to this and other websites. Google&apos;s advertising cookies — including
               the DoubleClick cookie — let Google and its partners show you personalised ads based on your visit to this
               site and other sites you&apos;ve visited.

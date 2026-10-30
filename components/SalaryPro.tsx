@@ -88,6 +88,10 @@ export function SalaryPro() {
           <div>
             <h1 className="text-2xl md:text-3xl font-extrabold leading-tight" style={{ color: "#1d4ed8" }}>Take-Home Pay Calculator 2026/27</h1>
             <p className="text-sm text-muted mt-1">See what lands in your bank account after tax, National Insurance and other deductions.</p>
+            <p className="text-xs text-muted mt-2">
+              This is the full calculator — pension, student loan, tax code, Marriage and Blind Person&apos;s Allowance all included.
+              For a quick hourly or daily rate check, try the simpler <Link href="/after-tax" className="text-accent hover:underline">After Tax</Link> page instead.
+            </p>
           </div>
         </div>
       )}
