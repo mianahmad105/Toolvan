@@ -1,6 +1,46 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { gbp, type Region, type StudentPlan } from "@/lib/tax";
+
+/**
+ * A number input that tracks its own keystroke-level text, instead of mirroring the
+ * numeric `value` prop straight into the input. A plain controlled <input type="number">
+ * re-renders "0" back in the moment you backspace it out (empty string -> 0 -> "0" again),
+ * so clearing the field to type a fresh number never actually worked. This only resyncs
+ * from `value` when it was changed from outside this input (a preset button, a prefill from
+ * the URL, etc) - not when it was this input's own onChange that produced the new value -
+ * so an in-progress "5." or an intentionally empty box doesn't get stomped on every keystroke.
+ */
+export function NumBox({ value, onChange, className, onFocus, ...rest }: {
+  value: number; onChange: (n: number) => void; className?: string;
+} & Omit<React.InputHTMLAttributes<HTMLInputElement>, "value" | "onChange" | "type">) {
+  const [text, setText] = useState(Number.isNaN(value) ? "" : String(value));
+  useEffect(() => {
+    const parsed = text === "" ? 0 : parseFloat(text);
+    if (parsed !== value || Number.isNaN(parsed) !== Number.isNaN(value)) {
+      setText(Number.isNaN(value) ? "" : String(value));
+    }
+    // Only re-sync when `value` changes from outside this input — see comment above.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value]);
+
+  return (
+    <input
+      type="number"
+      inputMode="decimal"
+      className={className}
+      value={text}
+      onFocus={(e) => { e.target.select(); onFocus?.(e); }}
+      onChange={(e) => {
+        const raw = e.target.value;
+        setText(raw);
+        const n = raw === "" ? 0 : parseFloat(raw);
+        onChange(Number.isNaN(n) ? 0 : n);
+      }}
+      {...rest}
+    />
+  );
+}
 
 export function NumField({ label, value, onChange, prefix = "£", suffix, step = 1, min = 0 }: {
   label: string; value: number; onChange: (n: number) => void; prefix?: string; suffix?: string; step?: number; min?: number;
@@ -10,11 +50,9 @@ export function NumField({ label, value, onChange, prefix = "£", suffix, step =
       <span className="label">{label}</span>
       <div className="relative">
         {prefix && <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted">{prefix}</span>}
-        <input
+        <NumBox
           className="field" style={{ paddingLeft: prefix ? "2.2rem" : undefined, paddingRight: suffix ? "3rem" : undefined }}
-          type="number" inputMode="decimal" min={min} step={step} onFocus={(e) => e.target.select()}
-          value={Number.isNaN(value) ? "" : value}
-          onChange={(e) => onChange(e.target.value === "" ? 0 : parseFloat(e.target.value))}
+          min={min} step={step} value={value} onChange={onChange}
         />
         {suffix && <span className="absolute right-3 top-1/2 -translate-y-1/2 text-muted text-sm">{suffix}</span>}
       </div>

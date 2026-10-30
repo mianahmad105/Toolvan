@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Clock, Sparkles } from "lucide-react";
 import type { Region } from "@/lib/tax";
+import { NumBox } from "./ui";
 
 const PERIODS = { year: 1, month: 12, week: 52 } as const;
 
@@ -35,8 +36,7 @@ export function QuickCalc() {
       <label className="label mt-6">Gross pay (£)</label>
       <div className="relative">
         <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted">£</span>
-        <input type="number" min={0} className="field" style={{ paddingLeft: "2.4rem", borderRadius: "0.9rem" }} value={gross}
-          onFocus={(e) => e.target.select()} onChange={(e) => setGross(parseFloat(e.target.value) || 0)} />
+        <NumBox min={0} className="field" style={{ paddingLeft: "2.4rem", borderRadius: "0.9rem" }} value={gross} onChange={setGross} />
       </div>
 
       <div className="grid grid-cols-2 gap-4 mt-4">

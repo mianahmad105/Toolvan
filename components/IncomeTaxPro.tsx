@@ -6,7 +6,7 @@ import {
   PieChart, Plus, Smartphone, Target, Zap, Scale, Landmark, BookOpen,
 } from "lucide-react";
 import { BLIND_ALLOWANCE, calcSalary, gbp, incomeTax, type Region, type StudentPlan } from "@/lib/tax";
-import { PLANS } from "./ui";
+import { NumBox, PLANS } from "./ui";
 import { TaxBandsReference } from "./proui";
 
 const FREQ = { year: 1, month: 12, week: 52, day: 260 } as const;
@@ -446,7 +446,7 @@ export function IncomeTaxPro() {
                 <select className="field" defaultValue="2026/27"><option value="2026/27">2026/27</option></select></div>
               <div className="grid grid-cols-[1fr_auto] gap-3">
                 <div><label className="label">Pay (£)</label>
-                  <input className="field" type="number" min={0} step={100} value={inp.amount} onFocus={(e) => e.target.select()} onChange={(e) => set("amount", parseFloat(e.target.value) || 0)} /></div>
+                  <NumBox className="field" min={0} step={100} value={inp.amount} onChange={(n) => set("amount", n)} /></div>
                 <div><label className="label">Paid</label>
                   <select className="field" value={inp.freq} onChange={(e) => set("freq", e.target.value as Freq)}>
                     <option value="year">A year</option><option value="month">A month</option><option value="week">A week</option><option value="day">A day</option></select></div>
@@ -473,7 +473,7 @@ export function IncomeTaxPro() {
                   <div><label className="label">Pension contribution</label>
                     <div className="flex gap-2">
                       <select className="field !w-24 shrink-0" value={inp.pensionUnit} onChange={(e) => set("pensionUnit", e.target.value as "pct" | "gbp")}><option value="pct">%</option><option value="gbp">£ a year</option></select>
-                      <input className="field" type="number" min={0} step={0.5} value={inp.pensionVal} onFocus={(e) => e.target.select()} onChange={(e) => set("pensionVal", parseFloat(e.target.value) || 0)} />
+                      <NumBox className="field" min={0} step={0.5} value={inp.pensionVal} onChange={(n) => set("pensionVal", n)} />
                     </div></div>
                   <div><label className="label">Student loan plan</label>
                     <select className="field" value={inp.plan} onChange={(e) => set("plan", e.target.value as StudentPlan)}>{PLANS.map((p) => <option key={p.value} value={p.value}>{p.label}</option>)}</select></div>
