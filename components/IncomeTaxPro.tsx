@@ -6,6 +6,7 @@ import {
   PieChart, Plus, Smartphone, Target, Zap, Scale, Landmark, BookOpen,
 } from "lucide-react";
 import { BLIND_ALLOWANCE, calcSalary, gbp, incomeTax, type Region, type StudentPlan } from "@/lib/tax";
+import { accessibleBg, accessibleText } from "@/lib/color";
 import { NumBox, PLANS } from "./ui";
 import { TaxBandsReference } from "./proui";
 
@@ -66,10 +67,11 @@ function Accordion({ icon: Icon, title, sub, color, children }: { icon: typeof C
 }
 
 function StatCard({ label, value, note, color }: { label: string; value: string; note: string; color: string }) {
+  const safe = accessibleText(color);
   return (
     <div className="rounded-2xl p-5" style={{ background: tint(color, 8), border: `1px solid ${tint(color, 30)}` }}>
-      <div className="text-sm font-medium" style={{ color }}>{label}</div>
-      <div className="text-3xl font-extrabold mt-1.5 break-words" style={{ color: label === "Gross pay" ? "var(--text)" : color }}>{value}</div>
+      <div className="text-sm font-medium" style={{ color: safe }}>{label}</div>
+      <div className="text-3xl font-extrabold mt-1.5 break-words" style={{ color: label === "Gross pay" ? "var(--text)" : safe }}>{value}</div>
       <div className="text-sm text-muted mt-1">{note}</div>
     </div>
   );
@@ -265,7 +267,7 @@ export function IncomeTaxPro() {
           <StatCard label="Total deductions" value={gbp(deductions, 0)} note={`${pct(dRate)} of your pay`} color="#e11d48" />
         </div>
         <div className="flex justify-center">
-          <span className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-bold shadow-sm" style={{ background: tint(badge.c, 12), color: badge.c, border: `1px solid ${tint(badge.c, 35)}` }}>
+          <span className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-bold shadow-sm" style={{ background: tint(badge.c, 12), color: accessibleText(badge.c, 4.5, 12), border: `1px solid ${tint(badge.c, 35)}` }}>
             <span className="w-3 h-3 rounded-full" style={{ background: badge.c }} /> {badge.t}
           </span>
         </div>
@@ -275,7 +277,7 @@ export function IncomeTaxPro() {
             <h3 className="text-lg font-extrabold flex items-center gap-2"><BarChart3 size={19} style={{ color: TEAL }} /> Payslip-style breakdown</h3>
             <p className="text-sm text-muted">Your pay split across each pay period</p>
           </div>
-          <div className="overflow-x-auto">
+          <div tabIndex={0} className="overflow-x-auto">
             <table className="w-full text-sm min-w-[560px]">
               <thead><tr className="border-y border-line text-muted">
                 <th className="text-left font-bold px-5 py-3">Item</th>
@@ -299,23 +301,23 @@ export function IncomeTaxPro() {
           <p className="text-sm text-muted mt-1">Keep these results for later or send them to someone</p>
           <div className="flex flex-wrap justify-center gap-3 mt-4">
             <button type="button" onClick={async () => { try { await navigator.clipboard.writeText(summaryText); flash("Summary copied"); } catch { flash("Copy not available here"); } }}
-              className="inline-flex items-center gap-3 rounded-xl px-5 py-3 text-white text-left shadow" style={{ background: TEAL }}>
+              className="inline-flex items-center gap-3 rounded-xl px-5 py-3 text-white text-left shadow" style={{ background: accessibleBg(TEAL, 4.5, 0.9) }}>
               <ClipboardCopy size={20} /><span><b className="block leading-tight">Copy summary</b><span className="text-xs opacity-90">Short text version</span></span>
             </button>
             <button type="button" onClick={async () => { try { await navigator.clipboard.writeText(window.location.href); flash("Link copied"); } catch { flash("Copy not available here"); } }}
-              className="inline-flex items-center gap-3 rounded-xl px-5 py-3 text-white text-left shadow" style={{ background: "#334155" }}>
+              className="inline-flex items-center gap-3 rounded-xl px-5 py-3 text-white text-left shadow" style={{ background: accessibleBg("#334155", 4.5, 0.9) }}>
               <Link2 size={20} /><span><b className="block leading-tight">Copy link</b><span className="text-xs opacity-90">Reopens with your figures</span></span>
             </button>
-            <button type="button" onClick={() => window.print()} className="inline-flex items-center gap-3 rounded-xl px-5 py-3 text-white text-left shadow" style={{ background: "#b45309" }}>
+            <button type="button" onClick={() => window.print()} className="inline-flex items-center gap-3 rounded-xl px-5 py-3 text-white text-left shadow" style={{ background: accessibleBg("#b45309", 4.5, 0.9) }}>
               <FileDown size={20} /><span><b className="block leading-tight">Save as PDF</b><span className="text-xs opacity-90">Print this report</span></span>
             </button>
           </div>
-          {note && <p className="text-sm font-semibold mt-3" style={{ color: TEAL }}>{note}</p>}
+          {note && <p className="text-sm font-semibold mt-3" style={{ color: accessibleText(TEAL) }}>{note}</p>}
         </div>
 
         <div className="space-y-4">
           <Accordion icon={Target} title="Tax by band" sub="How each slice of your income is taxed" color="#d97706">
-            <div className="overflow-x-auto rounded-xl border border-line bg-surface"><table className="w-full text-sm min-w-[420px]">
+            <div tabIndex={0} className="overflow-x-auto rounded-xl border border-line bg-surface"><table className="w-full text-sm min-w-[420px]">
               <thead><tr className="bg-surface2 text-left"><th className="px-4 py-2.5">Band</th><th className="px-4 py-2.5">Income taxed</th><th className="px-4 py-2.5">Tax</th></tr></thead>
               <tbody>
                 <tr className="border-t border-line"><td className="px-4 py-2.5">Personal Allowance (0%)</td><td className="px-4 py-2.5">{gbp(Math.min(r.taxable, r.allowance))}</td><td className="px-4 py-2.5">£0.00</td></tr>
@@ -332,7 +334,7 @@ export function IncomeTaxPro() {
             <p className="text-sm text-muted mt-3 leading-6">The effective rate is your tax divided by your total pay. The rate on your next pound is what would be taken from an extra £1, including tax, National Insurance and any student loan.</p>
           </Accordion>
           <Accordion icon={Globe2} title="England vs Scotland" sub="Same pay, different tax rules" color="#0284c7">
-            <div className="overflow-x-auto rounded-xl border border-line bg-surface"><table className="w-full text-sm min-w-[420px]">
+            <div tabIndex={0} className="overflow-x-auto rounded-xl border border-line bg-surface"><table className="w-full text-sm min-w-[420px]">
               <thead><tr className="bg-surface2 text-left"><th className="px-4 py-2.5"></th><th className="px-4 py-2.5">England, Wales &amp; NI</th><th className="px-4 py-2.5">Scotland</th></tr></thead>
               <tbody>
                 {(() => {
@@ -442,20 +444,20 @@ export function IncomeTaxPro() {
             <h3 className="font-extrabold text-lg">Your details</h3>
             <p className="text-sm text-muted mb-4">Tell us about your pay and situation</p>
             <div className="rounded-2xl bg-surface p-5 shadow-sm space-y-4">
-              <div><label className="label">Tax year</label>
-                <select className="field" defaultValue="2026/27"><option value="2026/27">2026/27</option></select></div>
+              <div><label className="label" htmlFor="itp-tax-year">Tax year</label>
+                <select id="itp-tax-year" className="field" defaultValue="2026/27"><option value="2026/27">2026/27</option></select></div>
               <div className="grid grid-cols-[1fr_auto] gap-3">
-                <div><label className="label">Pay (£)</label>
-                  <NumBox className="field" min={0} step={100} value={inp.amount} onChange={(n) => set("amount", n)} /></div>
-                <div><label className="label">Paid</label>
-                  <select className="field" value={inp.freq} onChange={(e) => set("freq", e.target.value as Freq)}>
+                <div><label className="label" htmlFor="itp-amount">Pay (£)</label>
+                  <NumBox id="itp-amount" className="field" min={0} step={100} value={inp.amount} onChange={(n) => set("amount", n)} /></div>
+                <div><label className="label" htmlFor="itp-freq">Paid</label>
+                  <select id="itp-freq" className="field" value={inp.freq} onChange={(e) => set("freq", e.target.value as Freq)}>
                     <option value="year">A year</option><option value="month">A month</option><option value="week">A week</option><option value="day">A day</option></select></div>
               </div>
-              <div><label className="label">Region</label>
-                <select className="field" value={inp.region} onChange={(e) => set("region", e.target.value as Region)}>
+              <div><label className="label" htmlFor="itp-region">Region</label>
+                <select id="itp-region" className="field" value={inp.region} onChange={(e) => set("region", e.target.value as Region)}>
                   <option value="england">England, Wales &amp; N. Ireland</option><option value="scotland">Scotland</option></select></div>
-              <div><label className="label">State Pension age</label>
-                <select className="field" value={inp.over66 ? "over" : "under"} onChange={(e) => set("over66", e.target.value === "over")}>
+              <div><label className="label" htmlFor="itp-over66">State Pension age</label>
+                <select id="itp-over66" className="field" value={inp.over66 ? "over" : "under"} onChange={(e) => set("over66", e.target.value === "over")}>
                   <option value="under">Under State Pension age</option><option value="over">Reached State Pension age</option></select></div>
               <div className="flex items-center justify-between gap-3">
                 <span className="label !mb-0">Registered blind?</span>
@@ -470,15 +472,15 @@ export function IncomeTaxPro() {
               <button type="button" onClick={() => setAdv(!adv)} className="text-sm font-semibold" style={{ color: TEAL }}>{adv ? "Hide extra options" : "Show extra options"}</button>
               {adv && (
                 <div className="space-y-4 pt-1">
-                  <div><label className="label">Pension contribution</label>
+                  <div><label className="label" htmlFor="itp-pension-unit">Pension contribution</label>
                     <div className="flex gap-2">
-                      <select className="field !w-24 shrink-0" value={inp.pensionUnit} onChange={(e) => set("pensionUnit", e.target.value as "pct" | "gbp")}><option value="pct">%</option><option value="gbp">£ a year</option></select>
-                      <NumBox className="field" min={0} step={0.5} value={inp.pensionVal} onChange={(n) => set("pensionVal", n)} />
+                      <select id="itp-pension-unit" className="field !w-24 shrink-0" value={inp.pensionUnit} onChange={(e) => set("pensionUnit", e.target.value as "pct" | "gbp")}><option value="pct">%</option><option value="gbp">£ a year</option></select>
+                      <NumBox aria-label="Pension contribution amount" className="field" min={0} step={0.5} value={inp.pensionVal} onChange={(n) => set("pensionVal", n)} />
                     </div></div>
-                  <div><label className="label">Student loan plan</label>
-                    <select className="field" value={inp.plan} onChange={(e) => set("plan", e.target.value as StudentPlan)}>{PLANS.map((p) => <option key={p.value} value={p.value}>{p.label}</option>)}</select></div>
-                  <div><label className="label">Tax code (optional)</label>
-                    <input className="field uppercase" placeholder="e.g. 1257L" value={inp.taxCode} onChange={(e) => set("taxCode", e.target.value)} /></div>
+                  <div><label className="label" htmlFor="itp-plan">Student loan plan</label>
+                    <select id="itp-plan" className="field" value={inp.plan} onChange={(e) => set("plan", e.target.value as StudentPlan)}>{PLANS.map((p) => <option key={p.value} value={p.value}>{p.label}</option>)}</select></div>
+                  <div><label className="label" htmlFor="itp-taxcode">Tax code (optional)</label>
+                    <input id="itp-taxcode" className="field uppercase" placeholder="e.g. 1257L" value={inp.taxCode} onChange={(e) => set("taxCode", e.target.value)} /></div>
                   <label className="flex items-center gap-2.5 text-sm"><input type="checkbox" className="sal-check" checked={inp.marriage} onChange={(e) => set("marriage", e.target.checked)} /> I receive Marriage Allowance</label>
                 </div>
               )}
@@ -557,9 +559,9 @@ function Understanding({ blind }: { blind: number }) {
         <div className="rounded-xl bg-surface2 border border-line p-4 text-sm">
           <div className="font-bold mb-1">Where to check the official figures</div>
           <ul className="space-y-0.5">
-            <li><a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">GOV.UK: Income Tax rates and Personal Allowances</a></li>
-            <li><a href="https://www.gov.uk/national-insurance-rates-letters" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">GOV.UK: National Insurance rates and categories</a></li>
-            <li><a href="https://www.gov.uk/scottish-income-tax" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">GOV.UK: Scottish Income Tax rates</a></li>
+            <li><a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener noreferrer" className="text-accent underline">GOV.UK: Income Tax rates and Personal Allowances</a></li>
+            <li><a href="https://www.gov.uk/national-insurance-rates-letters" target="_blank" rel="noopener noreferrer" className="text-accent underline">GOV.UK: National Insurance rates and categories</a></li>
+            <li><a href="https://www.gov.uk/scottish-income-tax" target="_blank" rel="noopener noreferrer" className="text-accent underline">GOV.UK: Scottish Income Tax rates</a></li>
           </ul>
           <p className="text-xs text-muted mt-2">These results are estimates for general guidance and are not financial advice. Always confirm important figures with an official source.</p>
           <p className="text-xs text-muted mt-2">Rates last reviewed: 30 September 2026 · Built around the 2026/27 UK tax year</p>

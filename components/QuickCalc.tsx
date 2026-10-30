@@ -33,24 +33,24 @@ export function QuickCalc() {
       <h2 className="text-xl font-extrabold text-center">Quick Tax Calculator</h2>
       <p className="text-sm text-muted text-center mt-1">See your take-home pay in seconds</p>
 
-      <label className="label mt-6">Gross pay (£)</label>
+      <label className="label mt-6" htmlFor="qc-gross">Gross pay (£)</label>
       <div className="relative">
         <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted">£</span>
-        <NumBox min={0} className="field" style={{ paddingLeft: "2.4rem", borderRadius: "0.9rem" }} value={gross} onChange={setGross} />
+        <NumBox id="qc-gross" min={0} className="field" style={{ paddingLeft: "2.4rem", borderRadius: "0.9rem" }} value={gross} onChange={setGross} />
       </div>
 
       <div className="grid grid-cols-2 gap-4 mt-4">
         <div>
-          <label className="label">Paid every</label>
-          <select className="field" style={{ borderRadius: "0.9rem" }} value={freq} onChange={(e) => setFreq(e.target.value as keyof typeof PERIODS)}>
+          <label className="label" htmlFor="qc-freq">Paid every</label>
+          <select id="qc-freq" className="field" style={{ borderRadius: "0.9rem" }} value={freq} onChange={(e) => setFreq(e.target.value as keyof typeof PERIODS)}>
             <option value="year">Year</option>
             <option value="month">Month</option>
             <option value="week">Week</option>
           </select>
         </div>
         <div>
-          <label className="label">Tax region</label>
-          <select className="field" style={{ borderRadius: "0.9rem" }} value={region} onChange={(e) => setRegion(e.target.value as Region)}>
+          <label className="label" htmlFor="qc-region">Tax region</label>
+          <select id="qc-region" className="field" style={{ borderRadius: "0.9rem" }} value={region} onChange={(e) => setRegion(e.target.value as Region)}>
             <option value="england">England / Wales / NI</option>
             <option value="scotland">Scotland</option>
           </select>

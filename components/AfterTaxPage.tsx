@@ -89,7 +89,7 @@ export function AfterTaxPage() {
               straight to take-home pay, with no form fields to fill in beyond the amount itself. It doesn&apos;t handle
               pension contributions, student loan plans, a custom tax code, or Marriage/Blind Person&apos;s Allowance.
               If you need any of those, use the full{" "}
-              <Link href={toolHref("salary-calculator")} className="text-accent hover:underline">Salary Calculator</Link>{" "}
+              <Link href={toolHref("salary-calculator")} className="text-accent underline">Salary Calculator</Link>{" "}
               instead.
             </div>
           </div>
@@ -127,7 +127,7 @@ export function AfterTaxPage() {
             <h3 className="text-sm font-bold text-muted uppercase tracking-wide">Popular salaries</h3>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2">
               {POPULAR_SALARIES.map((p) => (
-                <button key={p.label} onClick={() => runFor(p.amount, p.freq)} className="flex items-center gap-1.5 text-left text-sm text-accent hover:underline">
+                <button key={p.label} onClick={() => runFor(p.amount, p.freq)} className="flex items-center gap-1.5 text-left text-sm text-accent underline">
                   <PoundSterling size={13} className="shrink-0" />{p.label}
                 </button>
               ))}
@@ -137,7 +137,7 @@ export function AfterTaxPage() {
             <h3 className="text-sm font-bold text-muted uppercase tracking-wide">Higher earners</h3>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2">
               {HIGH_EARNER_SALARIES.map((p) => (
-                <button key={p.label} onClick={() => runFor(p.amount, p.freq)} className="flex items-center gap-1.5 text-left text-sm text-accent hover:underline">
+                <button key={p.label} onClick={() => runFor(p.amount, p.freq)} className="flex items-center gap-1.5 text-left text-sm text-accent underline">
                   <PoundSterling size={13} className="shrink-0" />{p.label}
                 </button>
               ))}
@@ -147,7 +147,7 @@ export function AfterTaxPage() {
             <h3 className="text-sm font-bold text-muted uppercase tracking-wide">Other pay frequencies</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-2">
               {ALT_FREQUENCIES.map((p) => (
-                <button key={p.label} onClick={() => runFor(p.amount, p.freq)} className="flex items-center gap-1.5 text-left text-sm text-accent hover:underline">
+                <button key={p.label} onClick={() => runFor(p.amount, p.freq)} className="flex items-center gap-1.5 text-left text-sm text-accent underline">
                   <PoundSterling size={13} className="shrink-0" />{p.label}
                 </button>
               ))}
@@ -157,7 +157,7 @@ export function AfterTaxPage() {
             <h3 className="text-sm font-bold text-muted uppercase tracking-wide">Hourly and daily rates</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-2">
               {WAGE_RATES.map((p) => (
-                <button key={p.label} onClick={() => runFor(p.amount, p.freq)} className="flex items-center gap-1.5 text-left text-sm text-accent hover:underline">
+                <button key={p.label} onClick={() => runFor(p.amount, p.freq)} className="flex items-center gap-1.5 text-left text-sm text-accent underline">
                   <PoundSterling size={13} className="shrink-0" />{p.label}
                 </button>
               ))}
@@ -180,7 +180,7 @@ export function AfterTaxPage() {
           <p className="text-xs text-muted flex items-start gap-2 mt-4">
             <Info size={14} className="mt-0.5 shrink-0" />
             For pension, tax code or student loan adjustments, use our{" "}
-            <Link href={toolHref("salary-calculator")} className="text-accent hover:underline">Salary Calculator</Link> instead.
+            <Link href={toolHref("salary-calculator")} className="text-accent underline">Salary Calculator</Link> instead.
           </p>
         </section>
 
@@ -200,7 +200,7 @@ export function AfterTaxPage() {
           <div className="font-bold mb-1">Where to check the official figures</div>
           <ul className="space-y-0.5">
             {SOURCES.map((s) => (
-              <li key={s.href}><a href={s.href} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">{s.label}</a></li>
+              <li key={s.href}><a href={s.href} target="_blank" rel="noopener noreferrer" className="text-accent underline">{s.label}</a></li>
             ))}
           </ul>
           <p className="text-xs text-muted mt-2">These results are estimates for general guidance and are not financial or tax advice.</p>
@@ -217,7 +217,7 @@ export function AfterTaxPage() {
               ["capital-gains-tax-calculator", "Capital Gains Tax Calculator"], ["inheritance-tax-calculator", "Inheritance Tax Calculator"],
               ["ni-calculator", "NI Calculator"],
             ].map(([slug, label]) => (
-              <li key={slug}><Link href={toolHref(slug)} className="flex items-center gap-2 text-accent hover:underline"><span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />{label}</Link></li>
+              <li key={slug}><Link href={toolHref(slug)} className="flex items-center gap-2 text-accent underline"><span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />{label}</Link></li>
             ))}
           </ul>
         </div>

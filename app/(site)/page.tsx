@@ -47,7 +47,7 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl font-extrabold">UK Tax Guides</h2>
             <p className="text-muted mt-2 max-w-xl">Plain-English explainers for the rules behind the numbers — tax codes, Scottish tax, salary sacrifice and more.</p>
           </div>
-          <Link href="/guides" className="font-semibold text-accent hover:underline shrink-0">See all guides <ArrowRight size={15} className="inline" /></Link>
+          <Link href="/guides" className="font-semibold text-accent underline shrink-0">See all guides <ArrowRight size={15} className="inline" /></Link>
         </div>
         <div className="grid gap-4 sm:grid-cols-3 mt-7">
           {GUIDES.slice(0, 3).map((g) => (

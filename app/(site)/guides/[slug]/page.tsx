@@ -98,7 +98,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
           <hr className="my-8 border-line" />
           <p className="text-xs text-muted">
             This guide is general information, not financial or tax advice — check{" "}
-            <a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">GOV.UK</a>{" "}
+            <a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener noreferrer" className="text-accent underline">GOV.UK</a>{" "}
             or a qualified adviser for anything that affects a real financial decision.
           </p>
         </article>

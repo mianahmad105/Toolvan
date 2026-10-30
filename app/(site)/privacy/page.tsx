@@ -42,7 +42,7 @@ export default function Privacy() {
             </p>
             <p className="text-muted mt-3">
               If you have any questions about this policy, you can reach us at{" "}
-              <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">{CONTACT_EMAIL}</a>.
+              <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent underline">{CONTACT_EMAIL}</a>.
             </p>
           </section>
 
@@ -69,7 +69,7 @@ export default function Privacy() {
           <section>
             <h2 className="text-xl font-extrabold mb-2">3. Cookies and advertising</h2>
             <p className="text-muted mb-3">Here is what we and our advertising partners currently store in your browser:</p>
-            <div className="overflow-x-auto rounded-xl border border-line">
+            <div tabIndex={0} className="overflow-x-auto rounded-xl border border-line">
               <table className="w-full text-sm min-w-[480px]">
                 <thead><tr className="bg-surface2 text-left"><th className="px-4 py-2.5">Name</th><th className="px-4 py-2.5">Purpose</th><th className="px-4 py-2.5">Consent needed</th></tr></thead>
                 <tbody>
@@ -98,14 +98,14 @@ export default function Privacy() {
             )}
             <p className="text-muted mt-3">
               You can turn off personalised advertising at any time through{" "}
-              <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Google Ads Settings</a>.
+              <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-accent underline">Google Ads Settings</a>.
               For more detail on how Google uses information when you visit a site that uses its services, see Google&apos;s{" "}
-              <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+              <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-accent underline">
                 &ldquo;How Google uses information from sites or apps that use our services&rdquo;
               </a> page.
             </p>
             <p className="text-muted mt-3">
-              See our <Link href="/cookies" className="text-accent hover:underline">Cookie Policy</Link> for the full list of cookies and how to control them.
+              See our <Link href="/cookies" className="text-accent underline">Cookie Policy</Link> for the full list of cookies and how to control them.
             </p>
           </section>
 
@@ -131,7 +131,7 @@ export default function Privacy() {
             <p className="text-muted mt-3">
               Where advertising is shown, Google and its advertising partners may process limited technical data — such
               as your IP address and advertising cookie identifiers — to serve and measure ads, as described in{" "}
-              <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Google&apos;s partner sites policy</a>.
+              <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-accent underline">Google&apos;s partner sites policy</a>.
               This is separate from, and never combined with, the salary or tax figures you type into a calculator.
             </p>
           </section>
@@ -156,8 +156,8 @@ export default function Privacy() {
               <li><b className="text-ink">Withdraw consent</b> — at any time, where we rely on your consent</li>
             </ul>
             <p className="text-muted mt-3">
-              To use any of these rights, email us at <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">{CONTACT_EMAIL}</a>.
-              You can also complain to the <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Information Commissioner&apos;s Office (ICO)</a> if you&apos;re unhappy with how we&apos;ve handled your data.
+              To use any of these rights, email us at <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent underline">{CONTACT_EMAIL}</a>.
+              You can also complain to the <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-accent underline">Information Commissioner&apos;s Office (ICO)</a> if you&apos;re unhappy with how we&apos;ve handled your data.
             </p>
           </section>
 
@@ -173,8 +173,8 @@ export default function Privacy() {
 
         <hr className="my-8 border-line" />
         <p className="text-sm text-muted">
-          Questions about this policy? <Link href="/contact" className="text-accent hover:underline">Contact Us</Link> or email{" "}
-          <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">{CONTACT_EMAIL}</a>.
+          Questions about this policy? <Link href="/contact" className="text-accent underline">Contact Us</Link> or email{" "}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent underline">{CONTACT_EMAIL}</a>.
         </p>
       </div>
     </div>

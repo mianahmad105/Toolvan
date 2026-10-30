@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { calcSalary, gbp, type Region, type StudentPlan } from "@/lib/tax";
 import { CONTENT } from "@/lib/content";
+import { accessibleText } from "@/lib/color";
 import { NumBox, PLANS } from "./ui";
 import { TaxBandsReference } from "./proui";
 
@@ -108,7 +109,7 @@ export function SalaryPro() {
             fixed amount), a <b className="text-ink">student loan plan</b>, a <b className="text-ink">custom tax code</b>,
             and Marriage or Blind Person&apos;s Allowance, with a shareable results link. It doesn&apos;t take an hourly
             rate — for a quick hourly or daily wage check, use the simpler{" "}
-            <Link href="/after-tax" className="text-accent hover:underline">After Tax</Link> page instead.
+            <Link href="/after-tax" className="text-accent underline">After Tax</Link> page instead.
           </div>
         </div>
       )}
@@ -120,24 +121,24 @@ export function SalaryPro() {
         </div>
         <div className="grid gap-5 md:grid-cols-2 mt-5">
           <div>
-            <label className="label flex items-center gap-1.5">Gross pay
+            <label className="label flex items-center gap-1.5" htmlFor="sp-amount">Gross pay
               <span title="Your pay before tax and other deductions are taken off"><Info size={14} style={{ color: TEAL }} /></span>
             </label>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 font-bold text-muted">£</span>
-              <NumBox className="field sal-input" style={{ paddingLeft: "2.3rem" }} min={0} step={100} value={amount} onChange={setAmount} />
+              <NumBox id="sp-amount" className="field sal-input" style={{ paddingLeft: "2.3rem" }} min={0} step={100} value={amount} onChange={setAmount} />
             </div>
           </div>
           <div>
-            <label className="label">Pay period</label>
-            <select className="field sal-input" value={freq} onChange={(e) => setFreq(e.target.value as Freq)}>
+            <label className="label" htmlFor="sp-freq">Pay period</label>
+            <select id="sp-freq" className="field sal-input" value={freq} onChange={(e) => setFreq(e.target.value as Freq)}>
               <option value="year">Per year</option><option value="month">Per month</option>
               <option value="week">Per week</option><option value="day">Per day</option>
             </select>
           </div>
           <div>
-            <label className="label">Tax year</label>
-            <select className="field sal-input" defaultValue="2026/27"><option value="2026/27">2026/27</option></select>
+            <label className="label" htmlFor="sp-tax-year">Tax year</label>
+            <select id="sp-tax-year" className="field sal-input" defaultValue="2026/27"><option value="2026/27">2026/27</option></select>
           </div>
           <div>
             <label className="label">Tax region</label>
@@ -163,23 +164,23 @@ export function SalaryPro() {
         {open && (
           <div className="mt-5 pt-5 border-t border-line grid gap-5 md:grid-cols-2">
             <div>
-              <label className="label">Pension contribution</label>
+              <label className="label" htmlFor="sp-pension-unit">Pension contribution</label>
               <div className="flex gap-2">
-                <select className="field sal-input !w-28 shrink-0" value={pensionUnit} onChange={(e) => setPensionUnit(e.target.value as "pct" | "gbp")}>
+                <select id="sp-pension-unit" className="field sal-input !w-28 shrink-0" value={pensionUnit} onChange={(e) => setPensionUnit(e.target.value as "pct" | "gbp")}>
                   <option value="pct">%</option><option value="gbp">£ a year</option>
                 </select>
-                <NumBox className="field sal-input" min={0} step={0.5} value={pensionVal} onChange={setPensionVal} />
+                <NumBox aria-label="Pension contribution amount" className="field sal-input" min={0} step={0.5} value={pensionVal} onChange={setPensionVal} />
               </div>
             </div>
             <div>
-              <label className="label">Student loan plan</label>
-              <select className="field sal-input" value={plan} onChange={(e) => setPlan(e.target.value as StudentPlan)}>
+              <label className="label" htmlFor="sp-plan">Student loan plan</label>
+              <select id="sp-plan" className="field sal-input" value={plan} onChange={(e) => setPlan(e.target.value as StudentPlan)}>
                 {PLANS.map((p) => <option key={p.value} value={p.value}>{p.label}</option>)}
               </select>
             </div>
             <div>
-              <label className="label">Tax code (optional)</label>
-              <input className="field sal-input uppercase" value={taxCode} onChange={(e) => setTaxCode(e.target.value)} placeholder="e.g. 1257L" />
+              <label className="label" htmlFor="sp-taxcode">Tax code (optional)</label>
+              <input id="sp-taxcode" className="field sal-input uppercase" value={taxCode} onChange={(e) => setTaxCode(e.target.value)} placeholder="e.g. 1257L" />
             </div>
             <div className="grid gap-3 content-start pt-1 text-sm">
               <label className="flex items-center gap-2.5"><input type="checkbox" className="sal-check" checked={blind} onChange={(e) => setBlind(e.target.checked)} /> I claim Blind Person&apos;s Allowance</label>
@@ -239,7 +240,7 @@ export function SalaryPro() {
             </div>
           </div>
           <div className="flex justify-center mt-6">
-            <button type="button" onClick={share} className="inline-flex items-center gap-2 rounded-xl border-2 px-5 py-2.5 text-sm font-semibold hover:-translate-y-0.5 transition" style={{ borderColor: tint(TEAL, 40), color: TEAL, background: tint(TEAL, 8) }}>
+            <button type="button" onClick={share} className="inline-flex items-center gap-2 rounded-xl border-2 px-5 py-2.5 text-sm font-semibold hover:-translate-y-0.5 transition" style={{ borderColor: tint(TEAL, 40), color: accessibleText(TEAL), background: tint(TEAL, 8) }}>
               <Share2 size={16} /> {shared ? "Link copied" : "Share result"}
             </button>
           </div>
@@ -269,7 +270,7 @@ export function SalaryPro() {
 
             <div className="space-y-6">
               <Block icon={CalendarDays} title="Your pay by period" color="#7c3aed">
-                <div className="overflow-x-auto rounded-xl border border-line">
+                <div tabIndex={0} className="overflow-x-auto rounded-xl border border-line">
                   <table className="w-full text-sm min-w-[460px]">
                     <thead><tr className="bg-surface2 text-left">
                       {["Period", "Gross", "Tax", "NI", "Other", "Take-home"].map((h) => <th key={h} className="px-3 py-2.5 font-bold">{h}</th>)}
@@ -291,7 +292,7 @@ export function SalaryPro() {
                 <p className="text-xs text-muted mt-3">&ldquo;Other&rdquo; covers pension and student loan. Daily figures assume 260 working days.</p>
               </Block>
               <Block icon={Table2} title="Income tax by band" color="#e11d48">
-                <div className="overflow-x-auto rounded-xl border border-line">
+                <div tabIndex={0} className="overflow-x-auto rounded-xl border border-line">
                   <table className="w-full text-sm">
                     <thead><tr className="bg-surface2 text-left"><th className="px-3 py-2.5">Band</th><th className="px-3 py-2.5">Income taxed</th><th className="px-3 py-2.5">Tax</th></tr></thead>
                     <tbody>
@@ -378,7 +379,7 @@ export function SalaryPro() {
         <div className="font-bold mb-1">Where to check the official figures</div>
         <ul className="space-y-0.5">
           {SOURCES.map((s) => (
-            <li key={s.href}><a href={s.href} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">{s.label}</a></li>
+            <li key={s.href}><a href={s.href} target="_blank" rel="noopener noreferrer" className="text-accent underline">{s.label}</a></li>
           ))}
         </ul>
         <p className="text-xs text-muted mt-2">These results are estimates for general guidance and are not financial or tax advice. Your own figures may differ because of your circumstances, employer arrangements or later changes to tax rules.</p>

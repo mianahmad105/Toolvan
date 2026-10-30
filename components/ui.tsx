@@ -141,7 +141,7 @@ export function Periods({ annual, working = 260 }: { annual: number; working?: n
     ["Yearly", annual], ["Monthly", annual / 12], ["4-weekly", annual / 13], ["Weekly", annual / 52], ["Daily", annual / working],
   ] as const;
   return (
-    <div className="card overflow-x-auto">
+    <div tabIndex={0} className="card overflow-x-auto">
       <table className="w-full text-sm">
         <thead><tr className="bg-surface2 text-left text-muted"><th className="px-5 py-3">Period</th><th className="px-5 py-3 text-right">Amount</th></tr></thead>
         <tbody>

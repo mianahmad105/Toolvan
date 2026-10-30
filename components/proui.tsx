@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { BookOpen, CheckCircle2, ChevronDown, ClipboardCopy, FileDown, Link2, Plus, Share2, Smartphone, Zap } from "lucide-react";
 import { gbp } from "@/lib/tax";
 import { CONTENT } from "@/lib/content";
+import { accessibleBg, accessibleText } from "@/lib/color";
 
 /** Shared "Pro" design kit — the same visual language used by SalaryPro and IncomeTaxPro,
  *  factored out so every calculator can get the same premium look. */
@@ -104,7 +105,7 @@ export function ShareButton({ text, color = "#3b82f6" }: { text: string; color?:
   };
   return (
     <div className="flex justify-center mt-6">
-      <button type="button" onClick={share} className="inline-flex items-center gap-2 rounded-xl border-2 px-5 py-2.5 text-sm font-semibold hover:-translate-y-0.5 transition" style={{ borderColor: tint(color, 40), color, background: tint(color, 8) }}>
+      <button type="button" onClick={share} className="inline-flex items-center gap-2 rounded-xl border-2 px-5 py-2.5 text-sm font-semibold hover:-translate-y-0.5 transition" style={{ borderColor: tint(color, 40), color: accessibleText(color), background: tint(color, 8) }}>
         <Share2 size={16} /> {shared ? "Link copied" : "Share result"}
       </button>
     </div>
@@ -227,9 +228,10 @@ export function EmptyResults({ icon: Icon, color, label }: { icon: any; color: s
 }
 
 export function StatCard({ label, value, note, color }: { label: string; value: string; note: string; color: string }) {
+  const labelColor = accessibleText(color);
   return (
     <div className="rounded-2xl p-5" style={{ background: tint(color, 8), border: `1px solid ${tint(color, 30)}` }}>
-      <div className="text-sm font-medium" style={{ color }}>{label}</div>
+      <div className="text-sm font-medium" style={{ color: labelColor }}>{label}</div>
       <div className="text-3xl font-extrabold mt-1.5 break-words" style={{ color: "var(--text)" }}>{value}</div>
       <div className="text-sm text-muted mt-1">{note}</div>
     </div>
@@ -273,18 +275,18 @@ export function ShareSaveBar({ color, summaryText }: { color: string; summaryTex
       <p className="text-sm text-muted mt-1">Keep these results for later or send them to someone</p>
       <div className="flex flex-wrap justify-center gap-3 mt-4">
         <button type="button" onClick={async () => { try { await navigator.clipboard.writeText(summaryText); flash("Summary copied"); } catch { flash("Copy not available here"); } }}
-          className="inline-flex items-center gap-3 rounded-xl px-5 py-3 text-white text-left shadow" style={{ background: color }}>
+          className="inline-flex items-center gap-3 rounded-xl px-5 py-3 text-white text-left shadow" style={{ background: accessibleBg(color, 4.5, 0.9) }}>
           <ClipboardCopy size={20} /><span><b className="block leading-tight">Copy summary</b><span className="text-xs opacity-90">Short text version</span></span>
         </button>
         <button type="button" onClick={async () => { try { await navigator.clipboard.writeText(window.location.href); flash("Link copied"); } catch { flash("Copy not available here"); } }}
-          className="inline-flex items-center gap-3 rounded-xl px-5 py-3 text-white text-left shadow" style={{ background: "#334155" }}>
+          className="inline-flex items-center gap-3 rounded-xl px-5 py-3 text-white text-left shadow" style={{ background: accessibleBg("#334155", 4.5, 0.9) }}>
           <Link2 size={20} /><span><b className="block leading-tight">Copy link</b><span className="text-xs opacity-90">Reopens with your figures</span></span>
         </button>
-        <button type="button" onClick={() => window.print()} className="inline-flex items-center gap-3 rounded-xl px-5 py-3 text-white text-left shadow" style={{ background: "#b45309" }}>
+        <button type="button" onClick={() => window.print()} className="inline-flex items-center gap-3 rounded-xl px-5 py-3 text-white text-left shadow" style={{ background: accessibleBg("#b45309", 4.5, 0.9) }}>
           <FileDown size={20} /><span><b className="block leading-tight">Save as PDF</b><span className="text-xs opacity-90">Print this report</span></span>
         </button>
       </div>
-      {note && <p className="text-sm font-semibold mt-3" style={{ color }}>{note}</p>}
+      {note && <p className="text-sm font-semibold mt-3" style={{ color: accessibleText(color) }}>{note}</p>}
     </div>
   );
 }
@@ -411,7 +413,7 @@ export function Understanding({ slug, color, from, to, title, points, more, sour
             <h3 className="text-lg font-extrabold mb-2">More tools</h3>
             <ul className="space-y-1.5">
               {more.map((m) => (
-                <li key={m.href}><Link href={m.href} className="font-semibold underline" style={{ color }}>{m.label}</Link> <span className="text-muted">– {m.sub}</span></li>
+                <li key={m.href}><Link href={m.href} className="font-semibold underline text-accent">{m.label}</Link> <span className="text-muted">– {m.sub}</span></li>
               ))}
             </ul>
           </div>
@@ -420,7 +422,7 @@ export function Understanding({ slug, color, from, to, title, points, more, sour
           <div className="font-bold mb-1">Where to check the official figures</div>
           <ul className="space-y-0.5">
             {sources.map((s) => (
-              <li key={s.href}><a href={s.href} target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color }}>{s.label}</a></li>
+              <li key={s.href}><a href={s.href} target="_blank" rel="noopener noreferrer" className="underline text-accent">{s.label}</a></li>
             ))}
           </ul>
           <p className="text-xs text-muted mt-2">These results are estimates for general guidance and are not financial advice. Always confirm important figures with an official source.</p>
@@ -463,7 +465,7 @@ export function TaxBandsReference() {
           className={`rounded-lg px-4 py-2 text-sm font-semibold border ${tab === "scotland" ? "text-white border-transparent" : "bg-surface2 border-line text-muted"}`}
           style={tab === "scotland" ? { background: "#1d4ed8" } : undefined}>Scotland</button>
       </div>
-      <div className="overflow-x-auto rounded-xl border border-line">
+      <div tabIndex={0} className="overflow-x-auto rounded-xl border border-line">
         <table className="w-full text-sm min-w-[420px]">
           <thead><tr className="bg-surface2 text-left"><th className="px-4 py-2.5">Band</th><th className="px-4 py-2.5">Taxable income</th><th className="px-4 py-2.5">Rate</th></tr></thead>
           <tbody>
@@ -488,7 +490,7 @@ const NI_BANDS = [
 export function NIBandsReference() {
   return (
     <Block icon={BookOpen} title="2026/27 National Insurance rates" color="#059669">
-      <div className="overflow-x-auto rounded-xl border border-line">
+      <div tabIndex={0} className="overflow-x-auto rounded-xl border border-line">
         <table className="w-full text-sm min-w-[420px]">
           <thead><tr className="bg-surface2 text-left"><th className="px-4 py-2.5">Band</th><th className="px-4 py-2.5">Annual earnings</th><th className="px-4 py-2.5">Rate</th></tr></thead>
           <tbody>

@@ -42,21 +42,21 @@ export default function SalaryIndex() {
             pension, a student loan repayment, or a non-standard tax code will all change your real take-home pay,
             and Scotland uses entirely different Income Tax bands from England, Wales and Northern Ireland above the
             basic rate. Pick a salary for the full breakdown including Scotland, or use the full{" "}
-            <Link href="/salary-calculator" className="text-accent hover:underline">Salary Calculator</Link> for any
+            <Link href="/salary-calculator" className="text-accent underline">Salary Calculator</Link> for any
             amount with pension and student loan built in. See how National Insurance and Income Tax bands work in
-            more depth in our <Link href="/guides" className="text-accent hover:underline">tax guides</Link>.
+            more depth in our <Link href="/guides" className="text-accent underline">tax guides</Link>.
           </p>
         </div>
       </div>
 
-      <div className="card p-6 sm:p-8 mt-6 overflow-x-auto">
+      <div tabIndex={0} className="card p-6 sm:p-8 mt-6 overflow-x-auto">
         <h2 className="font-extrabold text-lg">Take-home pay by salary (England, Wales &amp; NI)</h2>
         <table className="w-full text-sm mt-4 min-w-[420px]">
           <thead><tr className="bg-surface2 text-left"><th className="px-3 py-2.5">Gross salary</th><th className="px-3 py-2.5">Take-home a year</th><th className="px-3 py-2.5">Take-home a month</th></tr></thead>
           <tbody>
             {table.map(({ gross, net }) => (
               <tr key={gross} className="border-t border-line">
-                <td className="px-3 py-2.5"><Link href={`/salary/${gross}`} className="text-accent hover:underline font-semibold">{gbp(gross, 0)}</Link></td>
+                <td className="px-3 py-2.5"><Link href={`/salary/${gross}`} className="text-accent underline font-semibold">{gbp(gross, 0)}</Link></td>
                 <td className="px-3 py-2.5">{gbp(net, 0)}</td>
                 <td className="px-3 py-2.5">{gbp(net / 12, 0)}</td>
               </tr>

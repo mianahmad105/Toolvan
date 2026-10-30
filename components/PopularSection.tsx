@@ -48,7 +48,7 @@ export function PopularSection() {
                 <span className="font-bold leading-tight">{t.title.replace(" Calculator", "")}</span>
               </div>
               <p className="text-sm text-muted mt-4">{BLURB[t.slug]}</p>
-              <span className="inline-flex items-center gap-1 text-sm font-medium mt-4" style={{ color: t.color }}>
+              <span className="inline-flex items-center gap-1 text-sm font-medium mt-4 text-accent">
                 Open calculator <ArrowRight size={15} className="transition group-hover:translate-x-1" />
               </span>
             </Link>
