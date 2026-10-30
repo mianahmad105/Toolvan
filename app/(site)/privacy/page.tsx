@@ -1,0 +1,142 @@
+import Link from "next/link";
+import { CONTACT_EMAIL, SITE_NAME, SITE_URL } from "@/lib/tools";
+
+export const metadata = { title: "Privacy Policy" };
+
+const LAST_UPDATED = "29 September 2026";
+
+function Row({ cookie, purpose, consent }: { cookie: string; purpose: string; consent: string }) {
+  return (
+    <tr className="border-t border-line">
+      <td className="px-4 py-2.5 font-mono text-xs">{cookie}</td>
+      <td className="px-4 py-2.5">{purpose}</td>
+      <td className="px-4 py-2.5">{consent}</td>
+    </tr>
+  );
+}
+
+export default function Privacy() {
+  return (
+    <div className="mx-auto max-w-4xl px-4 py-10">
+      <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted flex items-center gap-2">
+        <Link href="/" className="hover:text-ink">Home</Link><span>/</span><span className="text-ink">Privacy Policy</span>
+      </nav>
+
+      <div className="card p-6 sm:p-10">
+        <h1 className="text-3xl md:text-4xl font-extrabold">Privacy Policy</h1>
+        <p className="text-muted mt-1.5">Last updated: {LAST_UPDATED}</p>
+        <hr className="my-6 border-line" />
+
+        <div className="space-y-8 leading-7">
+          <section>
+            <h2 className="text-xl font-extrabold mb-2">1. Who we are</h2>
+            <p className="text-muted">
+              {SITE_URL.replace("https://", "")} is a free set of UK tax and salary calculators, run by {SITE_NAME}.
+              For the purposes of UK data protection law, {SITE_NAME} is the data controller for any personal data
+              collected through this website.
+            </p>
+            <p className="text-muted mt-3">
+              If you have any questions about this policy, you can reach us at{" "}
+              <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">{CONTACT_EMAIL}</a>.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-extrabold mb-2">2. What data we collect</h2>
+            <p className="text-muted">
+              You don&apos;t need an account to use our calculators, and we don&apos;t ask for personal details to show you a
+              result. Every calculation runs entirely in your own browser — the salary, income or other figures you
+              type in are never sent to our servers or stored anywhere by us.
+            </p>
+            <p className="text-muted mt-3">
+              The only thing we save in your browser is your light/dark display preference, using your browser&apos;s
+              local storage. It stays on your device and is never transmitted to us.
+            </p>
+            <p className="text-muted mt-3">
+              If you choose to contact us through our contact form or by email, we&apos;ll receive whatever you enter —
+              typically your name, email address, and the content of your message — so that we can reply to you.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-extrabold mb-2">3. Cookies and local storage</h2>
+            <p className="text-muted mb-3">We keep this deliberately simple. Here is everything we currently store in your browser:</p>
+            <div className="overflow-x-auto rounded-xl border border-line">
+              <table className="w-full text-sm min-w-[480px]">
+                <thead><tr className="bg-surface2 text-left"><th className="px-4 py-2.5">Name</th><th className="px-4 py-2.5">Purpose</th><th className="px-4 py-2.5">Consent needed</th></tr></thead>
+                <tbody>
+                  <Row cookie="theme" purpose="Remembers whether you last chose light or dark mode" consent="No — strictly necessary, and not a tracking cookie" />
+                </tbody>
+              </table>
+            </div>
+            <p className="text-muted mt-3">
+              We don&apos;t currently run analytics, advertising or tracking cookies of any kind. If that ever changes,
+              we&apos;ll update this page and our <Link href="/cookies" className="text-accent hover:underline">Cookie Policy</Link> first, and ask for your consent where the law requires it.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-extrabold mb-2">4. How we use your data</h2>
+            <ul className="list-disc pl-6 space-y-1.5 text-muted">
+              <li>To reply to messages you send us through the contact form or by email</li>
+              <li>To remember your display preference between visits, on your own device</li>
+            </ul>
+            <p className="text-muted mt-3">
+              We process contact-form messages on the basis of your consent to be contacted, and your display
+              preference as a strictly necessary part of running the site.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-extrabold mb-2">5. Third parties</h2>
+            <p className="text-muted">
+              We do not sell, rent or share your data with any third party. This site is hosted with standard
+              infrastructure providers, who may process traffic data (such as IP addresses) purely to serve the
+              website to you — they do not receive the figures you enter into a calculator.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-extrabold mb-2">6. Data retention</h2>
+            <p className="text-muted">
+              We keep contact-form messages only for as long as needed to resolve your enquiry, then delete them.
+              Your display preference stays in your browser until you clear your site data — we never see or store it ourselves.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-extrabold mb-2">7. Your rights under UK GDPR</h2>
+            <p className="text-muted mb-2">Where we hold any personal data about you (for example, a message you sent us), you have the right to:</p>
+            <ul className="list-disc pl-6 space-y-1.5 text-muted">
+              <li><b className="text-ink">Access</b> — ask for a copy of the data we hold about you</li>
+              <li><b className="text-ink">Rectification</b> — ask us to correct anything that&apos;s inaccurate</li>
+              <li><b className="text-ink">Erasure</b> — ask us to delete your data</li>
+              <li><b className="text-ink">Restriction</b> — ask us to limit how we use your data</li>
+              <li><b className="text-ink">Objection</b> — object to how we&apos;re using your data</li>
+              <li><b className="text-ink">Withdraw consent</b> — at any time, where we rely on your consent</li>
+            </ul>
+            <p className="text-muted mt-3">
+              To use any of these rights, email us at <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">{CONTACT_EMAIL}</a>.
+              You can also complain to the <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Information Commissioner&apos;s Office (ICO)</a> if you&apos;re unhappy with how we&apos;ve handled your data.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-extrabold mb-2">8. Changes to this policy</h2>
+            <p className="text-muted">
+              We may update this policy from time to time — for example, if we add a new feature that changes what
+              data we collect. The &ldquo;last updated&rdquo; date at the top of this page will always reflect the latest
+              version, and continuing to use the site after a change means you accept the update.
+            </p>
+          </section>
+        </div>
+
+        <hr className="my-8 border-line" />
+        <p className="text-sm text-muted">
+          Questions about this policy? <Link href="/contact" className="text-accent hover:underline">Contact Us</Link> or email{" "}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">{CONTACT_EMAIL}</a>.
+        </p>
+      </div>
+    </div>
+  );
+}
