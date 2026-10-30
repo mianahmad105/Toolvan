@@ -39,19 +39,21 @@ export default function Gdpr() {
             <ul className="list-disc pl-6 space-y-1.5 text-muted">
               <li>Your name, email address and message, if you contact us through the contact form or by email</li>
               <li>A light/dark display preference, stored in your own browser and never sent to us</li>
+              <li>Advertising cookie identifiers set by Google and its advertising partners, used to serve and measure ads</li>
             </ul>
             <p className="text-muted mt-3">
-              We don&apos;t run analytics or advertising trackers, so we don&apos;t collect browsing behaviour, device
-              fingerprints or location data. If that ever changes, this page and our{" "}
-              <Link href="/cookies" className="text-accent hover:underline">Cookie Policy</Link> will be updated first.
+              We don&apos;t run our own analytics trackers, and we don&apos;t collect this data ourselves — the advertising
+              data above is collected directly by Google and its partners through the cookies described in our{" "}
+              <Link href="/cookies" className="text-accent hover:underline">Cookie Policy</Link>, not by us. You can opt out
+              of personalised ads at any time through Google Ads Settings.
             </p>
           </section>
 
           <section>
             <h2 className="text-xl font-extrabold mb-2">Our lawful basis for processing</h2>
             <ul className="list-disc pl-6 space-y-1.5 text-muted">
-              <li><b className="text-ink">Consent</b> — when you send us a message, you&apos;re consenting to us using those details to reply to you</li>
-              <li><b className="text-ink">Legitimate interests</b> — keeping the site running securely and reliably</li>
+              <li><b className="text-ink">Consent</b> — when you send us a message, you&apos;re consenting to us using those details to reply to you; and when you accept advertising cookies via our cookie banner</li>
+              <li><b className="text-ink">Legitimate interests</b> — keeping the site running securely and reliably, and funding it through advertising</li>
             </ul>
             <p className="text-muted mt-3">We don&apos;t use your data for automated decision-making or profiling.</p>
           </section>
@@ -95,9 +97,11 @@ export default function Gdpr() {
           <section>
             <h2 className="text-xl font-extrabold mb-2">Keeping your data safe</h2>
             <p className="text-muted">
-              We only collect what&apos;s described above, keep it for as short a time as possible, and don&apos;t share it
-              with third parties for marketing. If we ever became aware of a data breach affecting your personal
-              data, we would notify the ICO and anyone affected without undue delay, as UK GDPR requires.
+              We only collect what&apos;s described above, keep it for as short a time as possible, and don&apos;t sell it or
+              share it with anyone beyond the advertising cookies described on this page and in our{" "}
+              <Link href="/cookies" className="text-accent hover:underline">Cookie Policy</Link>. If we ever became aware
+              of a data breach affecting your personal data, we would notify the ICO and anyone affected without undue
+              delay, as UK GDPR requires.
             </p>
           </section>
 
