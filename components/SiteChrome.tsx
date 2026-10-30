@@ -96,6 +96,8 @@ const QUICK_LINKS = [
   { href: "/tools", label: "Calculators" },
   { href: "/salary-calculator", label: "Salary Calculator" },
   { href: "/after-tax", label: "After-tax pay" },
+  { href: "/salary", label: "Salary after tax" },
+  { href: "/about", label: "About us" },
   { href: "/contact", label: "Contact Us" },
   { href: "/privacy", label: "Privacy notice" },
   { href: "/gdpr", label: "GDPR" },

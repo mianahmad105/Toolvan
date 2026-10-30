@@ -12,7 +12,7 @@ import { toolHref } from "@/lib/tools";
 import { NumField, PLANS, REGIONS, SelectField } from "./ui";
 import {
   Accordion, BarCompare, EmptyResults, PageHero, PieChartSvg, RowsTable, RunCard,
-  Section, ShareSaveBar, StatCard, Understanding,
+  Section, ShareSaveBar, StatCard, TaxBandsReference, Understanding,
 } from "./proui";
 
 const pct = (n: number) => `${isFinite(n) ? n.toFixed(1) : "0.0"}%`;
@@ -97,6 +97,7 @@ export function NICalculatorPro() {
         {results}
       </RunCard>
       {extra}
+      <TaxBandsReference />
       <Understanding slug="ni-calculator" color={NI_COLOR} from="#1f3b38" to="#345a55" title="Understanding National Insurance"
         points={["Employee Class 1 National Insurance", "8% and 2% band breakdown", "Effect of a pay rise on your NI", "Where your pay goes at a glance"]}
         more={[
@@ -204,6 +205,7 @@ export function AfterTaxPro() {
         {results}
       </RunCard>
       {extra}
+      <TaxBandsReference />
       <Understanding slug="after-tax" color={AFTER_COLOR} from="#3b2a12" to="#5a4522" title="Understanding after-tax pay"
         points={["Income tax and National Insurance", "Pension contributions before tax", "Student loan plans 1, 2, 4, 5 and postgraduate", "England, Wales, NI and Scotland"]}
         more={[
@@ -282,6 +284,7 @@ export function GrossSalaryCalculatorPro() {
         {results}
       </RunCard>
       {extra}
+      <TaxBandsReference />
       <Understanding slug="gross-salary-calculator" color={GROSS_COLOR} from="#2e1065" to="#4c1d95" title="Understanding gross salary"
         points={["Works backwards from take-home pay", "Income tax and National Insurance", "Pension contributions and student loan", "England, Wales, NI and Scotland"]}
         more={[
@@ -345,6 +348,7 @@ export function TaxCodeCheckerPro() {
         {results}
       </RunCard>
       {extra}
+      <TaxBandsReference />
       <Understanding slug="tax-code-checker" color={CODE_COLOR} from="#083344" to="#155e75" title="Understanding tax codes"
         points={["Standard, BR, D0, D1 and NT codes", "K codes that add to your taxable income", "Scotland (S) and Wales (C) prefixes", "M and N Marriage Allowance suffixes"]}
         more={[

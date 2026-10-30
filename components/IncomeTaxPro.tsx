@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { BLIND_ALLOWANCE, calcSalary, gbp, incomeTax, type Region, type StudentPlan } from "@/lib/tax";
 import { PLANS } from "./ui";
+import { TaxBandsReference } from "./proui";
 
 const FREQ = { year: 1, month: 12, week: 52, day: 260 } as const;
 type Freq = keyof typeof FREQ;
@@ -496,6 +497,7 @@ export function IncomeTaxPro() {
       </section>
 
       {extra}
+      <TaxBandsReference />
       <Understanding blind={BLIND_ALLOWANCE} />
     </div>
   );
