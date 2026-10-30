@@ -43,7 +43,7 @@ export function ContactForm() {
       </label>
       <p className="text-xs text-muted mt-1.5">Please include as much detail as possible to help us assist you better.</p>
 
-      <button type="submit" className="w-full mt-6 inline-flex items-center justify-center gap-2 rounded-xl py-3.5 font-bold text-white shadow-md" style={{ background: "linear-gradient(90deg,#16a34a,#a3e635)" }}>
+      <button type="submit" className="w-full mt-6 inline-flex items-center justify-center gap-2 rounded-xl py-3.5 font-bold text-white shadow-md" style={{ background: "linear-gradient(90deg,#1d4ed8,#38bdf8)" }}>
         <Send size={17} /> Send Message
       </button>
       <p className="text-xs text-muted mt-3">

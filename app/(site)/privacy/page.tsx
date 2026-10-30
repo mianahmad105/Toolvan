@@ -66,6 +66,7 @@ export default function Privacy() {
                 <thead><tr className="bg-surface2 text-left"><th className="px-4 py-2.5">Name</th><th className="px-4 py-2.5">Purpose</th><th className="px-4 py-2.5">Consent needed</th></tr></thead>
                 <tbody>
                   <Row cookie="theme" purpose="Remembers whether you last chose light or dark mode" consent="No — strictly necessary, and not a tracking cookie" />
+                  <Row cookie="cookieConsent" purpose="Remembers that you've seen our cookie notice" consent="No — strictly necessary, and not a tracking cookie" />
                 </tbody>
               </table>
             </div>

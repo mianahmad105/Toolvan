@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Clock, ShieldCheck, Sparkles } from "lucide-react";
+import { Clock, Sparkles } from "lucide-react";
 import type { Region } from "@/lib/tax";
 
 const PERIODS = { year: 1, month: 12, week: 52 } as const;
@@ -56,14 +56,13 @@ export function QuickCalc() {
         </div>
       </div>
 
-      <button type="submit" className="w-full mt-6 rounded-2xl py-4 font-bold text-white shadow-lg" style={{ background: "linear-gradient(90deg,#16a34a,#a3e635)" }}>
+      <button type="submit" className="w-full mt-6 rounded-2xl py-4 font-bold text-white shadow-lg" style={{ background: "linear-gradient(90deg,#1d4ed8,#38bdf8)" }}>
         Calculate My Tax
       </button>
 
       <div className="flex justify-center gap-5 mt-6 pt-5 border-t border-line text-xs text-muted">
-        <span className="inline-flex items-center gap-1.5"><ShieldCheck size={14} className="text-green-500" /> Private</span>
-        <span className="inline-flex items-center gap-1.5"><Clock size={14} className="text-green-500" /> Fast</span>
-        <span className="inline-flex items-center gap-1.5"><Sparkles size={14} className="text-yellow-500" /> Free</span>
+        <span className="inline-flex items-center gap-1.5"><Clock size={14} className="text-blue-500" /> Fast</span>
+        <span className="inline-flex items-center gap-1.5"><Sparkles size={14} className="text-sky-400" /> Free</span>
       </div>
     </form>
   );

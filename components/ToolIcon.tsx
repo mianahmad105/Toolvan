@@ -33,7 +33,7 @@ export function ToolIcon({ slug, color, size = 20, solid = false, gradient }: { 
       className={`grid place-items-center shrink-0 ${big ? "w-12 h-12 rounded-2xl shadow-md" : "w-10 h-10 rounded-xl"}`}
       style={
         gradient ? { background: gradient, color: "#fff" }
-        : solid ? { background: "linear-gradient(135deg, #22c55e, #16a34a)", color: "#fff" }
+        : solid ? { background: "linear-gradient(135deg, #3b82f6, #1d4ed8)", color: "#fff" }
         : { background: `color-mix(in srgb, ${color} 14%, transparent)`, color }
       }
     >

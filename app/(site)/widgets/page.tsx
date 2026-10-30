@@ -75,7 +75,7 @@ function WidgetCard({ tool }: { tool: Tool }) {
 export default function Widgets() {
   return (
     <>
-      <section className="text-white text-center px-4 py-16 md:py-20" style={{ background: "linear-gradient(120deg,#0a2412 0%,#16a34a 55%,#3f6212 100%)" }}>
+      <section className="text-white text-center px-4 py-16 md:py-20" style={{ background: "linear-gradient(120deg,#0a1a3d 0%,#1d4ed8 55%,#1e3a8a 100%)" }}>
         <div className="mx-auto max-w-2xl">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm">
             <Sparkles size={15} /> Free, no catches
@@ -123,7 +123,7 @@ export default function Widgets() {
       </div>
 
       <div className="mx-auto max-w-5xl px-4 py-14">
-        <div className="rounded-2xl px-6 py-10 md:px-12 text-white text-center" style={{ background: "linear-gradient(120deg,#16a34a,#a3e635)" }}>
+        <div className="rounded-2xl px-6 py-10 md:px-12 text-white text-center" style={{ background: "linear-gradient(120deg,#1d4ed8,#38bdf8)" }}>
           <Code2 size={28} className="mx-auto" />
           <h2 className="text-2xl md:text-3xl font-extrabold mt-3">Ready to add a calculator?</h2>
           <p className="text-white/90 mt-2 max-w-lg mx-auto">Copy a snippet above and paste it into your site. There&apos;s nothing to install and nothing to configure.</p>
