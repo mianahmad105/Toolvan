@@ -200,7 +200,7 @@ export function InheritanceTaxCalculatorPro() {
         ]}
         sources={[
           { label: "GOV.UK: How Inheritance Tax works", href: "https://www.gov.uk/inheritance-tax" },
-          { label: "GOV.UK: Residence nil-rate band", href: "https://www.gov.uk/guidance/inheritance-tax-additional-threshold-residence-nil-rate-band" },
+          { label: "GOV.UK: Residence nil-rate band", href: "https://www.gov.uk/guidance/inheritance-tax-residence-nil-rate-band" },
         ]} />
     </div>
   );
