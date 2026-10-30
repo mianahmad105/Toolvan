@@ -454,9 +454,9 @@ export function IncomeTaxPro() {
               <div><label className="label">Region</label>
                 <select className="field" value={inp.region} onChange={(e) => set("region", e.target.value as Region)}>
                   <option value="england">England, Wales &amp; N. Ireland</option><option value="scotland">Scotland</option></select></div>
-              <div><label className="label">Your age</label>
+              <div><label className="label">State Pension age</label>
                 <select className="field" value={inp.over66 ? "over" : "under"} onChange={(e) => set("over66", e.target.value === "over")}>
-                  <option value="under">Under 66</option><option value="over">66 or over</option></select></div>
+                  <option value="under">Under State Pension age</option><option value="over">Reached State Pension age</option></select></div>
               <div className="flex items-center justify-between gap-3">
                 <span className="label !mb-0">Registered blind?</span>
                 <div className="flex gap-2">

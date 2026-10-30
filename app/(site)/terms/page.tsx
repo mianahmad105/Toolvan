@@ -1,9 +1,13 @@
 import Link from "next/link";
 import { CONTACT_EMAIL, SITE_NAME, SITE_URL } from "@/lib/tools";
 
-export const metadata = { title: "Terms of Use", alternates: { canonical: "/terms" } };
+export const metadata = {
+  title: "Terms of Use",
+  description: "The terms that apply when you use Toolvan's free UK tax and salary calculators, including liability, permitted use and advertising.",
+  alternates: { canonical: "/terms" },
+};
 
-const LAST_UPDATED = "29 September 2026";
+const LAST_UPDATED = "30 September 2026";
 const DOMAIN = SITE_URL.replace("https://", "");
 
 export default function Terms() {
@@ -104,8 +108,15 @@ export default function Terms() {
           <section>
             <h2 className="text-xl font-extrabold mb-2">8. Advertising and funding</h2>
             <p className="text-muted">
-              The Site is currently free to use and does not display third-party advertising. If that changes in
-              future, we&apos;ll update this page and our <Link href="/privacy" className="text-accent hover:underline">Privacy Policy</Link> to explain what&apos;s shown and how it&apos;s targeted.
+              The Site is free to use, and we display advertising through Google AdSense to help cover the cost of
+              running it. Ads may be personalised based on your browsing activity, using the cookies described in our{" "}
+              <Link href="/privacy" className="text-accent hover:underline">Privacy Policy</Link> and{" "}
+              <Link href="/cookies" className="text-accent hover:underline">Cookie Policy</Link>. You can control ad
+              personalisation at any time through Google Ads Settings.
+            </p>
+            <p className="text-muted mt-3">
+              An advertisement shown on the Site is not an endorsement of that advertiser or its products or services
+              by {SITE_NAME}, and we don&apos;t control the content of third-party ads served through the network.
             </p>
           </section>
 

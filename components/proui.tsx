@@ -477,3 +477,28 @@ export function TaxBandsReference() {
     </Block>
   );
 }
+
+const NI_BANDS = [
+  { band: "Below the Primary Threshold", range: "Up to £12,570", rate: "0%" },
+  { band: "Main rate", range: "£12,571 to £50,270", rate: "8%" },
+  { band: "Above the Upper Earnings Limit", range: "Over £50,270", rate: "2%" },
+];
+
+/** Static reference table of the 2026/27 employee Class 1 National Insurance rates. */
+export function NIBandsReference() {
+  return (
+    <Block icon={BookOpen} title="2026/27 National Insurance rates" color="#059669">
+      <div className="overflow-x-auto rounded-xl border border-line">
+        <table className="w-full text-sm min-w-[420px]">
+          <thead><tr className="bg-surface2 text-left"><th className="px-4 py-2.5">Band</th><th className="px-4 py-2.5">Annual earnings</th><th className="px-4 py-2.5">Rate</th></tr></thead>
+          <tbody>
+            {NI_BANDS.map((r) => (
+              <tr key={r.band} className="border-t border-line"><td className="px-4 py-2.5">{r.band}</td><td className="px-4 py-2.5">{r.range}</td><td className="px-4 py-2.5 font-semibold">{r.rate}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="text-xs text-muted mt-3">Employee Class 1 National Insurance stops once you reach State Pension age. Income Tax is worked out separately, on different bands.</p>
+    </Block>
+  );
+}

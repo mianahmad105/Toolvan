@@ -1,9 +1,13 @@
 import Link from "next/link";
 import { CONTACT_EMAIL, SITE_NAME, SITE_URL } from "@/lib/tools";
 
-export const metadata = { title: "Privacy Policy", alternates: { canonical: "/privacy" } };
+export const metadata = {
+  title: "Privacy Policy",
+  description: "How Toolvan handles your data, the cookies we and our advertising partners use, and how to control personalised ads.",
+  alternates: { canonical: "/privacy" },
+};
 
-const LAST_UPDATED = "29 September 2026";
+const LAST_UPDATED = "30 September 2026";
 
 function Row({ cookie, purpose, consent }: { cookie: string; purpose: string; consent: string }) {
   return (
@@ -59,20 +63,35 @@ export default function Privacy() {
           </section>
 
           <section>
-            <h2 className="text-xl font-extrabold mb-2">3. Cookies and local storage</h2>
-            <p className="text-muted mb-3">We keep this deliberately simple. Here is everything we currently store in your browser:</p>
+            <h2 className="text-xl font-extrabold mb-2">3. Cookies and advertising</h2>
+            <p className="text-muted mb-3">Here is what we and our advertising partners currently store in your browser:</p>
             <div className="overflow-x-auto rounded-xl border border-line">
               <table className="w-full text-sm min-w-[480px]">
                 <thead><tr className="bg-surface2 text-left"><th className="px-4 py-2.5">Name</th><th className="px-4 py-2.5">Purpose</th><th className="px-4 py-2.5">Consent needed</th></tr></thead>
                 <tbody>
                   <Row cookie="theme" purpose="Remembers whether you last chose light or dark mode" consent="No — strictly necessary, and not a tracking cookie" />
                   <Row cookie="cookieConsent" purpose="Remembers that you've seen our cookie notice" consent="No — strictly necessary, and not a tracking cookie" />
+                  <Row cookie="Google advertising cookies (e.g. DoubleClick/IDE)" purpose="Set by Google to serve and measure ads, and to limit how many times you see the same ad" consent="Yes — used only for ads, based on your prior visits to this and other sites" />
+                  <Row cookie="Other advertising partner cookies" purpose="Google's advertising partners may set their own cookies to support ad delivery and measurement on our pages" consent="Yes — same basis as the Google advertising cookies above" />
                 </tbody>
               </table>
             </div>
             <p className="text-muted mt-3">
-              We don&apos;t currently run analytics, advertising or tracking cookies of any kind. If that ever changes,
-              we&apos;ll update this page and our <Link href="/cookies" className="text-accent hover:underline">Cookie Policy</Link> first, and ask for your consent where the law requires it.
+              We use Google and other third-party vendors to show advertising on this site. These vendors use cookies to
+              serve ads based on your past visits to this and other websites. Google&apos;s advertising cookies — including
+              the DoubleClick cookie — let Google and its partners show you personalised ads based on your visit to this
+              site and other sites you&apos;ve visited.
+            </p>
+            <p className="text-muted mt-3">
+              You can turn off personalised advertising at any time through{" "}
+              <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Google Ads Settings</a>.
+              For more detail on how Google uses information when you visit a site that uses its services, see Google&apos;s{" "}
+              <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                &ldquo;How Google uses information from sites or apps that use our services&rdquo;
+              </a> page.
+            </p>
+            <p className="text-muted mt-3">
+              See our <Link href="/cookies" className="text-accent hover:underline">Cookie Policy</Link> for the full list of cookies and how to control them.
             </p>
           </section>
 
@@ -91,9 +110,15 @@ export default function Privacy() {
           <section>
             <h2 className="text-xl font-extrabold mb-2">5. Third parties</h2>
             <p className="text-muted">
-              We do not sell, rent or share your data with any third party. This site is hosted with standard
-              infrastructure providers, who may process traffic data (such as IP addresses) purely to serve the
-              website to you — they do not receive the figures you enter into a calculator.
+              We do not sell your personal data. This site is hosted with standard infrastructure providers, who may
+              process traffic data (such as IP addresses) purely to serve the website to you — they do not receive the
+              figures you enter into a calculator.
+            </p>
+            <p className="text-muted mt-3">
+              Where advertising is shown, Google and its advertising partners may process limited technical data — such
+              as your IP address and advertising cookie identifiers — to serve and measure ads, as described in{" "}
+              <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Google&apos;s partner sites policy</a>.
+              This is separate from, and never combined with, the salary or tax figures you type into a calculator.
             </p>
           </section>
 

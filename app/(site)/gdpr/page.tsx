@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { CONTACT_EMAIL, SITE_NAME, SITE_URL } from "@/lib/tools";
 
-export const metadata = { title: "GDPR Compliance", alternates: { canonical: "/gdpr" } };
+export const metadata = {
+  title: "GDPR Compliance",
+  description: "How Toolvan meets its obligations under UK GDPR — what personal data we process, your rights, and how to exercise them.",
+  alternates: { canonical: "/gdpr" },
+};
 
 const LAST_UPDATED = "30 September 2026";
 const DOMAIN = SITE_URL.replace("https://", "");

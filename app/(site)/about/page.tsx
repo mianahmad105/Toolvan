@@ -21,9 +21,9 @@ export default function About() {
           <h2 className="text-xl font-extrabold mb-2">What we do</h2>
           <p className="text-muted">
             {SITE_NAME} is an independent, free set of UK tax and salary calculators — take-home pay, income tax,
-            National Insurance, Stamp Duty, Capital Gains Tax and more. It&apos;s built and maintained by a single
-            developer, not a large company, with the aim of giving a quick, clear estimate without needing to sign up
-            or hand over any personal details.
+            National Insurance, Stamp Duty, Capital Gains Tax and more. Hi, I&apos;m Adeel — I built and maintain it
+            myself, not as part of a large company, with the aim of giving a quick, clear estimate without needing to
+            sign up or hand over any personal details.
           </p>
         </section>
 

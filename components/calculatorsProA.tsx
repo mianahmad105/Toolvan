@@ -12,7 +12,7 @@ import { toolHref } from "@/lib/tools";
 import { NumField, PLANS, REGIONS, SelectField } from "./ui";
 import {
   Accordion, BarCompare, EmptyResults, PageHero, PieChartSvg, RowsTable, RunCard,
-  Section, ShareSaveBar, StatCard, TaxBandsReference, Understanding,
+  NIBandsReference, Section, ShareSaveBar, StatCard, TaxBandsReference, Understanding,
 } from "./proui";
 
 const pct = (n: number) => `${isFinite(n) ? n.toFixed(1) : "0.0"}%`;
@@ -97,7 +97,7 @@ export function NICalculatorPro() {
         {results}
       </RunCard>
       {extra}
-      <TaxBandsReference />
+      <NIBandsReference />
       <Understanding slug="ni-calculator" color={NI_COLOR} from="#1f3b38" to="#345a55" title="Understanding National Insurance"
         points={["Employee Class 1 National Insurance", "8% and 2% band breakdown", "Effect of a pay rise on your NI", "Where your pay goes at a glance"]}
         more={[
@@ -366,27 +366,34 @@ export function TaxCodeCheckerPro() {
 /* ---------------------------------------------------------------------- */
 const PRO_RATA_COLOR = "#dc2626";
 
+type ProRataUnit = "days" | "hours";
+
 export function ProRataCalculatorPro() {
   const [salary, setSalary] = useState(0);
-  const [fullDays, setFullDays] = useState(5);
-  const [myDays, setMyDays] = useState(0);
-  const [snap, setSnap] = useState<{ salary: number; fullDays: number; myDays: number } | null>(null);
-  const submit = (e: React.FormEvent) => { e.preventDefault(); setSnap({ salary, fullDays, myDays }); };
+  const [unit, setUnit] = useState<ProRataUnit>("days");
+  const [fullUnits, setFullUnits] = useState(5);
+  const [myUnits, setMyUnits] = useState(0);
+  const [snap, setSnap] = useState<{ salary: number; unit: ProRataUnit; fullUnits: number; myUnits: number } | null>(null);
+  const submit = (e: React.FormEvent) => { e.preventDefault(); setSnap({ salary, unit, fullUnits, myUnits }); };
 
   let results: React.ReactNode = <EmptyResults icon={Clock} color={PRO_RATA_COLOR} label="Calculate" />;
   let extra: React.ReactNode = null;
   if (snap) {
-    const share = snap.fullDays > 0 ? snap.myDays / snap.fullDays : 0;
+    const share = snap.fullUnits > 0 ? snap.myUnits / snap.fullUnits : 0;
     const annual = snap.salary * share;
     const foregone = snap.salary - annual;
-    const days = (snap.fullDays || 5) * 52;
-    const periods: [string, number][] = [["Yearly", 1], ["Monthly", 12], ["Weekly", 52], ["Daily", days]];
+    const perUnitDivisor = snap.myUnits > 0 ? snap.myUnits * 52 : 1;
+    const periods: [string, number][] = [
+      ["Yearly", 1], ["Monthly", 12], ["Weekly", 52],
+      [snap.unit === "hours" ? "Hourly" : "Daily", perUnitDivisor],
+    ];
+    const unitLabel = snap.unit === "hours" ? "hours" : "days";
 
     results = (
       <div className="space-y-6">
         <div className="text-center">
           <h2 className="text-2xl md:text-3xl font-extrabold">Your pro rata salary</h2>
-          <p className="text-muted mt-1">{snap.myDays} of {snap.fullDays} full-time days a week</p>
+          <p className="text-muted mt-1">{snap.myUnits} of {snap.fullUnits} full-time {unitLabel} a week</p>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           <StatCard label="Full-time salary" value={gbp(snap.salary, 0)} note="100% equivalent" color="#64748b" />
@@ -413,12 +420,15 @@ export function ProRataCalculatorPro() {
 
   return (
     <div className="space-y-10">
-      <PageHero title="Pro Rata Calculator" subtitle="Convert a full-time salary into your pro rata salary based on the days you work." />
-      <RunCard icon={Clock} from="#b91c1c" to="#f87171" formTitle="Your working pattern" formSub="Tell us your days and full-time salary" submitLabel="Calculate" onSubmit={submit}
+      <PageHero title="Pro Rata Calculator" subtitle="Convert a full-time salary into your pro rata salary based on the days or hours you work." />
+      <RunCard icon={Clock} from="#b91c1c" to="#f87171" formTitle="Your working pattern" formSub="Tell us your days or hours and full-time salary" submitLabel="Calculate" onSubmit={submit}
         form={<>
           <NumField label="Full-time annual salary" value={salary} onChange={setSalary} step={500} />
-          <NumField label="Full-time days per week" value={fullDays} onChange={setFullDays} prefix="" step={0.5} />
-          <NumField label="Days you work per week" value={myDays} onChange={setMyDays} prefix="" step={0.5} />
+          <SelectField label="Measured in" value={unit} onChange={(v) => { setUnit(v); setFullUnits(v === "hours" ? 37.5 : 5); }} options={[
+            { value: "days", label: "Days per week" }, { value: "hours", label: "Hours per week" },
+          ]} />
+          <NumField label={`Full-time ${unit} per week`} value={fullUnits} onChange={setFullUnits} prefix="" step={0.5} />
+          <NumField label={`${unit === "hours" ? "Hours" : "Days"} you work per week`} value={myUnits} onChange={setMyUnits} prefix="" step={0.5} />
         </>}>
         {results}
       </RunCard>
