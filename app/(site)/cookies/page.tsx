@@ -1,4 +1,4 @@
-export const metadata = { title: "Cookie Policy" };
+export const metadata = { title: "Cookie Policy", alternates: { canonical: "/cookies" } };
 
 export default function Cookies() {
   return (

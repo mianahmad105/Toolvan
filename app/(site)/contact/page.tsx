@@ -5,7 +5,7 @@ import {
 import { ContactForm } from "@/components/ContactForm";
 import { CONTACT_EMAIL } from "@/lib/tools";
 
-export const metadata = { title: "Contact" };
+export const metadata = { title: "Contact", alternates: { canonical: "/contact" } };
 
 const WHY = [
   "Free to use, no registration required",

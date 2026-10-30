@@ -5,7 +5,7 @@ import { CopyCodeButton } from "@/components/CopyCodeButton";
 import { ToolIcon } from "@/components/ToolIcon";
 import { CONTACT_EMAIL, TOOLS, toolHref, type Tool } from "@/lib/tools";
 
-export const metadata: Metadata = { title: "Free Embeddable Tax Calculator Widgets" };
+export const metadata: Metadata = { title: "Free Embeddable Tax Calculator Widgets", alternates: { canonical: "/widgets" } };
 
 const BADGES = [
   { icon: Rocket, label: "Set up in minutes" },

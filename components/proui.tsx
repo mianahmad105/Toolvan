@@ -439,9 +439,9 @@ const ENGLAND_BANDS = [
 ];
 const SCOTLAND_BANDS = [
   { band: "Personal Allowance", range: "Up to £12,570", rate: "0%" },
-  { band: "Starter rate", range: "£12,571 to £15,397", rate: "19%" },
-  { band: "Basic rate", range: "£15,398 to £27,491", rate: "20%" },
-  { band: "Intermediate rate", range: "£27,492 to £43,662", rate: "21%" },
+  { band: "Starter rate", range: "£12,571 to £16,537", rate: "19%" },
+  { band: "Basic rate", range: "£16,538 to £29,526", rate: "20%" },
+  { band: "Intermediate rate", range: "£29,527 to £43,662", rate: "21%" },
   { band: "Higher rate", range: "£43,663 to £75,000", rate: "42%" },
   { band: "Advanced rate", range: "£75,001 to £125,140", rate: "45%" },
   { band: "Top rate", range: "Over £125,140", rate: "48%" },

@@ -5,6 +5,7 @@ import { CONTACT_EMAIL, SITE_NAME } from "@/lib/tools";
 export const metadata = {
   title: "About",
   description: "How Toolvan builds and maintains its free UK tax and salary calculators, where the figures come from, and how to get in touch.",
+  alternates: { canonical: "/about" },
 };
 
 const LAST_REVIEWED = "30 September 2026";

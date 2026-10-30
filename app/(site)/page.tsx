@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Calculator, TrendingUp } from "lucide-react";
 import { QuickCalc } from "@/components/QuickCalc";
@@ -6,6 +7,8 @@ import { ToolSuite } from "@/components/ToolSuite";
 import { AppPromo } from "@/components/AppPromo";
 import { EmbedSection } from "@/components/EmbedSection";
 import { NewsletterSection } from "@/components/NewsletterSection";
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 export default function Home() {
   return (
