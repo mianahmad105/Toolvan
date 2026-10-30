@@ -34,7 +34,7 @@ export function InheritanceTaxCalculator() {
   const [estate, setEstate] = useState(0);
   const [home, setHome] = useState(0);
   const [transfer, setTransfer] = useState<"no" | "yes">("no");
-  const r = inheritanceTax(estate, home, transfer === "yes");
+  const r = inheritanceTax(estate, home, transfer === "yes" ? 100 : 0);
   return (
     <Shell
       form={<>

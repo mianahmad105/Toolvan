@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContactBand } from "@/components/ContactBand";
-import { calcSalary, gbp, PERSONAL_ALLOWANCE } from "@/lib/tax";
+import { calcSalary, gbp } from "@/lib/tax";
 import { COMMON_SALARIES } from "@/lib/salaries";
 import { SITE_URL, toolHref } from "@/lib/tools";
 
@@ -48,6 +48,14 @@ export default async function SalaryAmountPage({ params }: { params: Promise<{ a
     { q: `What's the take-home pay on ${gbp(gross, 0)} in Scotland?`, a: `In Scotland, a ${gbp(gross, 0)} salary works out at about ${gbp(sco.net, 0)} a year take-home, because Scottish Income Tax uses different bands from the rest of the UK.` },
     { q: `What is the effective tax rate on ${gbp(gross, 0)}?`, a: `Income Tax alone comes to about ${effective.toFixed(1)}% of a ${gbp(gross, 0)} salary. Add National Insurance and the combined effective rate is about ${combinedRate.toFixed(1)}%.` },
     { q: "Does this include pension contributions or student loan?", a: "No — this page assumes no pension contribution, no student loan and the standard tax code. Use the full Income Tax Calculator to add those and get a more personal figure." },
+    ...(gross > 100000 && gross <= 125140 ? [{
+      q: "Why does my Personal Allowance shrink on this salary?",
+      a: `Above £100,000, the Personal Allowance reduces by £1 for every £2 you earn. On ${gbp(gross, 0)} it's down to ${gbp(eng.allowance, 0)}, and it disappears completely at £125,140. Between £100,000 and £125,140 this creates the "60% tax trap" — an effective marginal rate of around 60% on income in that band, well above the 40% headline rate.`,
+    }] : []),
+    ...(gross > 125140 ? [{
+      q: "Do I still get a Personal Allowance on this salary?",
+      a: `No. The Personal Allowance reduces by £1 for every £2 earned above £100,000 and disappears completely at £125,140 — well below ${gbp(gross, 0)}. So on this salary your whole income is taxable, with no tax-free slice at the start.`,
+    }] : []),
   ];
 
   const webAppSchema = {
@@ -111,8 +119,21 @@ export default async function SalaryAmountPage({ params }: { params: Promise<{ a
               ))}
             </tbody>
           </table>
-          <p className="text-xs text-muted mt-3">Personal Allowance: {gbp(PERSONAL_ALLOWANCE, 0)}. Assumes the standard tax code, one job, no pension contribution and no student loan.</p>
+          <p className="text-xs text-muted mt-3">Personal Allowance: {gbp(eng.allowance, 0)}{gross > 100000 ? " (reduced because you earn over £100,000)" : ""}. Assumes the standard tax code, one job, no pension contribution and no student loan.</p>
         </div>
+
+        {gross > 100000 && gross <= 125140 && (
+          <div className="rounded-xl p-5 text-sm mt-6" style={{ background: "color-mix(in srgb, #d97706 10%, var(--surface))", border: "1px solid color-mix(in srgb, #d97706 30%, var(--border))" }}>
+            <div className="font-bold" style={{ color: "#92400e" }}>You're in the "60% tax trap" zone</div>
+            <p className="text-muted mt-1.5">
+              Between £100,000 and £125,140, your Personal Allowance shrinks by £1 for every £2 you earn — so on{" "}
+              {gbp(gross, 0)} it's down to {gbp(eng.allowance, 0)}. Combined with 40% Higher Rate tax on the income
+              that allowance would otherwise have sheltered, each extra £100 you earn in this band is taxed at an
+              effective rate of around 60% (closer to 62% once National Insurance is added) — even though the
+              headline rate is only 40%.
+            </p>
+          </div>
+        )}
 
         <div className="card p-6 sm:p-8 mt-6">
           <h2 className="font-extrabold text-lg">England, Wales &amp; NI vs Scotland</h2>

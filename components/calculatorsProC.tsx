@@ -115,16 +115,16 @@ const IHT_COLOR = "#e11d48";
 export function InheritanceTaxCalculatorPro() {
   const [estate, setEstate] = useState(0);
   const [home, setHome] = useState(0);
-  const [transfer, setTransfer] = useState<"no" | "yes">("no");
-  const [snap, setSnap] = useState<{ estate: number; home: number; transfer: "no" | "yes" } | null>(null);
-  const submit = (e: React.FormEvent) => { e.preventDefault(); setSnap({ estate, home, transfer }); };
+  const [transferPct, setTransferPct] = useState(0);
+  const [snap, setSnap] = useState<{ estate: number; home: number; transferPct: number } | null>(null);
+  const submit = (e: React.FormEvent) => { e.preventDefault(); setSnap({ estate, home, transferPct }); };
 
   let results: React.ReactNode = <EmptyResults icon={Landmark} color={IHT_COLOR} label="Estimate the Inheritance Tax" />;
   let extra: React.ReactNode = null;
   if (snap) {
-    const r = inheritanceTax(snap.estate, snap.home, snap.transfer === "yes");
-    const withTransfer = inheritanceTax(snap.estate, snap.home, true).tax;
-    const withoutTransfer = inheritanceTax(snap.estate, snap.home, false).tax;
+    const r = inheritanceTax(snap.estate, snap.home, snap.transferPct);
+    const withTransfer = inheritanceTax(snap.estate, snap.home, 100).tax;
+    const withoutTransfer = inheritanceTax(snap.estate, snap.home, 0).tax;
     const summaryText = `Inheritance Tax summary: estate value ${gbp(snap.estate, 0)}, taxable estate ${gbp(r.taxable, 0)}, Inheritance Tax due ${gbp(r.tax, 0)}.`;
 
     results = (
@@ -165,13 +165,12 @@ export function InheritanceTaxCalculatorPro() {
               </ul></div>
           </div>
         </Section>
-        <Section icon={Scale} title="Transferable spouse allowance" sub="Inheritance Tax with and without the transfer" from="#9f1239" to="#e11d48">
+        <Section icon={Scale} title="Transferable spouse allowance" sub="Inheritance Tax with none of, and all of, a late spouse's unused allowance" from="#9f1239" to="#e11d48">
           <div className="rounded-2xl border border-line p-5">
-            <BarCompare color={IHT_COLOR}
-              aLabel={snap.transfer === "yes" ? "With transfer" : "Without transfer"}
-              bLabel={snap.transfer === "yes" ? "Without transfer" : "With transfer"}
-              rows={[{ label: "Inheritance Tax due", a: snap.transfer === "yes" ? withTransfer : withoutTransfer, b: snap.transfer === "yes" ? withoutTransfer : withTransfer }]} />
+            <BarCompare color={IHT_COLOR} aLabel="No transfer (0%)" bLabel="Full transfer (100%)"
+              rows={[{ label: "Inheritance Tax due", a: withoutTransfer, b: withTransfer }]} />
           </div>
+          <p className="text-xs text-muted mt-3">You entered {snap.transferPct}% transferred, giving the {gbp(r.tax, 0)} result above — these two bars show the full range between 0% and 100%.</p>
         </Section>
       </>
     );
@@ -184,9 +183,10 @@ export function InheritanceTaxCalculatorPro() {
         form={<>
           <NumField label="Total value of the estate" value={estate} onChange={setEstate} step={5000} />
           <NumField label="Home left to children or grandchildren" value={home} onChange={setHome} step={5000} />
-          <SelectField label="Unused allowance from a late spouse?" value={transfer} onChange={setTransfer} options={[
-            { value: "no", label: "No" }, { value: "yes", label: "Yes, full allowance transfers" },
-          ]} />
+          <div>
+            <NumField label="Unused allowance from a late spouse" value={transferPct} onChange={(v) => setTransferPct(Math.max(0, Math.min(100, v)))} prefix="" suffix="%" step={5} />
+            <p className="text-xs text-muted mt-1.5">0% if none, 100% if their entire nil-rate band was unused — it's often somewhere in between.</p>
+          </div>
         </>}>
         {results}
       </RunCard>
