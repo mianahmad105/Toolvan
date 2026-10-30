@@ -23,16 +23,28 @@ export default function SalaryIndex() {
         <h1 className="text-2xl md:text-4xl font-extrabold flex items-center gap-3"><Calculator className="text-accent" /> UK Salary After Tax</h1>
         <div className="text-muted mt-4 leading-7 space-y-3">
           <p>
-            How much of a UK salary actually lands in your bank account depends on Income Tax, National Insurance and,
-            for many people, a pension contribution or student loan repayment on top. This page lists take-home pay
-            for the salaries people search for most, worked out for the 2026/27 tax year in England, Wales and
-            Northern Ireland.
+            How much of a UK salary actually lands in your bank account comes down to two separate deductions. Income
+            Tax is charged on your taxable income — your salary minus the tax-free Personal Allowance of £12,570 for
+            2026/27 — in slices, or bands, at rising rates, so a pay rise only pushes the portion above a threshold
+            into the higher rate, never your whole salary. National Insurance is worked out separately, straight from
+            your gross pay rather than your taxable income: employees pay 8% on earnings between £12,570 and £50,270,
+            then 2% on anything above that.
           </p>
           <p>
-            Pick a figure below to see the full breakdown — yearly, monthly, weekly and daily — plus how the same
-            salary compares in Scotland, which uses its own Income Tax bands. Don&apos;t see your exact number? The
-            full <Link href="/salary-calculator" className="text-accent hover:underline">Salary Calculator</Link> works
-            for any amount and adds pension contributions and student loan plans into the figure.
+            Take a salary of £35,000 as an example. The first £12,570 is tax-free, leaving £22,430 of taxable income,
+            all inside the 20% basic-rate band — £4,486 of Income Tax. National Insurance is 8% on the £22,430 above
+            the £12,570 threshold, which comes to £1,794.40. Total deductions of £6,280.40 leave take-home pay of
+            £28,719.60 a year, or about £2,393 a month — roughly 82% of the original salary. That ratio of what you
+            keep falls gradually as income rises, because more of it crosses into the 40% and 45% bands.
+          </p>
+          <p>
+            The figures below assume a standard tax code, one job, and no pension or student loan — a workplace
+            pension, a student loan repayment, or a non-standard tax code will all change your real take-home pay,
+            and Scotland uses entirely different Income Tax bands from England, Wales and Northern Ireland above the
+            basic rate. Pick a salary for the full breakdown including Scotland, or use the full{" "}
+            <Link href="/salary-calculator" className="text-accent hover:underline">Salary Calculator</Link> for any
+            amount with pension and student loan built in. See how National Insurance and Income Tax bands work in
+            more depth in our <Link href="/guides" className="text-accent hover:underline">tax guides</Link>.
           </p>
         </div>
       </div>
