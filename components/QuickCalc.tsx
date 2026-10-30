@@ -27,6 +27,7 @@ export function QuickCalc() {
       className="w-full max-w-md rounded-3xl bg-surface border border-line p-7 text-left"
       style={{ boxShadow: "0 24px 60px -20px rgba(15,23,42,0.25)" }}
       onSubmit={submit}
+      noValidate
     >
       <h2 className="text-xl font-extrabold text-center">Quick Tax Calculator</h2>
       <p className="text-sm text-muted text-center mt-1">See your take-home pay in seconds</p>

@@ -204,7 +204,7 @@ export function RunCard({ icon: Icon, from, to, formTitle, formSub, submitLabel,
         <p className="text-white/90 text-sm mt-1">Fill in your details and press Calculate</p>
       </div>
       <div className="grid lg:grid-cols-[360px_1fr]">
-        <form onSubmit={onSubmit} className="p-6 bg-surface2 lg:border-r border-line no-print">
+        <form onSubmit={onSubmit} noValidate className="p-6 bg-surface2 lg:border-r border-line no-print">
           <h3 className="font-extrabold text-lg">{formTitle}</h3>
           <p className="text-sm text-muted mb-4">{formSub}</p>
           <div className="rounded-2xl bg-surface p-5 shadow-sm space-y-4">

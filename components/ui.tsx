@@ -54,6 +54,7 @@ export function Shell({ form, result }: { form: React.ReactNode; result: React.R
     <div className="space-y-6">
       <form
         className="card p-6 sm:p-8"
+        noValidate
         onChange={() => setDone(false)}
         onSubmit={(e) => { e.preventDefault(); setDone(true); }}
       >

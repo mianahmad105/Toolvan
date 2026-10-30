@@ -86,7 +86,7 @@ export function SalaryPro() {
   };
 
   const form = (
-    <form className="sal-card" onSubmit={submit}>
+    <form className="sal-card" onSubmit={submit} noValidate>
       {snap ? (
         <h2 className="text-2xl font-extrabold" style={{ color: "#1d4ed8" }}>Update your calculation</h2>
       ) : (
