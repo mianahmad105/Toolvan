@@ -278,7 +278,7 @@ export function CGTCalculator() {
         <NumField label="Your taxable income" value={income} onChange={setIncome} step={500} />
       </>}
       result={<>
-        <BigResult label="Capital gains tax" value={gbp(r.tax)} sub="2025/26 · 18% basic rate, 24% higher rate" />
+        <BigResult label="Capital gains tax" value={gbp(r.tax)} sub="2026/27 · 18% basic rate, 24% higher rate" />
         <Rows rows={[
           { label: "Annual exempt amount", value: gbp(r.exempt, 0) },
           { label: "Taxable gain", value: gbp(r.taxableGain) },
