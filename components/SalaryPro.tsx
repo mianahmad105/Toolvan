@@ -2,12 +2,19 @@
 import Link from "next/link";
 import { useRef, useState } from "react";
 import {
-  ArrowDownToLine, CalendarDays, Calculator, CheckCircle2, ChevronDown, Eye, Info, Percent,
+  ArrowDownToLine, BookOpen, CalendarDays, Calculator, CheckCircle2, ChevronDown, Eye, Info, Percent,
   PoundSterling, Share2, ShieldCheck, SlidersHorizontal, UserRound, Users, Wallet, Table2, Layers,
 } from "lucide-react";
 import { calcSalary, gbp, type Region, type StudentPlan } from "@/lib/tax";
+import { CONTENT } from "@/lib/content";
 import { PLANS } from "./ui";
 import { TaxBandsReference } from "./proui";
+
+const SOURCES = [
+  { label: "GOV.UK: Income Tax rates and Personal Allowances", href: "https://www.gov.uk/income-tax-rates" },
+  { label: "GOV.UK: National Insurance rates and categories", href: "https://www.gov.uk/national-insurance-rates-letters" },
+  { label: "GOV.UK: Scottish Income Tax rates", href: "https://www.gov.uk/scottish-income-tax" },
+];
 
 const FREQ = { year: 1, month: 12, week: 52, day: 260 } as const;
 type Freq = keyof typeof FREQ;
@@ -331,11 +338,21 @@ export function SalaryPro() {
     { q: "What is included in the calculation?", a: "Income tax, employee National Insurance, pension contributions, student loan repayments, and optional allowances such as Blind Person's Allowance and Marriage Allowance. You can also enter your own tax code." },
     { q: "Can I work out my pay for Scotland?", a: "Yes. Choose Scotland under Tax region and the Scottish income tax bands are used instead of the ones for England, Wales and Northern Ireland." },
     { q: "Which tax year is used?", a: "The 2026/27 tax year, which runs from 6 April 2026 to 5 April 2027. Always check the latest figures on gov.uk before making big decisions." },
+    ...CONTENT["salary-calculator"].faqs.slice(2, 5),
   ];
+  const howItWorks = CONTENT["salary-calculator"].how;
 
   const extras = (
     <div className="space-y-6">
       <TaxBandsReference />
+
+      <section className="card p-6 md:p-8">
+        <h2 className="text-2xl font-extrabold flex items-center gap-2" style={{ color: "#1d4ed8" }}><BookOpen size={20} /> How this calculator works</h2>
+        <div className="mt-4 space-y-3 text-[15px] leading-7">
+          {howItWorks.map((p, i) => <p key={i} className="text-muted">{p}</p>)}
+        </div>
+      </section>
+
       <section className="card p-5">
         <div className="font-extrabold">More tools to try</div>
         <div className="flex flex-wrap gap-3 mt-3">
@@ -359,10 +376,15 @@ export function SalaryPro() {
         </div>
       </section>
 
-      <div className="rounded-xl bg-surface2 p-5 text-sm" style={{ borderLeft: "4px solid #f43f5e" }}>
-        <div className="font-bold" style={{ color: "#be123c" }}>Please note</div>
-        <p className="text-muted mt-1">These results are estimates for general guidance and are not financial or tax advice. Your own figures may differ because of your circumstances, employer arrangements or later changes to tax rules. For official information visit <a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">GOV.UK</a>.</p>
-        <p className="text-xs text-muted mt-2">Rates last reviewed: 30 September 2026 · Built around the 2026/27 UK tax year</p>
+      <div className="rounded-xl bg-surface2 border border-line p-5 text-sm">
+        <div className="font-bold mb-1">Where to check the official figures</div>
+        <ul className="space-y-0.5">
+          {SOURCES.map((s) => (
+            <li key={s.href}><a href={s.href} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">{s.label}</a></li>
+          ))}
+        </ul>
+        <p className="text-xs text-muted mt-2">These results are estimates for general guidance and are not financial or tax advice. Your own figures may differ because of your circumstances, employer arrangements or later changes to tax rules.</p>
+        <p className="text-xs text-muted mt-2">Rates last reviewed: 2 October 2026 · Built around the 2026/27 UK tax year</p>
       </div>
     </div>
   );
