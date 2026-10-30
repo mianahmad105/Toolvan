@@ -1,5 +1,5 @@
 import {
-  ArrowUpRight, BadgePercent, Banknote, Building2, Calculator, CalendarDays, Car, Clock, Coins, HandCoins,
+  ArrowUpRight, BadgePercent, Building2, Calculator, CalendarDays, Car, Clock, Coins, HandCoins,
   Home, Landmark, PiggyBank, Receipt, ScanSearch, Shield, TrendingDown, TrendingUp, Users, Zap, type LucideIcon,
 } from "lucide-react";
 
@@ -7,7 +7,6 @@ const ICONS: Record<string, LucideIcon> = {
   "salary-calculator": TrendingUp,
   "income-tax-calculator": Receipt,
   "ni-calculator": Zap,
-  "after-tax": Banknote,
   "gross-salary-calculator": ArrowUpRight,
   "tax-code-checker": ScanSearch,
   "pro-rata-calculator": Clock,

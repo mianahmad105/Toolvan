@@ -19,8 +19,6 @@ export const TOOLS: Tool[] = [
     description: "See exactly how much income tax you pay in each band for England, Wales, NI or Scotland." },
   { slug: "ni-calculator", title: "National Insurance Calculator", short: "Class 1 NI", icon: "🛡️", category: "Income Tax", popular: true, color: "#059669",
     description: "Calculate your employee Class 1 National Insurance contributions." },
-  { slug: "after-tax", title: "After Tax", short: "Net from gross", icon: "🏦", category: "Income Tax", popular: true, color: "#d97706",
-    description: "Instantly see your net salary after all deductions and the percentage you keep." },
   { slug: "gross-salary-calculator", title: "Gross Salary Calculator", short: "Net to gross", icon: "🔄", category: "Income Tax", color: "#7c3aed",
     description: "Know the take-home pay you want? Find the gross salary you need to earn." },
   { slug: "tax-code-checker", title: "Tax Code Checker", short: "Decode your code", icon: "🔎", category: "Income Tax", color: "#0891b2",
@@ -63,7 +61,8 @@ export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.toolvan
 export const CONTACT_EMAIL = "support@toolvan.site";
 
 /** Byline shown on the About page and every guide. */
-export const AUTHOR_NAME = "Jack Dev";
+export const AUTHOR_NAME = "M Adeel";
+export const AUTHOR_SLUG = "m-adeel";
 
 // Google AdSense publisher ID. Not a secret — it's meant to sit directly in every page's
 // <head>, which is exactly what AdSense's own verification snippet asks you to paste.
@@ -73,7 +72,7 @@ export const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID ?? "c
 
 /** Public URL of each tool. */
 export function toolHref(slug: string): string {
-  if (slug === "salary-calculator" || slug === "after-tax") return `/${slug}`;
+  if (slug === "salary-calculator") return `/${slug}`;
   if (["hourly-to-yearly", "salary-to-hourly", "daily-rate-to-annual-salary"].includes(slug)) return `/salary-calculator/${slug}`;
   return `/tools/${slug}`;
 }

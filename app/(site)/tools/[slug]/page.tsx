@@ -46,13 +46,23 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
       acceptedAnswer: { "@type": "Answer", text: f.a },
     })),
   } : null;
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Calculators", item: `${SITE_URL}/tools` },
+      { "@type": "ListItem", position: 3, name: tool.title, item: `${SITE_URL}${toolHref(slug)}` },
+    ],
+  };
 
   return (
     <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
     {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="mx-auto max-w-[1400px] px-4 sm:px-8 py-10">
-      <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted flex items-center gap-2"><Link href="/" className="hover:text-ink">Home</Link><span>/</span><span className="text-ink">{tool.title}</span></nav>
+      <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted flex items-center gap-2"><Link href="/" className="hover:text-ink">Home</Link><span>/</span><Link href="/tools" className="hover:text-ink">Calculators</Link><span>/</span><span className="text-ink">{tool.title}</span></nav>
       <CalculatorLoader slug={slug} />
       <p className="text-xs text-muted mt-6">Based on 2026/27 UK tax rates. Results are estimates and not financial advice.</p>
 

@@ -11,7 +11,6 @@ const BLURB: Record<string, string> = {
   "salary-calculator": "See your take-home pay after tax, NI and pension.",
   "income-tax-calculator": "Find out how much tax you owe in each band.",
   "ni-calculator": "Work out your Class 1 National Insurance bill.",
-  "after-tax": "Turn a gross salary into net pay in one click.",
   "gross-salary-calculator": "Find the gross pay behind your target take-home.",
   "tax-code-checker": "Decode what the letters and numbers mean.",
   "pro-rata-calculator": "Convert a full-time wage to part-time pay.",

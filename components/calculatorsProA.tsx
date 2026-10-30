@@ -103,7 +103,7 @@ export function NICalculatorPro() {
         more={[
           { href: toolHref("salary-calculator"), label: "Take-home pay", sub: "full income tax and NI breakdown" },
           { href: toolHref("income-tax-calculator"), label: "Income tax calculator", sub: "see your tax by band" },
-          { href: toolHref("after-tax"), label: "After-tax salary", sub: "net pay from gross" },
+          { href: "/after-tax", label: "Salary after tax", sub: "common salaries, take-home pay table" },
         ]} />
     </div>
   );
@@ -289,7 +289,7 @@ export function GrossSalaryCalculatorPro() {
         points={["Works backwards from take-home pay", "Income tax and National Insurance", "Pension contributions and student loan", "England, Wales, NI and Scotland"]}
         more={[
           { href: toolHref("salary-calculator"), label: "Take-home pay", sub: "gross to net" },
-          { href: toolHref("after-tax"), label: "After-tax salary", sub: "net from gross" },
+          { href: "/after-tax", label: "Salary after tax", sub: "common salaries, take-home pay table" },
           { href: toolHref("income-tax-calculator"), label: "Income tax calculator", sub: "tax by band" },
         ]}
         sources={[

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ amount: s
   return {
     title: `${gbp(gross, 0)} After Tax UK — Take-Home Pay 2026/27`,
     description: `See exactly how much of a ${gbp(gross, 0)} salary you take home after Income Tax and National Insurance in the UK for 2026/27, with a full yearly, monthly, weekly and daily breakdown.`,
-    alternates: { canonical: `/salary/${gross}` },
+    alternates: { canonical: `/after-tax/${gross}` },
     // Templated pages covering the same figures as the Salary Calculator — kept out of the
     // index so they don't read as thin/duplicate content, but still linked and crawlable.
     robots: { index: false, follow: true },
@@ -29,7 +29,7 @@ function prefillHref(gross: number, region: "england" | "scotland") {
   return `${toolHref("income-tax-calculator")}?d=${encodeURIComponent(JSON.stringify(d))}`;
 }
 
-export default async function SalaryAmountPage({ params }: { params: Promise<{ amount: string }> }) {
+export default async function AfterTaxAmountPage({ params }: { params: Promise<{ amount: string }> }) {
   const { amount } = await params;
   const gross = Number(amount);
   if (!COMMON_SALARIES.includes(gross)) notFound();
@@ -65,7 +65,7 @@ export default async function SalaryAmountPage({ params }: { params: Promise<{ a
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: `${gbp(gross, 0)} After Tax UK Calculator`,
-    url: `${SITE_URL}/salary/${gross}`,
+    url: `${SITE_URL}/after-tax/${gross}`,
     description: `Take-home pay breakdown for a ${gbp(gross, 0)} UK salary in 2026/27.`,
     applicationCategory: "FinanceApplication",
     operatingSystem: "Any",
@@ -76,15 +76,25 @@ export default async function SalaryAmountPage({ params }: { params: Promise<{ a
     "@type": "FAQPage",
     mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
   };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Salary After Tax UK", item: `${SITE_URL}/after-tax` },
+      { "@type": "ListItem", position: 3, name: gbp(gross, 0), item: `${SITE_URL}/after-tax/${gross}` },
+    ],
+  };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <div className="mx-auto max-w-4xl px-4 py-10">
         <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted flex items-center gap-2">
           <Link href="/" className="hover:text-ink">Home</Link><span>/</span>
-          <Link href="/salary" className="hover:text-ink">Salary</Link><span>/</span>
+          <Link href="/after-tax" className="hover:text-ink">Salary After Tax UK</Link><span>/</span>
           <span className="text-ink">{gbp(gross, 0)}</span>
         </nav>
 
@@ -170,12 +180,12 @@ export default async function SalaryAmountPage({ params }: { params: Promise<{ a
         <div className="card p-6 sm:p-8 mt-6">
           <h2 className="font-extrabold text-lg">Other salaries</h2>
           <div className="flex flex-wrap gap-2 mt-4">
-            {prev && <Link href={`/salary/${prev}`} className="rounded-lg bg-surface2 border border-line px-3 py-2 text-sm hover:border-accent transition">{gbp(prev, 0)}</Link>}
-            {next && <Link href={`/salary/${next}`} className="rounded-lg bg-surface2 border border-line px-3 py-2 text-sm hover:border-accent transition">{gbp(next, 0)}</Link>}
+            {prev && <Link href={`/after-tax/${prev}`} className="rounded-lg bg-surface2 border border-line px-3 py-2 text-sm hover:border-accent transition">{gbp(prev, 0)}</Link>}
+            {next && <Link href={`/after-tax/${next}`} className="rounded-lg bg-surface2 border border-line px-3 py-2 text-sm hover:border-accent transition">{gbp(next, 0)}</Link>}
           </div>
           <div className="flex flex-wrap gap-2 mt-3">
             {COMMON_SALARIES.filter((a) => a !== gross).map((a) => (
-              <Link key={a} href={`/salary/${a}`} className="rounded-full bg-surface2 border border-line px-3 py-1.5 text-xs hover:border-accent transition">{gbp(a, 0)}</Link>
+              <Link key={a} href={`/after-tax/${a}`} className="rounded-full bg-surface2 border border-line px-3 py-1.5 text-xs hover:border-accent transition">{gbp(a, 0)}</Link>
             ))}
           </div>
         </div>

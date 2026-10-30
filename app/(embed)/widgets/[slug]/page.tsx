@@ -20,7 +20,8 @@ export default async function Widget({ params }: { params: Promise<{ slug: strin
   if (!tool) notFound();
   return (
     <div className="p-4">
-      <h1 className="text-xl font-extrabold mb-4">{tool.icon} {tool.title}</h1>
+      <h1 className="text-xl font-extrabold mb-1">{tool.icon} {tool.title}</h1>
+      <p className="text-sm text-muted mb-4">{tool.description}</p>
       <CalculatorLoader slug={slug} />
       <p className="text-xs text-muted mt-4 text-center">
         Powered by <Link href={toolHref(slug)} target="_blank" className="font-semibold text-accent2">{SITE_NAME}</Link>

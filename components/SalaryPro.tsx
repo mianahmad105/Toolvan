@@ -104,12 +104,13 @@ export function SalaryPro() {
         <div className="mt-5 rounded-xl border border-line bg-surface2 p-4 flex gap-3">
           <Info size={16} className="text-accent shrink-0 mt-0.5" />
           <div className="text-sm text-muted">
-            <b className="text-ink">How this differs from After Tax:</b> this is the full calculator — it&apos;s the
-            only one on the site that accounts for a <b className="text-ink">pension contribution</b> (percentage or
-            fixed amount), a <b className="text-ink">student loan plan</b>, a <b className="text-ink">custom tax code</b>,
-            and Marriage or Blind Person&apos;s Allowance, with a shareable results link. It doesn&apos;t take an hourly
-            rate — for a quick hourly or daily wage check, use the simpler{" "}
-            <Link href="/after-tax" className="text-accent underline">After Tax</Link> page instead.
+            <b className="text-ink">The full calculator:</b> this is the only one on the site that accounts for a{" "}
+            <b className="text-ink">pension contribution</b> (percentage or fixed amount), a{" "}
+            <b className="text-ink">student loan plan</b>, a <b className="text-ink">custom tax code</b>, and
+            Marriage or Blind Person&apos;s Allowance, with a shareable results link. Paid by the hour or day?
+            Convert it to a yearly figure first with our{" "}
+            <Link href="/tools/hourly-to-yearly" className="text-accent underline">Hourly to Yearly</Link> calculator,
+            then enter that amount here.
           </div>
         </div>
       )}
@@ -355,7 +356,7 @@ export function SalaryPro() {
       <section className="card p-5">
         <div className="font-extrabold">More tools to try</div>
         <div className="flex flex-wrap gap-3 mt-3">
-          {[{ href: "/after-tax", label: "After-tax pay" }, { href: "/tools/income-tax-calculator", label: "Income tax bands" }, { href: "/tools/tax-code-checker", label: "Tax code checker" }].map((l) => (
+          {[{ href: "/after-tax", label: "Salary after tax" }, { href: "/tools/income-tax-calculator", label: "Income tax bands" }, { href: "/tools/tax-code-checker", label: "Tax code checker" }].map((l) => (
             <Link key={l.href} href={l.href} className="rounded-lg bg-surface border border-line px-4 py-2 text-sm font-medium shadow-sm hover:border-accent transition">{l.label}</Link>
           ))}
         </div>

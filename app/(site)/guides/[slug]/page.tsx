@@ -5,7 +5,7 @@ import { HelpCircle } from "lucide-react";
 import { ToolCard } from "@/components/ToolCard";
 import { ContactBand } from "@/components/ContactBand";
 import { GUIDES, getGuide } from "@/lib/guides";
-import { AUTHOR_NAME, getTool, SITE_URL } from "@/lib/tools";
+import { AUTHOR_NAME, AUTHOR_SLUG, getTool, SITE_URL } from "@/lib/tools";
 
 export function generateStaticParams() {
   return GUIDES.map((g) => ({ slug: g.slug }));
@@ -23,16 +23,21 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
   if (!guide) notFound();
 
   const relatedTools = guide.related.map((s) => getTool(s)).filter((t): t is NonNullable<typeof t> => !!t);
-  const otherGuides = GUIDES.filter((g) => g.slug !== slug).slice(0, 3);
+  // Prefer guides that share a related calculator (genuinely relevant), then fill any
+  // remaining slots so every guide page doesn't just link to the same first few guides.
+  const shared = GUIDES.filter((g) => g.slug !== slug && g.related.some((r) => guide.related.includes(r)));
+  const rest = GUIDES.filter((g) => g.slug !== slug && !shared.includes(g));
+  const otherGuides = [...shared, ...rest].slice(0, 3);
 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: guide.title,
     description: guide.dek,
+    datePublished: guide.published,
     dateModified: guide.updated,
     url: `${SITE_URL}/guides/${slug}`,
-    author: { "@type": "Person", name: AUTHOR_NAME },
+    author: { "@type": "Person", name: AUTHOR_NAME, url: `${SITE_URL}/author/${AUTHOR_SLUG}` },
   };
   const faqSchema = guide.faqs.length > 0 ? {
     "@context": "https://schema.org",
@@ -43,11 +48,21 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
       acceptedAnswer: { "@type": "Answer", text: f.a },
     })),
   } : null;
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Guides", item: `${SITE_URL}/guides` },
+      { "@type": "ListItem", position: 3, name: guide.title, item: `${SITE_URL}/guides/${slug}` },
+    ],
+  };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <div className="mx-auto max-w-3xl px-4 py-10">
         <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted flex items-center gap-2 flex-wrap">
           <Link href="/" className="hover:text-ink">Home</Link><span>/</span>
@@ -59,7 +74,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
           <h1 className="text-3xl md:text-4xl font-extrabold leading-tight">{guide.title}</h1>
           <p className="text-muted mt-3 leading-7">{guide.dek}</p>
           <p className="text-xs text-muted mt-3">
-            Written by {AUTHOR_NAME} · Last updated{" "}
+            Written by <Link href={`/author/${AUTHOR_SLUG}`} className="text-accent underline">{AUTHOR_NAME}</Link> · Last updated{" "}
             {new Date(guide.updated).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}
           </p>
           <hr className="my-6 border-line" />
@@ -68,11 +83,29 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
             {guide.sections.map((s) => (
               <section key={s.heading}>
                 <h2 className="text-xl font-extrabold mb-2">{s.heading}</h2>
-                {s.paragraphs.map((p, i) => <p key={i} className="text-muted mt-2">{p}</p>)}
+                {s.paragraphs?.map((p, i) => <p key={i} className="text-muted mt-2">{p}</p>)}
                 {s.bullets && (
                   <ul className="list-disc pl-6 space-y-1.5 text-muted mt-3">
                     {s.bullets.map((b) => <li key={b}>{b}</li>)}
                   </ul>
+                )}
+                {s.table && (
+                  <div tabIndex={0} className="overflow-x-auto rounded-xl border border-line mt-4">
+                    <table className="w-full text-sm min-w-[480px]">
+                      <thead>
+                        <tr className="bg-surface2 text-left">
+                          {s.table.headers.map((h) => <th key={h} className="px-3 py-2.5">{h}</th>)}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {s.table.rows.map((row, i) => (
+                          <tr key={i} className="border-t border-line">
+                            {row.map((cell, j) => <td key={j} className={`px-3 py-2.5 ${j === 0 ? "font-semibold" : ""}`}>{cell}</td>)}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 )}
               </section>
             ))}
@@ -92,6 +125,20 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
                   ))}
                 </div>
               </section>
+            </>
+          )}
+
+          {guide.sources && guide.sources.length > 0 && (
+            <>
+              <hr className="my-8 border-line" />
+              <div className="rounded-xl bg-surface2 border border-line p-4 text-sm">
+                <div className="font-bold mb-1">Where to check the official figures</div>
+                <ul className="space-y-0.5">
+                  {guide.sources.map((s) => (
+                    <li key={s.href}><a href={s.href} target="_blank" rel="noopener noreferrer" className="text-accent underline">{s.label}</a></li>
+                  ))}
+                </ul>
+              </div>
             </>
           )}
 

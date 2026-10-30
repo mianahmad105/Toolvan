@@ -1,5 +1,4 @@
 "use client";
-import { AfterTaxPage } from "./AfterTaxPage";
 import { IncomeTaxPro } from "./IncomeTaxPro";
 import { SalaryPro } from "./SalaryPro";
 import {
@@ -19,7 +18,6 @@ const PRO_CALCULATORS: Record<string, () => React.JSX.Element> = {
   "salary-calculator": SalaryPro,
   "income-tax-calculator": IncomeTaxPro,
   "ni-calculator": NICalculatorPro,
-  "after-tax": AfterTaxPage,
   "gross-salary-calculator": GrossSalaryCalculatorPro,
   "tax-code-checker": TaxCodeCheckerPro,
   "pro-rata-calculator": ProRataCalculatorPro,

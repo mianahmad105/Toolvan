@@ -24,7 +24,6 @@ const HIGHLIGHTS: Record<string, [string, string]> = {
   "salary-calculator": ["Gross to net pay breakdown", "Pension and student loan support"],
   "income-tax-calculator": ["Tax band-by-band breakdown", "England, Wales, NI and Scotland"],
   "ni-calculator": ["Employee Class 1 NI", "Monthly and yearly totals"],
-  "after-tax": ["Net pay from a gross figure", "Shows the % of pay you keep"],
   "gross-salary-calculator": ["Works backwards from take-home pay", "Finds the salary you'd need"],
   "tax-code-checker": ["Decodes any UK tax code", "Shows your tax-free allowance"],
   "pro-rata-calculator": ["Part-time salary from full-time", "Yearly, monthly and weekly figures"],
@@ -104,6 +103,45 @@ export default function Widgets() {
         </div>
       </div>
 
+      <div className="mx-auto max-w-3xl px-4 pb-4">
+        <div className="card p-6 sm:p-8 space-y-4 leading-7 text-muted">
+          <h2 className="font-extrabold text-lg text-ink">Who these widgets are for</h2>
+          <p>
+            These embeds are built for anyone who publishes content about UK pay, tax or property and would rather
+            show a working calculator than a static table of numbers. That covers personal finance bloggers writing
+            about take-home pay or Stamp Duty, recruitment and job-board sites that want candidates to see real
+            figures against a salary, HR and payroll teams adding a self-service tool to an intranet page, mortgage
+            brokers and accountants who want a quick affordability or tax estimate on their own site, and student
+            or careers advice pages explaining things like student loan repayments or pro rata pay. If your readers
+            are asking &ldquo;what would that actually be worth to me?&rdquo;, a live calculator answers it far
+            better than a paragraph of prose ever could.
+          </p>
+          <h2 className="font-extrabold text-lg text-ink">How to embed one</h2>
+          <p>
+            Every calculator on this site is also available as a self-contained embed. Open the calculator you want
+            below, preview it to check it fits your page, then press the copy button to grab a short HTML snippet —
+            typically an iframe pointed at the calculator&apos;s own URL. Paste that snippet into your CMS, static
+            site, or a plain HTML page, and the calculator loads and runs entirely in the visitor&apos;s browser.
+            There&apos;s no API key, no script tag to register, and no account needed — if you can paste HTML into
+            your page, you can embed a calculator. Because it runs client-side, nothing your visitor types is sent
+            back to this site or stored anywhere.
+          </p>
+          <h2 className="font-extrabold text-lg text-ink">Example use cases</h2>
+          <ul className="list-disc pl-6 space-y-1.5">
+            <li>A recruitment listing embedding the Salary Calculator next to a job advert so candidates can see take-home pay for the advertised salary.</li>
+            <li>A personal finance blog post about buying a first home embedding the Stamp Duty Calculator instead of describing the bands in text.</li>
+            <li>A university careers page embedding the Pro Rata Calculator and Hourly to Yearly converter for students comparing part-time job offers.</li>
+            <li>An accountancy firm&apos;s website embedding the Capital Gains Tax or Inheritance Tax calculators as a lead-generating tool on a services page.</li>
+            <li>An HR intranet page embedding the Income Tax Calculator so staff can model the effect of a pay rise or extra pension contribution themselves.</li>
+          </ul>
+          <p className="text-sm">
+            Each widget stays aligned with the 2026/27 UK tax rates used across the rest of this site, so you&apos;re
+            never responsible for maintaining the figures yourself — if a Budget changes a threshold, every embed
+            updates automatically.
+          </p>
+        </div>
+      </div>
+
       <div className="band py-14">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center max-w-xl mx-auto">
@@ -131,8 +169,8 @@ export default function Widgets() {
             <Link href="/salary-calculator" className="inline-flex items-center gap-2 rounded-xl bg-white text-accent2 px-5 py-3 font-bold">
               <MousePointerClick size={17} /> Open Salary Calculator
             </Link>
-            <Link href="/after-tax" className="inline-flex items-center gap-2 rounded-xl bg-white text-accent2 px-5 py-3 font-bold">
-              <MousePointerClick size={17} /> Open After-Tax Pay
+            <Link href="/tools/gross-salary-calculator" className="inline-flex items-center gap-2 rounded-xl bg-white text-accent2 px-5 py-3 font-bold">
+              <MousePointerClick size={17} /> Open Gross Salary Calculator
             </Link>
             <Link href="/contact" className="inline-flex items-center gap-2 rounded-xl border-2 border-white/40 px-5 py-3 font-bold">
               <ClipboardCheck size={17} /> Need help embedding?

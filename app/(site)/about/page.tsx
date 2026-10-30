@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { BookOpen, CheckCircle2, Mail, RefreshCw, UserRound } from "lucide-react";
-import { AUTHOR_NAME, CONTACT_EMAIL, SITE_NAME } from "@/lib/tools";
+import { AUTHOR_NAME, AUTHOR_SLUG, CONTACT_EMAIL, SITE_NAME } from "@/lib/tools";
 
 export const metadata = {
   title: "About",
@@ -20,15 +20,16 @@ export default function About() {
         <section>
           <h2 className="text-xl font-extrabold mb-2 flex items-center gap-2"><UserRound size={19} className="text-accent" /> Who&apos;s behind this</h2>
           <p className="text-muted">
-            I&apos;m {AUTHOR_NAME}, a software developer, and I build and maintain {SITE_NAME} myself — it&apos;s not a
+            I&apos;m {AUTHOR_NAME}, a web developer, and I build and maintain {SITE_NAME} myself — it&apos;s not a
             product of a large company or a finance firm, just one person&apos;s side project that grew into a full set
             of calculators. I&apos;m not a tax adviser or an accountant; what I bring is the engineering side — building
             something fast, clear and free to use — while the actual tax rules come straight from published
-            government sources, described below.
+            government sources, described below. You can read more about my background on the{" "}
+            <Link href={`/author/${AUTHOR_SLUG}`} className="text-accent underline">author page</Link>.
           </p>
           <p className="text-muted mt-3">
-            I started {SITE_NAME} because the UK tax calculators I kept landing on were cluttered with ads, slow to
-            load, or quietly running on last year&apos;s rates. I wanted something that gave a straight answer — your
+            I started {SITE_NAME} because most of the UK tax calculators I came across were cluttered with ads, slow
+            to load, or quietly running on last year&apos;s rates. I wanted something that gave a straight answer — your
             take-home pay, your tax band, your Stamp Duty bill — without a wall of pop-ups or a signup form in the
             way. That&apos;s still the goal: no account, nothing you type is sent anywhere, just a number you can trust.
           </p>

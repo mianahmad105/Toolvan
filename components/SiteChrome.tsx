@@ -3,15 +3,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BookOpen, Calculator, ChevronDown, Home, LayoutGrid, Mail, TrendingUp, X } from "lucide-react";
-import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
-import { SITE_NAME } from "@/lib/tools";
+import { AUTHOR_SLUG, SITE_NAME } from "@/lib/tools";
 import { ToolSearch } from "./ToolSearch";
-
-const SOCIAL_LINKS = [
-  { href: "https://www.facebook.com", label: "Facebook", icon: FaFacebook },
-  { href: "https://www.instagram.com", label: "Instagram", icon: FaInstagram },
-  { href: "https://www.tiktok.com", label: "TikTok", icon: FaTiktok },
-];
 
 const MOBILE_NAV = [
   { href: "/", label: "Home", icon: Home },
@@ -23,10 +16,11 @@ const MOBILE_NAV = [
 
 /** Pages that aren't already one click away from the homepage's main nav or body content. */
 const MORE_LINKS = [
-  { href: "/after-tax", label: "After-tax pay" },
-  { href: "/salary", label: "Salary after tax" },
+  { href: "/after-tax", label: "Salary after tax" },
   { href: "/widgets", label: "Widgets" },
   { href: "/about", label: "About us" },
+  { href: `/author/${AUTHOR_SLUG}`, label: "About the author" },
+  { href: "/editorial-policy", label: "Editorial policy" },
   { href: "/contact", label: "Contact Us" },
   { href: "/privacy", label: "Privacy notice" },
   { href: "/cookies", label: "Cookie Policy" },
@@ -162,8 +156,7 @@ const QUICK_LINKS = [
   { href: "/", label: "Home" },
   { href: "/tools", label: "Calculators" },
   { href: "/salary-calculator", label: "Salary Calculator" },
-  { href: "/after-tax", label: "After-tax pay" },
-  { href: "/salary", label: "Salary after tax" },
+  { href: "/after-tax", label: "Salary after tax" },
   { href: "/guides", label: "Guides" },
   { href: "/about", label: "About us" },
   { href: "/contact", label: "Contact Us" },
@@ -182,14 +175,6 @@ export function Footer() {
           <p className="mt-3 text-sm leading-7 max-w-xs">
             Simple UK tax and salary calculators that show where your money goes and what you keep.
           </p>
-          <div className="flex items-center gap-3 mt-5">
-            {SOCIAL_LINKS.map(({ href, label, icon: Icon }) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
-                className="grid place-items-center w-9 h-9 rounded-full bg-white/10 text-white hover:bg-white/20 transition">
-                <Icon size={16} />
-              </a>
-            ))}
-          </div>
         </div>
 
         <div>
@@ -209,6 +194,8 @@ export function Footer() {
           </p>
           <ul className="mt-4 space-y-3 text-sm">
             <li><Link href="/about" className="text-blue-200 hover:text-white transition">About us</Link></li>
+            <li><Link href={`/author/${AUTHOR_SLUG}`} className="text-blue-200 hover:text-white transition">About the author</Link></li>
+            <li><Link href="/editorial-policy" className="text-blue-200 hover:text-white transition">Editorial policy</Link></li>
             <li><Link href="/contact" className="text-blue-200 hover:text-white transition">Contact us</Link></li>
           </ul>
         </div>
