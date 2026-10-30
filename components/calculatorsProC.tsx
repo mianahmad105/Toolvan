@@ -414,7 +414,7 @@ export function VehicleTaxCalculatorPro() {
         <RowsTable title="Breakdown" rows={[
           { label: "First-year rate", value: gbp(r.first, 0) },
           { label: "Standard rate", value: gbp(r.standard, 0) },
-          { label: "Expensive car supplement (over £40,000)", value: gbp(r.supplement, 0) },
+          { label: "Expensive car supplement (over £50,000)", value: gbp(r.supplement, 0) },
           { label: "Standard rate with supplement", value: gbp(r.standardWithSupplement, 0), strong: true },
         ]} />
         <ShareSaveBar color={VEHICLE_COLOR} summaryText={summaryText} />
@@ -448,7 +448,7 @@ export function VehicleTaxCalculatorPro() {
       </RunCard>
       {extra}
       <Understanding slug="vehicle-tax-calculator" color={VEHICLE_COLOR} from="#422006" to="#713f12" title="Understanding vehicle tax"
-        points={["First-year rate based on CO₂ emissions", "Standard rate from year two", "Expensive car supplement over £40,000", "Electric vehicle rates"]}
+        points={["First-year rate based on CO₂ emissions", "Standard rate from year two", "Expensive car supplement over £50,000", "Electric vehicle rates"]}
         more={[
           { href: toolHref("loan-repayment-calculator"), label: "Loan repayment calculator", sub: "monthly payments on a loan" },
           { href: toolHref("stamp-duty-calculator"), label: "Stamp Duty calculator", sub: "tax when buying a home" },

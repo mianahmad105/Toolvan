@@ -127,7 +127,7 @@ export function VehicleTaxCalculator() {
         <Rows title="Rates for a car registered after April 2017" rows={[
           { label: "First-year rate", value: gbp(r.first, 0) },
           { label: "Standard rate from year 2", value: gbp(r.standard, 0) },
-          { label: "Expensive car supplement (list price over £40,000)", value: gbp(r.supplement, 0) },
+          { label: "Expensive car supplement (list price over £50,000)", value: gbp(r.supplement, 0) },
           { label: "Standard rate with supplement", value: gbp(r.standardWithSupplement, 0), strong: true },
         ]} />
       </>}
