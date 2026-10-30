@@ -47,7 +47,7 @@ export function incomeTax(taxable: number, region: Region = "england", allowance
   return { tax: total, bands: out, allowance: pa };
 }
 
-// Employee Class 1 NI 2025/26 (annual approximation)
+// Employee Class 1 NI 2026/27 (thresholds frozen since 2025/26; annual approximation)
 export function employeeNI(gross: number) {
   const PT = 12570, UEL = 50270;
   const main = Math.max(0, Math.min(gross, UEL) - PT) * 0.08;
@@ -73,7 +73,7 @@ export interface SalaryInput {
   marriage?: boolean; // receiving Marriage Allowance
 }
 
-export const BLIND_ALLOWANCE = 3130;
+export const BLIND_ALLOWANCE = 3250;
 export const MARRIAGE_SAVING = 252;
 
 export function calcSalary(i: SalaryInput) {
@@ -151,7 +151,7 @@ export function parseTaxCode(raw: string) {
   };
 }
 
-// CGT 2025/26
+// CGT 2026/27 (rates and exempt amount unchanged since 2025/26)
 export function calcCGT(gain: number, taxableIncome: number, asset: "shares" | "property") {
   void asset;
   const exempt = 3000;
