@@ -6,7 +6,11 @@ import { ADSENSE_CLIENT_ID, SITE_NAME, SITE_URL } from "@/lib/tools";
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta" });
 
-const GOOGLE_SITE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+// Google Search Console verification. Not a secret — this value is meant to be publicly
+// visible in the page source, which is how Search Console confirms ownership. Hardcoded as
+// the default so it works without needing an env var set on the host; still overridable via
+// NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION if the verification code is ever rotated.
+const GOOGLE_SITE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? "wkwXk0RsWvss_nDpVvWYbY813v7oTAS3egDGOZB3cFU";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
